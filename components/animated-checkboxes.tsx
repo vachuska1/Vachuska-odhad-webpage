@@ -4,11 +4,25 @@ import { useState } from "react"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Switch } from "@/components/ui/switch" // For toggle button
-import { CheckCircle, XCircle } from "lucide-react" // For icon-based checkbox
+import { Switch } from "@/components/ui/switch"
+import { CheckCircle, XCircle } from "lucide-react"
 
-export function AnimatedCheckboxes() {
-  const [checkedStates, setCheckedStates] = useState(Array(8).fill(false)) // Increased for new types
+interface AnimatedCheckboxesProps {
+  checkboxes: {
+    title: string;
+    standard: string;
+    growing: string;
+    pulsing: string;
+    rotating: string;
+    rounded: string;
+    sliding: string;
+    toggle: string;
+    icon: string;
+  };
+}
+
+export function AnimatedCheckboxes({ checkboxes }: AnimatedCheckboxesProps) {
+  const [checkedStates, setCheckedStates] = useState(Array(8).fill(false))
 
   const handleCheck = (index: number) => {
     setCheckedStates((prev) => {
@@ -20,54 +34,47 @@ export function AnimatedCheckboxes() {
 
   const checkboxTypes = [
     {
-      name: "Standardní (Červená)",
-      description: "Výchozí zaškrtávací políčko s červenou barvou.",
+      name: checkboxes.standard,
       type: "checkbox",
       className: "data-[state=checked]:bg-red-500 data-[state=checked]:text-white transition-colors duration-200",
     },
     {
-      name: "Zvětšující se (3x, Fialová)",
-      description: "Zvětší se 3x a změní barvu na fialovou při zaškrtnutí.",
+      name: checkboxes.growing,
       type: "checkbox",
       className:
         "data-[state=checked]:scale-[3] data-[state=checked]:bg-purple-500 data-[state=checked]:text-white transition-all duration-200",
     },
     {
-      name: "Pulzující (Žlutá)",
-      description: "Krátce pulzuje a změní barvu na žlutou při zaškrtnutí.",
+      name: checkboxes.pulsing,
       type: "checkbox",
       className: "data-[state=checked]:bg-yellow-500 data-[state=checked]:text-white transition-colors duration-200",
-      checkClassName: "data-[state=checked]:animate-pulse-once", // Custom animation
+      checkClassName: "data-[state=checked]:animate-pulse-once",
     },
     {
-      name: "Otočné (Zelená)",
-      description: "Otočí se a změní barvu na zelenou při zaškrtnutí.",
+      name: checkboxes.rotating,
       type: "checkbox",
       className:
         "data-[state=checked]:rotate-12 data-[state=checked]:bg-green-500 data-[state=checked]:text-white transition-all duration-200",
     },
     {
-      name: "Zaoblené (Modrá)",
-      description: "Zaoblené zaškrtávací políčko s modrou barvou.",
+      name: checkboxes.rounded,
       type: "checkbox",
       className:
         "rounded-full data-[state=checked]:bg-blue-500 data-[state=checked]:text-white transition-colors duration-200",
     },
     {
-      name: "Posuvné (Šedá)",
-      description: "Posune se a změní barvu na šedou při zaškrtnutí.",
+      name: checkboxes.sliding,
       type: "checkbox",
       className:
         "data-[state=checked]:translate-x-1 data-[state=checked]:bg-gray-500 data-[state=checked]:text-white transition-all duration-200",
     },
     {
-      name: "Přepínač (Toggle)",
-      description: "Jednoduchý přepínač pro zapnutí/vypnutí.",
+      name: checkboxes.toggle,
       type: "switch",
     },
     {
-      name: "Ikona (Check/Cross)",
-      description: "Zaškrtávací políčko založené na ikonách.",
+      name: checkboxes.icon.split(":")[0],
+      description: checkboxes.icon.split(":")[1].trim(),
       type: "icon",
     },
   ]
@@ -76,7 +83,7 @@ export function AnimatedCheckboxes() {
     <Card className="p-4 bg-card text-card-foreground shadow-lg max-w-4xl mx-auto">
       <CardHeader className="pb-4">
         <CardTitle className="text-2xl font-bold text-foreground text-center">
-          Ukázky animovaných zaškrtávacích políček
+          {checkboxes.title}
         </CardTitle>
       </CardHeader>
       <CardContent className="grid grid-cols-1 sm:grid-cols-2 gap-6">

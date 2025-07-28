@@ -1,6 +1,7 @@
 "use client"
 
-import { useActionState } from "react"
+import { useFormStatus } from "react-dom"
+import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -8,19 +9,35 @@ import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { toast } from "@/hooks/use-toast"
-import { sendEmail } from "@/app/actions/send-email" // Import the server action
+import { sendEmail } from "@/app/actions/send-email"
 
 interface ContactFormProps {
   lang: "cz" | "en"
 }
 
-export function ContactForm({ lang }: ContactFormProps) {
-  const [state, formAction, isPending] = useActionState(sendEmail, {
-    success: false,
-    message: "",
-  })
+function SubmitButton({ lang, isSubmitting }: { lang: 'cz' | 'en', isSubmitting: boolean }) {
+  const translations = {
+    cz: {
+      submit: "Odeslat zprávu",
+      sending: "Odesílám..."
+    },
+    en: {
+      submit: "Send Message",
+      sending: "Sending..."
+    }
+  }
+  
+  return (
+    <Button type="submit" className="w-full" disabled={isSubmitting}>
+      {isSubmitting ? translations[lang].sending : translations[lang].submit}
+    </Button>
+  )
+}
 
-  const handleSubmit = async (e: any) => {
+export function ContactForm({ lang }: ContactFormProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
     const gdprAgreed = formData.get("gdprAgreed") === "on"
@@ -36,8 +53,46 @@ export function ContactForm({ lang }: ContactFormProps) {
       })
       return
     }
-
-    await formAction(formData) // Call the server action
+    
+    setIsSubmitting(true)
+    
+    try {
+      const result = await sendEmail(null, formData)
+      
+      if (result.success) {
+        // Reset the form on success if it still exists
+        if (e.currentTarget) {
+          e.currentTarget.reset()
+        }
+        
+        toast({
+          title: lang === "cz" ? "Úspěch" : "Success",
+          description: result.message || (lang === "cz" 
+            ? "Zpráva byla úspěšně odeslána!" 
+            : "Message sent successfully!"),
+          variant: "default",
+        })
+      } else {
+        toast({
+          title: lang === "cz" ? "Chyba" : "Error",
+          description: result.message || (lang === "cz"
+            ? "Při odesílání zprávy došlo k chybě."
+            : "An error occurred while sending the message."),
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      console.error("Error sending email:", error)
+      toast({
+        title: lang === "cz" ? "Chyba" : "Error",
+        description: lang === "cz"
+          ? "Při odesílání zprávy došlo k chybě."
+          : "An error occurred while sending the message.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const translations = {
@@ -88,9 +143,7 @@ export function ContactForm({ lang }: ContactFormProps) {
           {t.gdpr}
         </Label>
       </div>
-      <Button type="submit" className="w-full" disabled={isPending}>
-        {isPending ? (lang === "cz" ? "Odesílám..." : "Sending...") : t.submit}
-      </Button>
+      <SubmitButton lang={lang} isSubmitting={isSubmitting} />
     </form>
   )
 }

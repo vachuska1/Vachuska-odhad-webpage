@@ -1,8 +1,22 @@
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
+import { useEffect, useState } from "react"
 
 export function WebExamplesSlider() {
+  const [api, setApi] = useState<CarouselApi>()
+
+  // Auto-advance the carousel every 5 seconds
+  useEffect(() => {
+    if (!api) return
+
+    const interval = setInterval(() => {
+      api.scrollNext()
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [api])
+
   const images = [
     "/ekostat.png",
     "/nanobuild.png",
@@ -15,14 +29,16 @@ export function WebExamplesSlider() {
 
   return (
     <Carousel
+      setApi={setApi}
       opts={{
         align: "start",
+        loop: true,
       }}
-      className="w-full max-w-4xl mx-auto"
+      className="w-full max-w-6xl mx-auto"
     >
       <CarouselContent>
         {images.map((src, index) => (
-          <CarouselItem key={index} className="basis-full sm:basis-1/2 lg:basis-1/2">
+          <CarouselItem key={index} className="basis-full md:basis-1/2">
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-video items-center justify-center p-6">

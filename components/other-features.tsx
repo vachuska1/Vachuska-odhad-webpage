@@ -9,10 +9,38 @@ import { useTheme } from "next-themes"
 import { useState, useEffect, useRef } from "react"
 import { Sun, Moon } from "lucide-react"
 
-export function OtherFeatures() {
+interface OtherFeaturesProps {
+  darkModeToggle: string;
+  darkMode: string;
+  liveSearch: string;
+  searchPlaceholder: string;
+  dragToReorder: string;
+  dragToReorderDesc: string;
+  scrollIndicator: {
+    title: string;
+    items: string[];
+  };
+  hoverEffect: {
+    title: string;
+    hover: string;
+    cardTitle: string;
+    cardDesc: string;
+  };
+}
+
+export function OtherFeatures({ 
+  darkModeToggle, 
+  darkMode, 
+  liveSearch, 
+  searchPlaceholder, 
+  dragToReorder,
+  dragToReorderDesc,
+  scrollIndicator,
+  hoverEffect
+}: OtherFeaturesProps) {
   const { theme, setTheme } = useTheme()
   const [searchTerm, setSearchTerm] = useState("")
-  const [items, setItems] = useState(["Weby", "Animace", "Formuláře", "Ostatní"])
+  const [items, setItems] = useState(["Weby", "Animace", "Formuláře", "Ostatní", "Menu"])
   const [filteredItems, setFilteredItems] = useState(items)
 
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -80,7 +108,7 @@ export function OtherFeatures() {
       {/* Dark Mode Toggle */}
       <Card className="p-4 bg-card text-card-foreground shadow-lg">
         <CardHeader className="pb-4">
-          <CardTitle className="text-2xl font-bold">Přepínač tmavého režimu</CardTitle>
+          <CardTitle className="text-2xl font-bold">{dragToReorder}</CardTitle>
         </CardHeader>
         <CardContent className="flex justify-center items-center h-24">
           <Button
@@ -90,7 +118,7 @@ export function OtherFeatures() {
             className="bg-transparent text-foreground border-border hover:bg-accent"
           >
             {theme === "dark" ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
-            <span className="ml-2 text-lg">{theme === "dark" ? "Světlý režim" : "Tmavý režim"}</span>
+            <span className="ml-2 text-lg">{theme === "dark" ? 'Světlý režim' : darkMode}</span>
           </Button>
         </CardContent>
       </Card>
@@ -98,11 +126,11 @@ export function OtherFeatures() {
       {/* Live Search Input */}
       <Card className="p-4 bg-card text-card-foreground shadow-lg">
         <CardHeader className="pb-4">
-          <CardTitle className="text-2xl font-bold">Živý vyhledávací vstup</CardTitle>
+          <CardTitle className="text-2xl font-bold">{liveSearch}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <Input
-            placeholder="Hledat položky..."
+            placeholder={searchPlaceholder}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="p-3 text-base"
@@ -124,7 +152,7 @@ export function OtherFeatures() {
       {/* Drag & Drop */}
       <Card className="p-4 bg-card text-card-foreground shadow-lg">
         <CardHeader className="pb-4">
-          <CardTitle className="text-2xl font-bold">Přetažení pro změnu pořadí</CardTitle>
+          <CardTitle className="text-2xl font-bold">{dragToReorder}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-2">
           <div className="max-h-32 overflow-y-auto border rounded-md p-2 text-base">
@@ -142,14 +170,14 @@ export function OtherFeatures() {
               </div>
             ))}
           </div>
-          <p className="text-sm text-gray-500">Přetáhněte položky pro změnu pořadí.</p>
+          <p className="text-sm text-gray-500">{dragToReorderDesc}</p>
         </CardContent>
       </Card>
 
       {/* Animated Scroll Indicator (requires parent to be scrollable) */}
       <Card className="lg:col-span-3 p-4 bg-card text-card-foreground shadow-lg">
         <CardHeader className="pb-4">
-          <CardTitle className="text-2xl font-bold">Animovaný indikátor posouvání (posouvejte tuto kartu)</CardTitle>
+          <CardTitle className="text-2xl font-bold">{scrollIndicator.title}</CardTitle>
         </CardHeader>
         <CardContent className="relative">
           <div className="h-1 bg-gray-200 dark:bg-gray-700 rounded-full mb-4">
@@ -159,12 +187,12 @@ export function OtherFeatures() {
             ></div>
           </div>
           <div ref={scrollContainerRef} className="h-48 overflow-y-auto border rounded-md p-4 scroll-snap-y-mandatory">
-            {[...Array(10)].map((_, i) => (
+            {scrollIndicator.items.map((item, i) => (
               <div
                 key={i}
                 className="h-24 flex items-center justify-center text-lg border-b last:border-b-0 scroll-snap-align-start"
               >
-                Položka posouvání {i + 1}
+                {item}
               </div>
             ))}
           </div>
@@ -174,16 +202,16 @@ export function OtherFeatures() {
       {/* Custom Hover Effect Example */}
       <Card className="lg:col-span-3 p-4 bg-card text-card-foreground shadow-lg">
         <CardHeader className="pb-4">
-          <CardTitle className="text-2xl font-bold">Vlastní efekt najetí myší</CardTitle>
+          <CardTitle className="text-2xl font-bold">{hoverEffect.title}</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-wrap gap-4 justify-center">
           <Button className="group relative overflow-hidden transition-all duration-300 hover:scale-105 py-3 px-6 text-lg">
-            <span className="relative z-10">Najeďte myší</span>
+            <span className="relative z-10">{hoverEffect.hover}</span>
             <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           </Button>
           <div className="relative p-6 border rounded-lg cursor-pointer group overflow-hidden bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-            <h3 className="font-semibold relative z-10 text-xl">Karta s efektem najetí</h3>
-            <p className="text-base text-gray-600 dark:text-gray-400 relative z-10">Objevte více po najetí myší.</p>
+            <h3 className="font-semibold relative z-10 text-xl">{hoverEffect.cardTitle}</h3>
+            <p className="text-base text-gray-600 dark:text-gray-400 relative z-10">{hoverEffect.cardDesc}</p>
             <div className="absolute inset-0 bg-blue-500 scale-0 group-hover:scale-100 transition-transform duration-300 origin-bottom-right"></div>
             <div className="absolute inset-0 bg-purple-500 scale-0 group-hover:scale-100 transition-transform duration-300 origin-top-left delay-100"></div>
           </div>

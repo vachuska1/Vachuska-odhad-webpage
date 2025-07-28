@@ -8,16 +8,28 @@ import { MenuIcon } from "lucide-react"
 import Link from "next/link"
 
 interface MenuExamplesProps {
-  scrollToSection: (id: string) => void
+  scrollToSection: (id: string) => void;
+  menu: {
+    simple: string;
+    websites: string;
+    animations: string;
+    forms: string;
+    menu: string;
+    other: string;
+    dropdown: string;
+    openMenu: string;
+    mobileSidebar: string;
+    openSidebar: string;
+  };
 }
 
-export function MenuExamples({ scrollToSection }: MenuExamplesProps) {
+export function MenuExamples({ scrollToSection, menu }: MenuExamplesProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       {/* Menu Type 1: Simple Horizontal */}
       <Card className="p-4 bg-card text-card-foreground shadow-lg">
         <CardHeader className="pb-4">
-          <CardTitle className="text-2xl font-bold">Jednoduché horizontální menu</CardTitle>
+          <CardTitle className="text-2xl font-bold">{menu.simple}</CardTitle>
         </CardHeader>
         <CardContent>
           <nav className="flex flex-wrap justify-center gap-2">
@@ -51,13 +63,13 @@ export function MenuExamples({ scrollToSection }: MenuExamplesProps) {
       {/* Menu Type 2: Dropdown Menu */}
       <Card className="p-4 bg-card text-card-foreground shadow-lg">
         <CardHeader className="pb-4">
-          <CardTitle className="text-2xl font-bold">Rozbalovací menu</CardTitle>
+          <CardTitle className="text-2xl font-bold">{menu.dropdown}</CardTitle>
         </CardHeader>
         <CardContent className="flex justify-center items-center h-full">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" className="py-3 px-6 text-lg bg-transparent">
-                Otevřít menu
+                {menu.openMenu}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
@@ -84,14 +96,14 @@ export function MenuExamples({ scrollToSection }: MenuExamplesProps) {
       {/* Menu Type 3: Mobile Sidebar */}
       <Card className="p-4 bg-card text-card-foreground shadow-lg">
         <CardHeader className="pb-4">
-          <CardTitle className="text-2xl font-bold">Mobilní boční panel</CardTitle>
+          <CardTitle className="text-2xl font-bold">{menu.mobileSidebar}</CardTitle>
         </CardHeader>
         <CardContent className="flex justify-center items-center h-full">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="lg" className="py-3 px-6 text-lg bg-transparent">
                 <MenuIcon className="h-6 w-6 mr-2" />
-                Otevřít boční panel
+                {menu.openSidebar}
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[280px] sm:w-[350px] p-6">

@@ -1,9 +1,23 @@
 "use server"
 
 import { Resend } from "resend"
-import { ContactEmail } from "@/emails/contact-email" // Import the component from its new dedicated file
+import { ContactEmail } from "@/emails/contact-email"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+
+// Helper function to create HTML email content
+function createEmailContent({ name, email, phone, message }: { name: string; email: string; phone: string; message: string }) {
+  return `
+    <div style="font-family: sans-serif; line-height: 1.6">
+      <h1>New Contact Form Submission</h1>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+      <p><strong>Message:</strong></p>
+      <p>${message}</p>
+    </div>
+  `
+}
 
 export async function sendEmail(prevState: any, formData: FormData) {
   const name = formData.get("name") as string
@@ -21,11 +35,17 @@ export async function sendEmail(prevState: any, formData: FormData) {
   }
 
   try {
+    const emailHtml = createEmailContent({ name, email, phone, message });
+    
+    // Always send to odhadyvachuska@gmail.com
+    const toEmail = 'odhadyvachuska@gmail.com';
+    
     const { data, error } = await resend.emails.send({
-      from: "onboarding@resend.dev", // Replace with your verified Resend domain email
-      to: "delivered@resend.dev", // Replace with the recipient email address
-      subject: "New Contact Form Submission from Website",
-      react: ContactEmail({ name, email, phone, message }),
+      from: 'onboarding@resend.dev',
+      to: toEmail,
+      replyTo: email, // So you can reply directly to the sender
+      subject: `New Contact Form Submission from ${name}`,
+      html: emailHtml,
     })
 
     if (error) {
@@ -34,7 +54,7 @@ export async function sendEmail(prevState: any, formData: FormData) {
     }
 
     console.log("Email sent successfully:", data)
-    return { success: true, message: "Email sent successfully!" }
+    return { success: true, message: "Email byl odeslán úspěšně." }
   } catch (error) {
     console.error("Server action error:", error)
     return { success: false, message: "An unexpected error occurred." }

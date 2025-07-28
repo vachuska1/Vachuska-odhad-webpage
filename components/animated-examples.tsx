@@ -1,36 +1,53 @@
 import { Card, CardContent } from "@/components/ui/card"
 
-export function AnimatedExamples() {
+interface AnimationType {
+  bounce: string;
+  bounceDesc: string;
+  fade: string;
+  fadeDesc: string;
+  rotate: string;
+  rotateDesc: string;
+  scale: string;
+  scaleDesc: string;
+  slide: string;
+  slideDesc: string;
+}
+
+interface AnimatedExamplesProps {
+  animationTypes: AnimationType;
+}
+
+export function AnimatedExamples({ animationTypes }: AnimatedExamplesProps) {
   const animations = [
     {
-      name: "Bounce",
+      name: animationTypes.bounce,
       className: "animate-bounce-custom",
       emoji: "👋",
-      description: "A simple bouncing effect.",
+      description: animationTypes.bounceDesc,
     },
     {
-      name: "Fade In/Out",
+      name: animationTypes.fade,
       className: "animate-fade-in-out",
       emoji: "✨",
-      description: "Fades in and out smoothly.",
+      description: animationTypes.fadeDesc,
     },
     {
-      name: "Rotate 3D",
+      name: animationTypes.rotate,
       className: "animate-rotate-3d",
       emoji: "🔄",
-      description: "Rotates on its Y-axis.",
+      description: animationTypes.rotateDesc,
     },
     {
-      name: "Scale Pulse",
+      name: animationTypes.scale,
       className: "animate-scale-pulse",
       emoji: "💖",
-      description: "Grows and shrinks gently.",
+      description: animationTypes.scaleDesc,
     },
     {
-      name: "Slide In/Out",
+      name: animationTypes.slide,
       className: "animate-slide-in-out",
       emoji: "➡️",
-      description: "Slides horizontally.",
+      description: animationTypes.slideDesc,
     },
   ]
 

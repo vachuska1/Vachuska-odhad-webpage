@@ -5,101 +5,139 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Mail, User, Phone } from "lucide-react"
 
-export function ContactFormExamples() {
+interface ContactFormExamplesProps {
+  forms: {
+    title: string;
+    simpleForm: {
+      title: string;
+      name: string;
+      namePlaceholder: string;
+      email: string;
+      emailPlaceholder: string;
+      message: string;
+      messagePlaceholder: string;
+      submit: string;
+    };
+    iconForm: {
+      title: string;
+      submit: string;
+    };
+    multiColumnForm: {
+      title: string;
+      firstName: string;
+      firstNamePlaceholder: string;
+      lastName: string;
+      lastNamePlaceholder: string;
+      email: string;
+      emailPlaceholder: string;
+      subject: string;
+      subjectPlaceholder: string;
+      message: string;
+      messagePlaceholder: string;
+      submit: string;
+    };
+    roundedForm: {
+      title: string;
+      submit: string;
+    };
+  };
+}
+
+export function ContactFormExamples({ forms }: ContactFormExamplesProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
       {/* Form Type 1: Simple */}
       <Card className="p-4 bg-card text-card-foreground shadow-lg border border-gray-200 dark:border-gray-700">
         <CardHeader className="pb-4">
-          <CardTitle className="text-2xl font-bold">Jednoduchý formulář</CardTitle>
+          <CardTitle className="text-2xl font-bold">{forms.simpleForm.title}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           <div>
-            <Label htmlFor="simple-name">Jméno</Label>
-            <Input id="simple-name" placeholder="Vaše jméno" className="p-3 text-base" />
+            <Label htmlFor="simple-name">{forms.simpleForm.name}</Label>
+            <Input id="simple-name" placeholder={forms.simpleForm.namePlaceholder} className="p-3 text-base" />
           </div>
           <div>
-            <Label htmlFor="simple-email">E-mail</Label>
-            <Input id="simple-email" type="email" placeholder="Váš e-mail" className="p-3 text-base" />
+            <Label htmlFor="simple-email">{forms.simpleForm.email}</Label>
+            <Input id="simple-email" type="email" placeholder={forms.simpleForm.emailPlaceholder} className="p-3 text-base" />
           </div>
           <div>
-            <Label htmlFor="simple-message">Zpráva</Label>
-            <Textarea id="simple-message" placeholder="Vaše zpráva" className="p-3 text-base min-h-[100px]" />
+            <Label htmlFor="simple-message">{forms.simpleForm.message}</Label>
+            <Textarea id="simple-message" placeholder={forms.simpleForm.messagePlaceholder} className="p-3 text-base min-h-[100px]" />
           </div>
-          <Button className="w-full py-3 text-lg">Odeslat</Button>
+          <Button className="w-full py-3 text-lg">{forms.simpleForm.submit}</Button>
         </CardContent>
       </Card>
 
       {/* Form Type 2: With Icons (Labels removed) */}
       <Card className="p-4 bg-card text-card-foreground shadow-lg border border-blue-300 dark:border-blue-700">
         <CardHeader className="pb-4">
-          <CardTitle className="text-2xl font-bold">Formulář s ikonami</CardTitle>
+          <CardTitle className="text-2xl font-bold">{forms.iconForm.title}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="relative">
             <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-            <Input id="icon-name" placeholder="Vaše jméno" className="pl-10 p-3 text-base" />
+            <Input id="icon-name" placeholder="" className="pl-10 p-3 text-base" />
           </div>
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-            <Input id="icon-email" type="email" placeholder="Váš e-mail" className="pl-10 p-3 text-base" />
+            <Input id="icon-email" type="email" placeholder="" className="pl-10 p-3 text-base" />
           </div>
           <div className="relative">
             <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-            <Input id="icon-phone" type="tel" placeholder="Váš telefon" className="pl-10 p-3 text-base" />
+            <Input id="icon-phone" type="tel" placeholder="" className="pl-10 p-3 text-base" />
           </div>
           <div>
-            <Textarea id="icon-message" placeholder="Vaše zpráva" className="p-3 text-base min-h-[100px]" />
+            <Textarea id="icon-message" placeholder={forms.simpleForm.messagePlaceholder} className="p-3 text-base min-h-[100px]" />
           </div>
-          <Button className="w-full py-3 text-lg bg-blue-600 hover:bg-blue-700">Odeslat</Button>
+          <Button className="w-full py-3 text-lg bg-blue-600 hover:bg-blue-700">{forms.iconForm.submit}</Button>
         </CardContent>
       </Card>
 
       {/* Form Type 3: Multi-column */}
       <Card className="p-4 bg-card text-card-foreground shadow-lg border border-green-300 dark:border-green-700">
         <CardHeader className="pb-4">
-          <CardTitle className="text-2xl font-bold">Vícesloupcový formulář</CardTitle>
+          <CardTitle className="text-2xl font-bold">{forms.multiColumnForm.title}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="multi-first-name">Křestní jméno</Label>
-              <Input id="multi-first-name" placeholder="Křestní jméno" className="p-3 text-base" />
+              <Label htmlFor="multi-first-name">{forms.multiColumnForm.firstName}</Label>
+              <Input id="multi-first-name" placeholder={forms.multiColumnForm.firstNamePlaceholder} className="p-3 text-base" />
             </div>
             <div>
-              <Label htmlFor="multi-last-name">Příjmení</Label>
-              <Input id="multi-last-name" placeholder="Příjmení" className="p-3 text-base" />
+              <Label htmlFor="multi-last-name">{forms.multiColumnForm.lastName}</Label>
+              <Input id="multi-last-name" placeholder={forms.multiColumnForm.lastNamePlaceholder} className="p-3 text-base" />
             </div>
           </div>
           <div>
-            <Label htmlFor="multi-email">E-mail</Label>
-            <Input id="multi-email" type="email" placeholder="E-mailová adresa" className="p-3 text-base" />
+            <Label htmlFor="multi-email">{forms.multiColumnForm.email}</Label>
+            <Input id="multi-email" type="email" placeholder={forms.multiColumnForm.emailPlaceholder} className="p-3 text-base" />
           </div>
           <div>
-            <Label htmlFor="multi-subject">Předmět</Label>
-            <Input id="multi-subject" placeholder="Předmět" className="p-3 text-base" />
+            <Label htmlFor="multi-subject">{forms.multiColumnForm.subject}</Label>
+            <Input id="multi-subject" placeholder={forms.multiColumnForm.subjectPlaceholder} className="p-3 text-base" />
           </div>
           <div>
-            <Label htmlFor="multi-message">Zpráva</Label>
-            <Textarea id="multi-message" placeholder="Vaše zpráva" className="p-3 text-base min-h-[100px]" />
+            <Label htmlFor="multi-message">{forms.multiColumnForm.message}</Label>
+            <Textarea id="multi-message" placeholder={forms.multiColumnForm.messagePlaceholder} className="p-3 text-base min-h-[100px]" />
           </div>
-          <Button className="w-full py-3 text-lg bg-green-600 hover:bg-green-700">Odeslat zprávu</Button>
+          <Button className="w-full py-3 text-lg bg-green-600 hover:bg-green-700">{forms.multiColumnForm.submit}</Button>
         </CardContent>
       </Card>
 
       {/* Form Type 4: Rounded & Colored */}
       <Card className="p-6 bg-gradient-to-br from-blue-400 to-purple-500 text-white shadow-xl rounded-xl">
         <CardHeader className="pb-4">
-          <CardTitle className="text-2xl font-bold text-white">Zaoblený a barevný formulář</CardTitle>
+          <CardTitle className="text-2xl font-bold text-white">{forms.roundedForm.title}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           <div>
             <Label htmlFor="round-name" className="text-white">
-              Jméno
+              {forms.simpleForm.name}
             </Label>
             <Input
               id="round-name"
-              placeholder="Vaše jméno"
+              placeholder={forms.simpleForm.namePlaceholder}
               className="rounded-full p-3 text-base bg-white/20 border-none placeholder:text-white/70 focus:ring-2 focus:ring-white"
             />
           </div>
@@ -110,7 +148,7 @@ export function ContactFormExamples() {
             <Input
               id="round-email"
               type="email"
-              placeholder="Váš e-mail"
+              placeholder={forms.simpleForm.emailPlaceholder}
               className="rounded-full p-3 text-base bg-white/20 border-none placeholder:text-white/70 focus:ring-2 focus:ring-white"
             />
           </div>
@@ -120,12 +158,12 @@ export function ContactFormExamples() {
             </Label>
             <Textarea
               id="round-message"
-              placeholder="Vaše zpráva"
+              placeholder={forms.simpleForm.messagePlaceholder}
               className="rounded-2xl p-3 text-base bg-white/20 border-none placeholder:text-white/70 focus:ring-2 focus:ring-white min-h-[100px]"
             />
           </div>
           <Button className="w-full py-3 text-lg bg-white text-blue-600 hover:bg-gray-100 rounded-full">
-            Odeslat OK
+            {forms.roundedForm.submit}
           </Button>
         </CardContent>
       </Card>
