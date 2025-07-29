@@ -40,6 +40,8 @@ export function ContactForm({ lang }: ContactFormProps) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
+    // Add language to form data for server action
+    formData.append('lang', lang)
     const gdprAgreed = formData.get("gdprAgreed") === "on"
 
     if (!gdprAgreed) {

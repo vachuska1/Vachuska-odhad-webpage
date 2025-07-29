@@ -20,6 +20,7 @@ function createEmailContent({ name, email, phone, message }: { name: string; ema
 }
 
 export async function sendEmail(prevState: any, formData: FormData) {
+  const lang = formData.get('lang') as 'cz' | 'en' || 'cz';
   const name = formData.get("name") as string
   const email = formData.get("email") as string
   const phone = formData.get("phone") as string
@@ -35,26 +36,49 @@ export async function sendEmail(prevState: any, formData: FormData) {
   }
 
   try {
-    const emailHtml = createEmailContent({ name, email, phone, message });
+    console.log('Sending email with Resend...')
     
-    // Always send to odhadyvachuska@gmail.com
-    const toEmail = 'odhadyvachuska@gmail.com';
-    
-    const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: toEmail,
-      replyTo: email, // So you can reply directly to the sender
-      subject: `New Contact Form Submission from ${name}`,
-      html: emailHtml,
-    })
-
-    if (error) {
-      console.error("Resend email error:", error)
-      return { success: false, message: error.message || "Failed to send email." }
+    // Check if Resend API key is available
+    if (!process.env.RESEND_API_KEY) {
+      console.error('Resend API key is missing')
+      return { success: false, message: 'Server configuration error. Please try again later.' }
     }
+    
+    try {
+      const emailHtml = createEmailContent({ name, email, phone, message });
+      
+      // Always send to odhadyvachuska@gmail.com
+      const toEmail = 'odhadyvachuska@gmail.com';
+      
+      const { data, error } = await resend.emails.send({
+        from: 'onboarding@resend.dev',
+        to: toEmail,
+        replyTo: email,
+        subject: `New Contact Form Submission from ${name}`,
+        html: emailHtml,
+      })
 
-    console.log("Email sent successfully:", data)
-    return { success: true, message: "Email byl odeslán úspěšně." }
+      if (error) {
+        console.error('Resend API error:', error)
+        return { 
+          success: false, 
+          message: error.message || (lang === 'cz' 
+            ? 'Nepodařilo se odeslat email. Zkuste to prosím znovu.' 
+            : 'Failed to send email. Please try again.')
+        }
+      }
+
+      console.log('Email sent successfully:', data)
+      return { 
+        success: true, 
+        message: lang === 'cz' 
+          ? 'Email byl úspěšně odeslán!' 
+          : 'Email sent successfully!' 
+      }
+    } catch (error) {
+      console.error("Server action error:", error)
+      return { success: false, message: "An unexpected error occurred." }
+    }
   } catch (error) {
     console.error("Server action error:", error)
     return { success: false, message: "An unexpected error occurred." }
