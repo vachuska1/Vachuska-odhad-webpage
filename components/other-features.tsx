@@ -26,6 +26,7 @@ interface OtherFeaturesProps {
     cardTitle: string;
     cardDesc: string;
   };
+  lang?: 'cs' | 'en';
 }
 
 export function OtherFeatures({ 
@@ -36,7 +37,8 @@ export function OtherFeatures({
   dragToReorder,
   dragToReorderDesc,
   scrollIndicator,
-  hoverEffect
+  hoverEffect,
+  lang = 'cs'
 }: OtherFeaturesProps) {
   const { theme, setTheme } = useTheme()
   const [searchTerm, setSearchTerm] = useState("")
@@ -118,7 +120,11 @@ export function OtherFeatures({
             className="bg-transparent text-foreground border-border hover:bg-accent"
           >
             {theme === "dark" ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
-            <span className="ml-2 text-lg">{theme === "dark" ? 'Světlý režim' : darkMode}</span>
+            <span className="ml-2 text-lg">
+              {theme === "dark" 
+                ? lang === 'cs' ? 'Světlý režim' : 'Light mode'
+                : lang === 'cs' ? 'Tmavý režim' : 'Dark mode'}
+            </span>
           </Button>
         </CardContent>
       </Card>

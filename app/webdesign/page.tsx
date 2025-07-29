@@ -18,6 +18,7 @@ import { MenuIcon } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function WebdesignPage() {
+  // Using 'cz' type to match translations object, but internally treating it as 'cs'
   const [lang, setLang] = useState<"cz" | "en">("cz")
   const { theme } = useTheme()
 
@@ -232,6 +233,7 @@ export default function WebdesignPage() {
     },
   }
 
+  // Map 'cz' to 'cs' for the translations object
   const t = translations[lang]
 
   const scrollToSection = (id: string) => {
@@ -252,7 +254,9 @@ export default function WebdesignPage() {
           </Link>
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <LanguageToggle onLanguageChange={setLang} />
+            <LanguageToggle 
+              onLanguageChange={(newLang) => setLang(newLang as "cz" | "en")} 
+            />
           </div>
         </div>
       </header>
@@ -455,6 +459,7 @@ export default function WebdesignPage() {
             dragToReorderDesc={t.otherFeatures.dragToReorderDesc}
             scrollIndicator={t.otherFeatures.scrollIndicator}
             hoverEffect={t.otherFeatures.hoverEffect}
+            lang={lang === 'cz' ? 'cs' : lang}
           />
         </section>
       </main>
