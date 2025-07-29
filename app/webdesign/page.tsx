@@ -25,19 +25,20 @@ export default function WebdesignPage() {
   const translations = {
     cz: {
       title: "Tvorba webových stránek",
-      intro:
-        "Tvořím moderní a rychlé weby pro prezentaci osob i firem s využitím nejnovějších technologií, jako jsou React, Next.js a Framer Motion. Weby jsou výkonné, bezpečné a uživatelsky přívětivé.",
-      examples: "Weby",
+      intro: "Moderní a responzivní webové stránky šité na míru vašim potřebám. Od jednoduchých prezentací až po složité webové aplikace.",
+      examples: "Ukázky prací",
       animations: "Animace",
-      contactForms: "Formuláře",
+      contactForms: "Kontaktní formuláře",
       menus: "Menu a navigace",
-      other: "Ostatní",
-      parallaxHero: "Efekt posouvání",
-      animatedCheckboxes: "Checkboxy",
+      other: "Další prvky",
+      parallaxHero: "Mizející efekt",
+      animatedCheckboxes: "Animované checkboxy",
       backToHome: "Zpět na úvod",
       allRightsReserved: "Všechna práva vyhrazena.",
       heroTitle: "Vytvářím digitální zážitky",
       heroSubtitle: "Moderní webdesign s důrazem na výkon a uživatelskou přívětivost.",
+      navigation: "Navigace",
+      contact: "Kontakt",
       animationTypes: {
         bounce: "Odrazit se",
         bounceDesc: "Jednoduchý efekt odrazu.",
@@ -244,15 +245,31 @@ export default function WebdesignPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-500 to-blue-500 text-foreground dark:from-gray-800 dark:to-gray-950">
-      <header className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <Link href="/">
-            <Button variant="ghost" className="text-foreground hover:bg-accent">
-              <ArrowLeft className="mr-2 h-4 w-4" /> {t.backToHome}
-            </Button>
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-emerald-50 dark:bg-background text-foreground">
+      {/* Fixed Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+          <Link 
+            href="/" 
+            className="flex items-center text-foreground hover:text-primary transition-colors"
+            title={t.backToHome}
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="h-5 w-5" 
+              viewBox="0 0 20 20" 
+              fill="currentColor"
+            >
+              <path 
+                fillRule="evenodd" 
+                d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" 
+                clipRule="evenodd" 
+              />
+            </svg>
+            <span className="ml-2 hidden sm:inline">{t.backToHome}</span>
           </Link>
-          <div className="flex items-center gap-2">
+          
+          <div className="flex items-center space-x-4">
             <ThemeToggle />
             <LanguageToggle 
               onLanguageChange={(newLang) => setLang(newLang as "cz" | "en")} 
@@ -260,9 +277,11 @@ export default function WebdesignPage() {
           </div>
         </div>
       </header>
-
-      {/* Section Navigation */}
-      <nav className="sticky top-0 z-10 bg-background/90 backdrop-blur-sm py-3 shadow-lg">
+      
+      {/* Add padding to main content to account for fixed header */}
+      <div className="pt-16">
+        {/* Section Navigation */}
+        <nav className="sticky top-0 z-10 bg-background/90 backdrop-blur-sm py-3 shadow-lg">
         <div className="container mx-auto px-4 flex items-center justify-between md:justify-center">
           {/* Desktop Navigation */}
           <div className="hidden md:flex flex-wrap justify-center gap-4">
@@ -463,11 +482,70 @@ export default function WebdesignPage() {
           />
         </section>
       </main>
+      </div> {/* End of padding div */}
+      
+      {/* Footer */}
+      <footer className="bg-background border-t border-border mt-24">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            {/* Left Column - Navigation */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">{lang === 'cz' ? 'Navigace' : 'Navigate'}</h3>
+              <nav className="flex flex-col space-y-2">
+                <a href="#parallax-hero-section" className="hover:text-primary transition-colors">
+                  {t.parallaxHero}
+                </a>
+                <a href="#web-examples" className="hover:text-primary transition-colors">
+                  {t.examples}
+                </a>
+                <a href="#animation-examples" className="hover:text-primary transition-colors">
+                  {t.animations}
+                </a>
+                <a href="#contact-form-examples" className="hover:text-primary transition-colors">
+                  {t.contactForms}
+                </a>
+                <a href="#menu-examples-section" className="hover:text-primary transition-colors">
+                  {t.menus}
+                </a>
+                <a href="#other-features" className="hover:text-primary transition-colors">
+                  {t.other}
+                </a>
+                <a href="#animated-checkboxes-section" className="hover:text-primary transition-colors">
+                  {t.animatedCheckboxes}
+                </a>
+              </nav>
+            </div>
+            
+            {/* Right Column - Contact */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">{lang === 'cz' ? 'Kontakt' : 'Contact'}</h3>
+              <div className="space-y-2">
+                <p className="font-medium">Ing. Aleš Vachuška</p>
+                <p className="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                  <a href="tel:+420774104020" className="hover:text-primary transition-colors">774 104 020</a>
+                </p>
+                <p className="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                  </svg>
+                  <a href="mailto:odhadyvachuska@gmail.com" className="hover:text-primary transition-colors">
+                    odhadyvachuska@gmail.com
+                  </a>
+                </p>
 
-      <footer className="bg-muted text-muted-foreground py-6 text-center">
-        <p>
-          &copy; {new Date().getFullYear()} Ing. Aleš Vachuška. {t.allRightsReserved}
-        </p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Copyright */}
+          <div className="border-t border-border pt-6 text-center text-sm text-muted-foreground">
+            <p> {new Date().getFullYear()} Ing. Aleš Vachuška. {t.allRightsReserved}</p>
+          </div>
+        </div>
       </footer>
     </div>
   )
