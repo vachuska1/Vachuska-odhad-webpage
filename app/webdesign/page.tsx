@@ -51,13 +51,13 @@ export default function WebdesignPage() {
       },
       checkboxes: {
         title: "Ukázky animovaných zaškrtávacích políček",
-        standard: "Standardní:",
-        growing: "Zvětšující se:",
-        pulsing: "Pulzující:",
-        rotating: "Otočné:",
-        rounded: "Zaoblené:",
-        sliding: "Posuvné:",
-        toggle: "Přepínač:",
+        standard: "Standardní",
+        growing: "Zvětšující se",
+        pulsing: "Pulzující",
+        rotating: "Otočné",
+        rounded: "Zaoblené",
+        sliding: "Posuvné",
+        toggle: "Přepínač",
         icon: "Ikona: Měnící"
       },
       forms: {
@@ -155,13 +155,13 @@ export default function WebdesignPage() {
       },
       checkboxes: {
         title: "Animated Checkbox Examples",
-        standard: "Standard:",
-        growing: "Growing:",
-        pulsing: "Pulsing:",
-        rotating: "Rotating:",
-        rounded: "Rounded:",
-        sliding: "Sliding:",
-        toggle: "Toggle:",
+        standard: "Standard",
+        growing: "Growing",
+        pulsing: "Pulsing",
+        rotating: "Rotating",
+        rounded: "Rounded",
+        sliding: "Sliding",
+        toggle: "Toggle",
         icon: "Icon: Changing"
       },
       forms: {
@@ -436,7 +436,7 @@ export default function WebdesignPage() {
 
         <section id="contact-form-examples" className="py-24 text-center">
           <h2 className="text-3xl font-bold mb-6 text-foreground">{t.contactForms}</h2>
-          <ContactFormExamples forms={t.forms} />
+          <ContactFormExamples lang={lang} forms={t.forms} />
         </section>
 
         <section id="menu-examples-section" className="py-24 text-center">

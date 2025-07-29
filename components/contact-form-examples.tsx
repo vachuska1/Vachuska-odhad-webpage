@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label"
 import { Mail, User, Phone } from "lucide-react"
 
 interface ContactFormExamplesProps {
+  lang: 'cz' | 'en';
   forms: {
     title: string;
     simpleForm: {
@@ -43,7 +44,7 @@ interface ContactFormExamplesProps {
   };
 }
 
-export function ContactFormExamples({ forms }: ContactFormExamplesProps) {
+export function ContactFormExamples({ lang, forms }: ContactFormExamplesProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
       {/* Form Type 1: Simple */}
@@ -74,17 +75,33 @@ export function ContactFormExamples({ forms }: ContactFormExamplesProps) {
           <CardTitle className="text-2xl font-bold">{forms.iconForm.title}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="relative">
-            <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-            <Input id="icon-name" placeholder="" className="pl-10 p-3 text-base" />
-          </div>
-          <div className="relative">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-            <Input id="icon-email" type="email" placeholder="" className="pl-10 p-3 text-base" />
-          </div>
-          <div className="relative">
-            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-            <Input id="icon-phone" type="tel" placeholder="" className="pl-10 p-3 text-base" />
+          <div className="space-y-2">
+            <div className="relative flex items-center">
+              <User className="text-gray-400 mr-2" size={20} />
+              <Input 
+                id="icon-name" 
+                placeholder={forms.simpleForm.namePlaceholder} 
+                className="flex-1 p-3 text-base"
+              />
+            </div>
+            <div className="relative flex items-center">
+              <Mail className="text-gray-400 mr-2" size={20} />
+              <Input 
+                id="icon-email" 
+                type="email" 
+                placeholder={forms.simpleForm.emailPlaceholder} 
+                className="flex-1 p-3 text-base"
+              />
+            </div>
+            <div className="relative flex items-center">
+              <Phone className="text-gray-400 mr-2" size={20} />
+              <Input 
+                id="icon-phone" 
+                type="tel" 
+                placeholder={lang === 'cz' ? 'Telefon' : 'Phone'} 
+                className="flex-1 p-3 text-base"
+              />
+            </div>
           </div>
           <div>
             <Textarea id="icon-message" placeholder={forms.simpleForm.messagePlaceholder} className="p-3 text-base min-h-[100px]" />
@@ -154,7 +171,7 @@ export function ContactFormExamples({ forms }: ContactFormExamplesProps) {
           </div>
           <div>
             <Label htmlFor="round-message" className="text-white">
-              Zpráva
+              {forms.simpleForm.message}
             </Label>
             <Textarea
               id="round-message"

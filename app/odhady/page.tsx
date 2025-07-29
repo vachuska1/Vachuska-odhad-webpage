@@ -23,25 +23,25 @@ export default function OdhadyPage() {
       whenToUse: "Kdy se vám moje služby budou hodit?",
       useCases: [
         {
-          title: "Prodej/Koupě nemovitosti",
-          description: "Pomohu vám zjistit reálnou hodnotu nemovitosti při prodeji nebo koupi.",
+          title: "Prodej nebo koupě nemovitosti",
+          description: "Zjistím tržní cenu nemovitosti, abyste prodali za férovou cenu nebo nakoupili bez rizika přeplacení.",
         },
         {
           title: "Reálná hodnota majetku",
-          description: "Potřebujete znát skutečnou hodnotu svého majetku pro různé účely.",
+          description: "Potřebujete znát skutečnou hodnotu svého majetku pro své vlastní účely.",
         },
         {
-          title: "Dědictví/Rozdělení majetku",
-          description: "Zajistím ocenění pro dědické řízení nebo vypořádání společného jmění.",
+          title: "Dědictví a rozdělení majetku",
+          description: "Ocením nemovitosti pro dědické řízení, rozvod či vypořádání společného jmění manželů.",
         },
       ],
       section2Title: "Další služby",
-      service1Title: "Tvorba kupních smluv a jejich umístění na katastr nemovitosti",
+      service1Title: "Kupní a darovací smlouvy",
       service1Desc:
-        "Kompletní příprava kupních smluv a zajištění jejich řádného vkladu do katastru nemovitostí pro bezproblémový převod vlastnictví.",
-      service2Title: "Tvorba havarijních plánů s jejich vyřízením na dotčených úřadech státní správy",
+        "Kompletní příprava kupních a darovacích mluv včetně jejich podání na katastr. Váš převod vlastnictví proběhne bez komplikací.",
+      service2Title: "Vypracuji havarijní plán a postarám se o jeho schválení na příslušných úřadech",
       service2Desc:
-        "Vypracování havarijních plánů a jejich schválení u příslušných státních orgánů pro zajištění souladu s legislativou.",
+        "V souladu s platnou legislativou.",
       contactFormTitle: "Kontaktní formulář",
       findMe: "Kde mě najdete",
       address: "Slatina 68, 34101 Slatina",
