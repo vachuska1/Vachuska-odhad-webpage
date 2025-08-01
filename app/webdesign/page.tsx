@@ -245,10 +245,10 @@ export default function WebdesignPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-emerald-50 dark:bg-background text-foreground">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-emerald-50 dark:bg-[#0f0f12] dark:text-foreground text-foreground/90 overflow-x-hidden">
       {/* Fixed Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
           <Link 
             href="/" 
             className="flex items-center text-foreground hover:text-primary transition-colors"
@@ -279,12 +279,12 @@ export default function WebdesignPage() {
       </header>
       
       {/* Add padding to main content to account for fixed header */}
-      <div className="pt-16">
+      <div className="pt-16 bg-white dark:bg-[#0f0f12]">
         {/* Section Navigation */}
-        <nav className="sticky top-0 z-10 bg-background/90 backdrop-blur-sm py-3 shadow-lg">
+        <nav className="sticky top-0 z-10 bg-background/90 dark:bg-background/95 backdrop-blur-sm py-3 shadow-lg">
         <div className="container mx-auto px-4 flex items-center justify-between md:justify-center">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex flex-wrap justify-center gap-4">
+          <div className="hidden md:flex flex-wrap justify-center gap-2 lg:gap-4">
             <Button
               variant="ghost"
               onClick={() => scrollToSection("parallax-hero-section")}
@@ -427,13 +427,13 @@ export default function WebdesignPage() {
         </div>
       </nav>
 
-      <main className="container mx-auto px-4">
-        <section className="py-24 text-center">
+      <main className="container mx-auto px-4 max-w-7xl bg-white dark:bg-[#0f0f12] rounded-lg shadow-lg dark:shadow-black/20">
+        <section className="py-16 md:py-24 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-foreground">{t.title}</h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">{t.intro}</p>
         </section>
 
-        <section id="parallax-hero-section" className="py-24">
+        <section id="parallax-hero-section" className="py-16 md:py-24">
           <h2 className="text-3xl font-bold text-center mb-8 text-foreground">{t.parallaxHero}</h2>
           <ParallaxHero
             imageUrl="/vachuska.png"
@@ -442,32 +442,32 @@ export default function WebdesignPage() {
           />
         </section>
 
-        <section id="web-examples" className="py-24">
+        <section id="web-examples" className="py-16 md:py-24">
           <h2 className="text-3xl font-bold text-center mb-8 text-foreground">{t.examples}</h2>
           <WebExamplesSlider />
         </section>
 
-        <section id="animation-examples" className="py-24 text-center">
+        <section id="animation-examples" className="py-16 md:py-24 text-center">
           <h2 className="text-3xl font-bold mb-6 text-foreground">{t.animations}</h2>
           <AnimatedExamples animationTypes={t.animationTypes} />
         </section>
 
-        <section id="animated-checkboxes-section" className="py-24 text-center">
+        <section id="animated-checkboxes-section" className="py-16 md:py-24 text-center">
           <h2 className="text-3xl font-bold mb-6 text-foreground">{t.animatedCheckboxes}</h2>
           <AnimatedCheckboxes checkboxes={t.checkboxes} />
         </section>
 
-        <section id="contact-form-examples" className="py-24 text-center">
+        <section id="contact-form-examples" className="py-16 md:py-24 text-center">
           <h2 className="text-3xl font-bold mb-6 text-foreground">{t.contactForms}</h2>
           <ContactFormExamples lang={lang} forms={t.forms} />
         </section>
 
-        <section id="menu-examples-section" className="py-24 text-center">
+        <section id="menu-examples-section" className="py-16 md:py-24 text-center">
           <h2 className="text-3xl font-bold mb-6 text-foreground">{t.menus}</h2>
           <MenuExamples scrollToSection={scrollToSection} menu={t.menu} />
         </section>
 
-        <section id="other-features" className="py-24 text-center">
+        <section id="other-features" className="py-16 md:py-24 text-center">
           <h2 className="text-3xl font-bold mb-6 text-foreground">{t.other}</h2>
           <OtherFeatures 
             darkModeToggle={t.otherFeatures.darkModeToggle}
@@ -485,12 +485,12 @@ export default function WebdesignPage() {
       </div> {/* End of padding div */}
       
       {/* Footer */}
-      <footer className="bg-background border-t border-border mt-24">
+      <footer className="bg-background border-t border-border mt-24 dark:bg-[#0f0f12] dark:border-gray-800">
         <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
             {/* Left Column - Navigation */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">{lang === 'cz' ? 'Navigace' : 'Navigate'}</h3>
+              <h3 className="text-lg font-semibold text-foreground">{lang === 'cz' ? 'Navigace' : 'Navigate'}</h3>
               <nav className="flex flex-col space-y-2">
                 <a href="#parallax-hero-section" className="hover:text-primary transition-colors">
                   {t.parallaxHero}
@@ -518,24 +518,32 @@ export default function WebdesignPage() {
             
             {/* Right Column - Contact */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">{lang === 'cz' ? 'Kontakt' : 'Contact'}</h3>
+              <h3 className="text-lg font-semibold text-foreground">{lang === 'cz' ? 'Kontakt' : 'Contact'}</h3>
               <div className="space-y-2">
                 <p className="font-medium">Ing. Aleš Vachuška</p>
-                <p className="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                  </svg>
-                  <a href="tel:+420774104020" className="hover:text-primary transition-colors">774 104 020</a>
-                </p>
-                <p className="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                  </svg>
-                  <a href="mailto:odhadyvachuska@gmail.com" className="hover:text-primary transition-colors">
-                    odhadyvachuska@gmail.com
+                <div className="flex flex-wrap gap-2">
+                  <a 
+                    href="tel:+420774104020" 
+                    className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 rounded-lg transition-colors text-foreground"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    <span>774 104 020</span>
                   </a>
-                </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <a 
+                    href="mailto:odhadyvachuska@gmail.com" 
+                    className="inline-flex items-center px-4 py-2 bg-primary/10 hover:bg-primary/20 rounded-lg transition-colors text-foreground break-all"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    <span className="break-all text-left">odhadyvachuska@gmail.com</span>
+                  </a>
+                </div>
 
               </div>
             </div>
