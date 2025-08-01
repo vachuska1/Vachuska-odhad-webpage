@@ -5,12 +5,14 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 import { FloatingContactButton } from "@/components/floating-contact-button"
+import { LocalServiceArea } from "@/components/LocalServiceArea"
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ["latin"] })
 
 const title = 'Ing. Aleš Vachuška | Odhady nemovitostí a tvorba webů'
 const description = 'Jmenuji se Aleš Vachuška, věnuji se odhadům nemovitostí a tvorbě moderních webů'
-const keywords = 'Odhady, oceňování, Ing. Aleš Vachuška, Tvorba webu, webdesign, obvyklá cena, odhady nemovitostí, moderní, web, levné'
+const keywords = 'Odhady nemovitostí Plzeňský kraj, Oceňování nemovitostí Strakonice, Odhad domu Blatná, Odhad bytu Klatovy, odhad chalup Horažďovice, Odhad pozemků Západní čechy Ing. Aleš Vachuška, Tvorba webu Nepomuk, webdesign, obvyklá cena, odhady nemovitostí, moderní, web, levné'
 const siteUrl = 'https://odhadyvachuska.cz'
 
 export const viewport: Viewport = {
@@ -97,11 +99,48 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ing. Aleš Vachuška - Odhady nemovitostí a tvorba webů",
+    "image": "https://odhadyvachuska.cz/gen8.webp",
+    "description": "Odhady a oceňování nemovitostí v Plzeňském kraji",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Plzeňský kraj",
+      "addressLocality": "Horažďovice"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "49.3207",
+      "longitude": "13.7008"
+    },
+    "areaServed": ["Strakonice", "Blatná", "Horazdovice", "Klatovy", "Nepomuk", "Plzeňský kraj"],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    "telephone": "+420774104020",
+    "priceRange": "Kč"
+  }
+
   return (
     <html lang="cs" suppressHydrationWarning>
+      <head>
+        <Script
+          id="business-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd)
+          }}
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
+          <LocalServiceArea />
           <Toaster />
           <FloatingContactButton />
         </ThemeProvider>
