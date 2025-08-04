@@ -139,7 +139,13 @@ export default function OdhadyPage() {
           <div>
             <h2 className="text-3xl font-bold text-foreground mb-6">{t.findMe}</h2>
             <p className="text-lg text-muted-foreground mb-2">{t.address}</p>
-            <p className="text-md text-muted-foreground mb-4">{t.coordinates}</p>
+            <p className="text-md text-muted-foreground mb-1">{t.coordinates}</p>
+            <p className="text-md text-muted-foreground mb-1">
+              <a href="tel:+420774104020" className="hover:text-foreground transition-colors">774 104 020</a>
+            </p>
+            <p className="text-md text-muted-foreground mb-4">
+              <a href="mailto:odhadyvachuska@gmail.com" className="hover:text-foreground transition-colors">odhadyvachuska@gmail.com</a>
+            </p>
             <div className="w-full h-80 rounded-lg overflow-hidden shadow-lg">
               {/* Basic Google Maps Embed without API Key, with increased zoom */}
               <iframe
