@@ -1,6 +1,6 @@
 'use client'
 
-import { Phone, Mail, MessageSquare } from 'lucide-react'
+import { Phone, Mail, MessageSquare, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
@@ -37,6 +37,14 @@ export function FloatingContactButton() {
           <Button asChild className="rounded-full w-12 h-12 p-0" variant="outline">
             <Link href={`https://wa.me/420${phoneNumber}`} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
               <MessageSquare className="h-5 w-5" />
+            </Link>
+          </Button>
+          <Button asChild className="rounded-full w-12 h-12 p-0" variant="outline">
+            <Link href="/odhady#contact-form" aria-label="Contact Form" onClick={() => {
+              // Close the menu after clicking the link
+              setIsExpanded(false);
+            }}>
+              <MessageCircle className="h-5 w-5" />
             </Link>
           </Button>
         </div>

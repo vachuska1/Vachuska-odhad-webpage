@@ -10,6 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { toast } from "@/hooks/use-toast"
 import { sendEmail } from "@/app/actions/send-email"
+import Link from "next/link"
 
 interface ContactFormProps {
   lang: "cz" | "en"
@@ -103,7 +104,11 @@ export function ContactForm({ lang }: ContactFormProps) {
       email: "Váš e-mail",
       phone: "Váš telefon",
       message: "Vaše zpráva",
-      gdpr: "Souhlasím se zpracováním osobních údajů (GDPR) dle EU",
+      gdpr: (
+        <>
+          Souhlasím se <Link href="/ochrana-osobnich-udaju" className="text-blue-600 hover:underline">zpracováním</Link> osobních údajů (GDPR) dle EU
+        </>
+      ),
       submit: "Odeslat zprávu",
     },
     en: {
@@ -140,7 +145,7 @@ export function ContactForm({ lang }: ContactFormProps) {
         <Checkbox id="gdprAgreed" name="gdprAgreed" />
         <Label
           htmlFor="gdprAgreed"
-          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 [&_a]:text-blue-600 [&_a]:hover:underline"
         >
           {t.gdpr}
         </Label>

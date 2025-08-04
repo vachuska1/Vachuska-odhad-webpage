@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       // Uncomment and add any disallowed paths if needed
       // disallow: '/private/',
     },
-    sitemap: 'https://vachuska-odhady.cz/sitemap.xml',
+    sitemap: 'https://odhadyvachuska.cz/sitemap.xml',
   }
 }

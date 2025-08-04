@@ -24,8 +24,8 @@ export default function WebdesignPage() {
 
   const translations = {
     cz: {
-      title: "Tvorba webových stránek",
-      intro: "Moderní a responzivní webové stránky šité na míru vašim potřebám. Od jednoduchých prezentací až po složité webové aplikace.",
+      title: "Tvorba webů na míru",
+      intro: "Moderní, responzivní weby – od jednoduchých prezentací po komplexní aplikace.",
       examples: "Ukázky prací",
       animations: "Animace",
       contactForms: "Kontaktní formuláře",
@@ -94,7 +94,7 @@ export default function WebdesignPage() {
         },
         roundedForm: {
           title: "Zaoblený a barevný formulář",
-          submit: "Odeslat OK"
+          submit: "Odeslat"
         }
       },
       menu: {
@@ -129,9 +129,9 @@ export default function WebdesignPage() {
       }
     },
     en: {
-      title: "Web Page Development",
+      title: "Custom Web Development",
       intro:
-        "I create modern and fast websites for personal and business presentation using the latest technologies such as React, Next.js, and Framer Motion. Websites are powerful, secure, and user-friendly.",
+        "Modern, responsive websites – from simple presentations to complex applications.",
       examples: "Web",
       animations: "Animations",
       contactForms: "Forms",
@@ -198,7 +198,7 @@ export default function WebdesignPage() {
         },
         roundedForm: {
           title: "Rounded and Colored Form",
-          submit: "Send OK"
+          submit: "Send"
         }
       },
       menu: {
@@ -245,7 +245,7 @@ export default function WebdesignPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-emerald-50 dark:bg-[#0f0f12] dark:text-foreground text-foreground/90 overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-[#0f0f12] text-foreground/90 overflow-x-hidden">
       {/* Fixed Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">

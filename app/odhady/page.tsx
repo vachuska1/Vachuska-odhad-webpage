@@ -39,9 +39,9 @@ export default function OdhadyPage() {
       service1Title: "Kupní a darovací smlouvy",
       service1Desc:
         "Kompletní příprava kupních a darovacích mluv včetně jejich podání na katastr. Váš převod vlastnictví proběhne bez komplikací.",
-      service2Title: "Vypracuji havarijní plán a postarám se o jeho schválení na příslušných úřadech",
+      service2Title: "Havarijní plán",
       service2Desc:
-        "V souladu s platnou legislativou.",
+        "Zpracuji plán v souladu s legislativou a zajistím jeho schválení na úřadech.",
       contactFormTitle: "Kontaktní formulář",
       findMe: "Kde mě najdete",
       address: "Slatina 68, 34101 Slatina",
@@ -73,9 +73,9 @@ export default function OdhadyPage() {
       service1Title: "Preparation of purchase agreements and their registration in the real estate cadastre",
       service1Desc:
         "Complete preparation of purchase agreements and ensuring their proper registration in the real estate cadastre for a smooth transfer of ownership.",
-      service2Title: "Preparation of emergency plans and their approval with relevant state administration authorities",
+      service2Title: "Emergency plans",
       service2Desc:
-        "Development of emergency plans and their approval by relevant state authorities to ensure compliance with legislation.",
+        "I will prepare the plan in accordance with the legislation and ensure its approval by the authorities.",
       contactFormTitle: "Contact Form",
       findMe: "Where to find me",
       address: "Slatina 68, 34101 Slatina",
