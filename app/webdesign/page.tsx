@@ -245,7 +245,7 @@ export default function WebdesignPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0f0f12] text-foreground/90 overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300 dark:text-foreground text-foreground/90 overflow-x-hidden">
       {/* Fixed Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">

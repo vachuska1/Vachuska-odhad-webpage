@@ -18,13 +18,14 @@ export function WebExamplesSlider() {
   }, [api])
 
   const images = [
+    "/krasnykamen.png",
     "/ekostat.png",
     "/nanobuild.png",
     "/recyclesound.png",
     "/superpricky.png",
     "/zodborovany.png",
     "/odhadyjiznicechy.png",
-    "/vachuska.png", // Added the landing page image as well
+    "/vachuska.png",
   ]
 
   return (
