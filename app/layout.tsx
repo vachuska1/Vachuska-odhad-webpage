@@ -10,11 +10,19 @@ import Script from 'next/script'
 
 const inter = Inter({ subsets: ["latin"] })
 
-const title = 'Ing. Aleš Vachuška | Odhady nemovitostí a tvorba webů'
-const description = 'Jmenuji se Aleš Vachuška, věnuji se odhadům nemovitostí a tvorbě moderních webů'
-const keywords = 'Odhady nemovitostí Plzeňský kraj, Oceňování nemovitostí Strakonice, Odhad domu Blatná, Odhad bytu Klatovy, odhad chalup Horažďovice, Odhad pozemků Západní čechy Ing. Aleš Vachuška, Tvorba webu Nepomuk, webdesign, obvyklá cena, odhady nemovitostí, moderní, web, levné'
-const siteUrl = 'https://odhadyvachuska.cz'
+// -------------------------
+// SEO META DATA
+// -------------------------
+const siteUrl = 'https://www.odhadyvachuska.cz'
+const title = 'Ing. Aleš Vachuška | Oceňování nemovitostí Horažďovice, Blatná a okolí'
+const description =
+  'Profesionální oceňování nemovitostí v Horažďovicích, Strakonicích, Blatné, Nepomuku, Blovicích, Sušici a Katovicích. Odhady bytů, domů, chat, chalup, pozemků i zemědělských objektů – rychle, srozumitelně a spolehlivě.'
+const keywords =
+  'odhad nemovitosti Horažďovice, odhady nemovitostí Strakonice, odhad domu Blatná, odhad bytu Nepomuk, odhady pozemků Blovice, ocenění chaty Sušice, odhady chalup Katovice, odhad ceny nemovitosti Plzeňský kraj, obvyklá cena nemovitosti, ocenění pozemků, odhady realit'
 
+// -------------------------
+// VIEWPORT
+// -------------------------
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -25,22 +33,25 @@ export const viewport: Viewport = {
   ],
 }
 
+// -------------------------
+// META DATA
+// -------------------------
 export const metadata: Metadata = {
   title: {
     default: title,
-    template: `%s | ${title.split('|')[0].trim()}`
+    template: `%s | Ing. Aleš Vachuška – Oceňování nemovitostí`
   },
   description: description,
   keywords: keywords,
   metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: '/',
+    canonical: '/odhady',
   },
   openGraph: {
     title: title,
     description: description,
-    url: siteUrl,
-    siteName: title,
+    url: siteUrl + '/odhady',
+    siteName: 'Ing. Aleš Vachuška – Oceňování nemovitostí',
     locale: 'cs_CZ',
     type: 'website',
   },
@@ -50,7 +61,7 @@ export const metadata: Metadata = {
     description: description,
   },
   verification: {
-    google: 'f1e74bf4ed807a2b', // Google Search Console verification code
+    google: 'f1e74bf4ed807a2b', // Google Search Console
   },
   robots: {
     index: true,
@@ -94,6 +105,9 @@ export const metadata: Metadata = {
   },
 }
 
+// -------------------------
+// ROOT LAYOUT
+// -------------------------
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -102,20 +116,32 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Ing. Aleš Vachuška - Odhady nemovitostí a tvorba webů",
+    "name": "Ing. Aleš Vachuška – Odhady nemovitostí",
     "image": "https://odhadyvachuska.cz/gen8.webp",
-    "description": "Odhady a oceňování nemovitostí v Plzeňském kraji",
+    "description":
+      "Profesionální oceňování nemovitostí v Horažďovicích, Strakonicích, Blatné, Nepomuku, Blovicích, Sušici a Katovicích. Byty, domy, chaty, chalupy, pozemky i zemědělské objekty.",
     "address": {
       "@type": "PostalAddress",
       "addressRegion": "Plzeňský kraj",
-      "addressLocality": "Horažďovice"
+      "addressLocality": "Horažďovice",
+      "streetAddress": "Slatina 68",
+      "postalCode": "34101"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "49.3207",
-      "longitude": "13.7008"
+      "latitude": "49.38557533326912",
+      "longitude": "13.741873179275624"
     },
-    "areaServed": ["Strakonice", "Blatná", "Horazdovice", "Klatovy", "Nepomuk", "Plzeňský kraj"],
+    "areaServed": [
+      "Horažďovice",
+      "Strakonice",
+      "Blatná",
+      "Nepomuk",
+      "Blovice",
+      "Sušice",
+      "Katovice",
+      "Plzeňský kraj"
+    ],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -123,22 +149,29 @@ export default function RootLayout({
       "closes": "17:00"
     },
     "telephone": "+420774104020",
-    "priceRange": "Kč"
+    "priceRange": "Kč",
+    "url": siteUrl
   }
 
   return (
     <html lang="cs" suppressHydrationWarning>
       <head>
+        {/* LocalBusiness Schema.org */}
         <Script
           id="business-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd)
+            __html: JSON.stringify(jsonLd),
           }}
         />
       </head>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
           <LocalServiceArea />
           <Toaster />
