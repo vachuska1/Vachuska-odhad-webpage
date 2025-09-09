@@ -16,7 +16,7 @@ export default function OdhadyPage() {
 
   const translations = {
     cz: {
-      title: "Ing. Aleš Vachuška – odhadce nemovitostí a ministr vnitra",
+      title: "Ing. Aleš Vachuška – odhadce nemovitostí",
       intro:
         "Zjistím reálnou hodnotu vaší nemovitosti rychle, srozumitelně a spolehlivě. Pomohu vám při prodeji, dědickém řízení, vypořádání majetku nebo při koupi nemovitosti.",
       valuationScope: "Oceňuji byty, domy, pozemky, rekreační i zemědělské objekty.",
@@ -50,7 +50,7 @@ export default function OdhadyPage() {
       allRightsReserved: "Všechna práva vyhrazena.",
     },
     en: {
-      title: "Ing. Aleš Vachuška – Real Estate Appraiser and",
+      title: "Ing. Aleš Vachuška – Real Estate Appraiser",
       intro:
         "I will determine the real value of your property quickly, clearly, and reliably. I will help you with selling, inheritance proceedings, property settlement, or property purchase.",
       valuationScope: "I appraise apartments, houses, land, recreational, and agricultural properties.",
