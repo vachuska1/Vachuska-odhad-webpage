@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { LanguageToggle } from "@/components/language-toggle" // Corrected import path
 import { ContactForm } from "@/components/contact-form" // Corrected import path
 import Link from "next/link"
@@ -13,6 +13,11 @@ import { Sun, Moon } from "lucide-react"
 export default function OdhadyPage() {
   const [lang, setLang] = useState<"cz" | "en">("cz")
   const { theme, setTheme } = useTheme()
+  
+  // Set light mode as default for this page
+  useEffect(() => {
+    setTheme('light')
+  }, [setTheme])
 
   const translations = {
     cz: {
@@ -109,6 +114,13 @@ export default function OdhadyPage() {
 
       <main className="container mx-auto px-4">
         <section className="py-24 text-center">
+          <div className="mb-8 flex justify-center">
+            <img 
+              src="/profilfoto.png" 
+              alt="Ing. Aleš Vachuška" 
+              className="max-w-96 h-auto"
+            />
+          </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mb-10">{t.title}</h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6">{t.intro}</p>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">{t.valuationScope}</p>
