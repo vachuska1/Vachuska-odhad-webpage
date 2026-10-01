@@ -1,0 +1,46 @@
+export const policies = {
+ en: {
+  privacy: { title: 'Privacy policy (GDPR)', sections: [
+   ['Data controller', 'Ing. Aleš Vachuška, Slatina 68, 341 01 Slatina, Czech Republic. Business ID: 14437830. Email: odhadyvachuska@gmail.com.'],
+   ['Information about personal data processing', 'This notice explains how and to what extent your personal data are processed in accordance with Regulation (EU) 2016/679 (GDPR).'],
+   ['Data I process', 'I process the information needed to provide my services: identification details (name, surname, title), contact details (email, phone, address), and information relating to the services (property details, cadastral area, ownership record, parcel numbers, valuation purpose, notes and photographs or documents you choose to attach).'],
+   ['Purposes of processing', 'Your data are processed to enter into and perform contracts, communicate about orders and services, comply with legal obligations such as tax and accounting requirements, and protect the legitimate interests of the controller, for example when recovering debts.'],
+   ['Legal bases', 'Processing is based on performance of a contract under Article 6(1)(b) GDPR, compliance with a legal obligation under Article 6(1)(c), or the legitimate interests of the controller under Article 6(1)(f).'],
+   ['Retention', 'I retain your data only as long as necessary: for the duration of the contractual relationship, subsequently for periods required by applicable accounting, tax or other legislation, or for the duration of a legitimate interest such as debt recovery.'],
+   ['Your rights under the GDPR', 'You may request access to your personal data, correction or erasure where legally applicable, restriction of processing and data portability. You may object to processing and lodge a complaint with the Czech Office for Personal Data Protection (Úřad pro ochranu osobních údajů) if you believe your data are being processed contrary to the GDPR.'],
+   ['Contact for exercising your rights', 'Send requests and questions about personal data protection to odhadyvachuska@gmail.com.'],
+   ['Enquiry form and attachments', 'Your name, phone number and email are needed to handle your enquiry. Property details and attachments are voluntary. Please send only documents relevant to the valuation. The details and attachments are delivered by email through Resend to odhadyvachuska@gmail.com and stored in that mailbox; the files are not made publicly accessible. Resend and Google provide email delivery and mailbox services. Their privacy policies explain their processing, including any international transfers.'],
+   ['Cookies and maps', 'Google Maps is loaded only after consent. Details and controls for changing your choice are available on the Cookies and external content page.'],
+  ] },
+  cookies: { title: 'Cookies and external content', sections: [
+   ['Website operator', 'The website is operated by Ing. Aleš Vachuška, business ID 14437830, Slatina 68, 341 01 Slatina, Czech Republic. Please send questions to odhadyvachuska@gmail.com.'],
+   ['What this website uses', 'This website does not use analytics or advertising tools. The enquiry form works without optional content being enabled. Fonts are served directly from this website.'],
+   ['Storing your choice', 'Your Google Maps preference and the time it was saved are stored in your browser’s localStorage under odhady-cookie-preferences-v1 for up to 180 days. This is used only to respect your choice, not for tracking. If browser storage is unavailable, your choice applies only during the visit.'],
+   ['Google Maps – optional content', 'The embedded map loads only after you explicitly allow it. Google then connects to your browser and may receive your IP address and browser information, use cookies and process data outside the EU. Google’s privacy and cookie policies describe its processing and retention periods.'],
+   ['Changing or withdrawing consent', 'You can reject optional content as easily as allowing it. Use the button below or Cookie settings in the footer to change your choice. Withdrawing consent removes the embedded map and prevents it from loading again. Third-party cookies already stored can be deleted in your browser settings.'],
+   ['External links', 'Opening a separate link to a map, WhatsApp, Instagram or another external service takes you directly to that provider.'],
+  ] },
+ },
+ de: {
+  privacy: { title: 'Datenschutz (DSGVO)', sections: [
+   ['Verantwortlicher', 'Ing. Aleš Vachuška, Slatina 68, 341 01 Slatina, Tschechien. Identifikationsnummer: 14437830. E-Mail: odhadyvachuska@gmail.com.'],
+   ['Informationen zur Verarbeitung personenbezogener Daten', 'Diese Hinweise informieren Sie gemäß der Verordnung (EU) 2016/679 (DSGVO) über Art und Umfang der Verarbeitung Ihrer personenbezogenen Daten.'],
+   ['Verarbeitete Daten', 'Ich verarbeite die für meine Leistungen erforderlichen Angaben: Identifikationsdaten (Vorname, Nachname, Titel), Kontaktdaten (E-Mail, Telefon, Anschrift) und leistungsbezogene Angaben (Immobiliendaten, Katastralgebiet, Eigentumsblatt, Flurstücksnummern, Bewertungszweck, Anmerkungen sowie freiwillig beigefügte Fotos oder Dokumente).'],
+   ['Verarbeitungszwecke', 'Ihre Daten werden zum Abschluss und zur Erfüllung von Verträgen, zur Kommunikation über Aufträge und Leistungen, zur Erfüllung gesetzlicher Pflichten, etwa im Steuer- und Rechnungswesen, sowie zum Schutz berechtigter Interessen des Verantwortlichen, beispielsweise bei der Forderungsbeitreibung, verarbeitet.'],
+   ['Rechtsgrundlagen', 'Die Verarbeitung erfolgt zur Vertragserfüllung nach Art. 6 Abs. 1 Buchst. b DSGVO, zur Erfüllung rechtlicher Verpflichtungen nach Art. 6 Abs. 1 Buchst. c oder aufgrund berechtigter Interessen nach Art. 6 Abs. 1 Buchst. f.'],
+   ['Speicherdauer', 'Ich speichere Ihre Daten nur so lange wie erforderlich: während des Vertragsverhältnisses, anschließend für gesetzlich vorgeschriebene Fristen, etwa nach Rechnungslegungs- und Steuervorschriften, oder für die Dauer eines berechtigten Interesses wie der Forderungsbeitreibung.'],
+   ['Ihre Rechte nach der DSGVO', 'Sie können Auskunft, Berichtigung oder Löschung Ihrer Daten bei Vorliegen der gesetzlichen Voraussetzungen, Einschränkung der Verarbeitung sowie Datenübertragbarkeit verlangen. Sie können Widerspruch einlegen und sich bei der tschechischen Datenschutzbehörde (Úřad pro ochranu osobních údajů) beschweren, wenn Sie eine Verarbeitung entgegen der DSGVO vermuten.'],
+   ['Kontakt zur Ausübung Ihrer Rechte', 'Senden Sie Anträge und Fragen zum Datenschutz an odhadyvachuska@gmail.com.'],
+   ['Anfrageformular und Anhänge', 'Name, Telefonnummer und E-Mail-Adresse werden zur Bearbeitung Ihrer Anfrage benötigt. Immobilienangaben und Anhänge sind freiwillig. Senden Sie nur bewertungsrelevante Unterlagen. Angaben und Anhänge werden über Resend per E-Mail an odhadyvachuska@gmail.com zugestellt und im Postfach gespeichert. Die Dateien sind nicht öffentlich zugänglich. Resend und Google stellen den E-Mail-Versand und das Postfach bereit. Ihre Datenschutzhinweise erläutern die Verarbeitung einschließlich möglicher internationaler Datenübermittlungen.'],
+   ['Cookies und Karte', 'Google Maps wird nur nach Einwilligung geladen. Einzelheiten und Möglichkeiten zur Änderung Ihrer Auswahl finden Sie auf der Seite Cookies und externe Inhalte.'],
+  ] },
+  cookies: { title: 'Cookies und externe Inhalte', sections: [
+   ['Websitebetreiber', 'Diese Website wird von Ing. Aleš Vachuška, Identifikationsnummer 14437830, Slatina 68, 341 01 Slatina, Tschechien betrieben. Fragen richten Sie bitte an odhadyvachuska@gmail.com.'],
+   ['Was diese Website verwendet', 'Diese Website verwendet keine Analyse- oder Werbetools. Das Anfrageformular funktioniert auch ohne optionale Inhalte. Schriftarten werden direkt von dieser Website geladen.'],
+   ['Speicherung Ihrer Auswahl', 'Ihre Auswahl zu Google Maps und der Speicherzeitpunkt werden unter odhady-cookie-preferences-v1 für höchstens 180 Tage im localStorage Ihres Browsers gespeichert. Dies dient nur dazu, Ihre Auswahl zu berücksichtigen, nicht dem Tracking. Ist die Speicherung nicht möglich, gilt Ihre Auswahl nur für den aktuellen Besuch.'],
+   ['Google Maps – optionale Inhalte', 'Die eingebettete Karte wird erst nach Ihrer ausdrücklichen Zustimmung geladen. Danach verbindet sich Google mit Ihrem Browser und kann Ihre IP-Adresse und Browserdaten erhalten, Cookies verwenden und Daten außerhalb der EU verarbeiten. Angaben zur Verarbeitung und Speicherung finden Sie in den Datenschutz- und Cookie-Hinweisen von Google.'],
+   ['Änderung und Widerruf der Einwilligung', 'Sie können optionale Inhalte ebenso einfach ablehnen wie erlauben. Ändern Sie Ihre Auswahl über die Schaltfläche unten oder die Cookie-Einstellungen in der Fußzeile. Bei einem Widerruf wird die eingebettete Karte entfernt und nicht erneut geladen. Bereits gespeicherte Drittanbieter-Cookies können Sie in den Browsereinstellungen löschen.'],
+   ['Externe Links', 'Wenn Sie einen separaten Link zu einer Karte, WhatsApp, Instagram oder einem anderen externen Dienst öffnen, wechseln Sie direkt zum jeweiligen Anbieter.'],
+  ] },
+ },
+}

@@ -1,13 +1,3 @@
-import { MetadataRoute } from 'next'
-
-export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      // Uncomment and add any disallowed paths if needed
-      // disallow: '/private/',
-    },
-    sitemap: 'https://odhadyvachuska.cz/sitemap.xml',
-  }
-}
+import type { MetadataRoute } from "next"
+import { siteUrl } from "@/lib/site"
+export default function robots(): MetadataRoute.Robots { return {rules:{userAgent:"*",allow:"/"},sitemap:`${siteUrl}/sitemap.xml`} }

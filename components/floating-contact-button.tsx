@@ -1,61 +1,35 @@
-'use client'
+"use client"
 
-import { Phone, Mail, MessageSquare, MessageCircle } from 'lucide-react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { useState } from 'react'
+import { useLocale } from "@/components/locale-provider"
+import { usePathname } from "next/navigation"
+import { useEffect, useRef, useState } from "react"
+import { Phone, Mail, MessageCircle, X } from "lucide-react"
 
 export function FloatingContactButton() {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const phoneNumber = '774104020'
-  
-  const toggleExpand = () => setIsExpanded(!isExpanded)
-
-  return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
-      {isExpanded && (
-        <div className="flex flex-col gap-2 mb-2 animate-in fade-in-50 slide-in-from-bottom-2">
-          <Button 
-            asChild 
-            className="rounded-full w-12 h-12 p-0" 
-            variant="outline"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <a 
-              href="mailto:odhadyvachuska@gmail.com" 
-              aria-label="Send email"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Mail className="h-5 w-5" />
-            </a>
-          </Button>
-          <Button asChild className="rounded-full w-12 h-12 p-0" variant="outline">
-            <Link href={`tel:${phoneNumber}`} aria-label={`Call ${phoneNumber}`}>
-              <Phone className="h-5 w-5" />
-            </Link>
-          </Button>
-          <Button asChild className="rounded-full w-12 h-12 p-0" variant="outline">
-            <Link href={`https://wa.me/420${phoneNumber}`} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-              <MessageSquare className="h-5 w-5" />
-            </Link>
-          </Button>
-          <Button asChild className="rounded-full w-12 h-12 p-0" variant="outline">
-            <Link href="/odhady#contact-form" aria-label="Contact Form" onClick={() => {
-              // Close the menu after clicking the link
-              setIsExpanded(false);
-            }}>
-              <MessageCircle className="h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-      )}
-      <Button 
-        onClick={toggleExpand}
-        className="rounded-full w-14 h-14 p-0 text-lg font-semibold shadow-lg"
-        aria-label={isExpanded ? 'Close contact options' : 'Contact us'}
-      >
-        {isExpanded ? '×' : <Mail className="h-6 w-6" />}
-      </Button>
+  const { t, href } = useLocale()
+  const path = usePathname()
+  const contact = `${href('/')}#poptavka`
+  const [open, setOpen] = useState(false)
+  const container = useRef<HTMLDivElement>(null)
+  const trigger = useRef<HTMLButtonElement>(null)
+  useEffect(() => {
+    if (!open) return
+    const pointer = (event: PointerEvent) => { if (!container.current?.contains(event.target as Node)) setOpen(false) }
+    const keyboard = (event: KeyboardEvent) => { if (event.key === 'Escape') { setOpen(false); trigger.current?.focus() } }
+    document.addEventListener('pointerdown', pointer)
+    document.addEventListener('keydown', keyboard)
+    return () => { document.removeEventListener('pointerdown', pointer); document.removeEventListener('keydown', keyboard) }
+  }, [open])
+  useEffect(() => setOpen(false), [path])
+  return <>
+    <div ref={container} className="floating-contact">
+      {open && <nav id="quick-contact" className="quick-contact-panel" aria-label={t("Možnosti kontaktu")}>
+        <a href="tel:+420774104020"><Phone size={20} aria-hidden="true" /><span>{t("Zavolat")}<small>774 104 020</small></span></a>
+        <a href="https://wa.me/420774104020" target="_blank" rel="noopener noreferrer"><MessageCircle size={20} aria-hidden="true" /><span>{t("Napsat na WhatsApp")}</span></a>
+        <a href="mailto:odhadyvachuska@gmail.com"><Mail size={20} aria-hidden="true" /><span>{t("Napsat e-mail")}<small>odhadyvachuska@gmail.com</small></span></a>
+      </nav>}
+      <button ref={trigger} type="button" className={`floating-phone${open ? ' contact-open' : ''}`} aria-label={t(open ? 'Zavřít možnosti kontaktu' : 'Zavolat nebo napsat')} aria-expanded={open} aria-controls={open ? 'quick-contact' : undefined} onClick={() => setOpen(value => !value)}>{open ? <X size={42} aria-hidden="true" /> : <Phone size={52} aria-hidden="true" />}</button>
     </div>
-  )
+    <nav className="mobile-contact-bar" aria-label={t("Rychlý kontakt")}><a href="tel:+420774104020"><Phone size={18} aria-hidden="true" />{t("Zavolat")}</a><a href={contact}><Mail size={18} aria-hidden="true" />{t("Poptávka")}</a></nav>
+  </>
 }

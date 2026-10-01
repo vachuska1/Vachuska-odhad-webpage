@@ -1,12 +1,14 @@
+import { pageMetadata } from "@/lib/site"
+export const metadata = pageMetadata("Ochrana osobních údajů", "Informace o zpracování osobních údajů při poptávce ocenění nemovitosti. Správce Ing. Aleš Vachuška, Slatina 68.", "/ochrana-osobnich-udaju")
 import Link from 'next/link';
 
 export default function OchranaOsobnichUdaju() {
   return (
-    <main className="container mx-auto px-4 py-12 max-w-4xl">
+    <main id="main-content" className="container mx-auto px-4 py-12 max-w-4xl">
       <div className="mb-8">
         <Link 
-          href="/odhady" 
-          className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+          href="/"
+          className="inline-flex items-center text-sm text-primary hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
         >
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
@@ -35,7 +37,7 @@ export default function OchranaOsobnichUdaju() {
             <p className="mb-0">Slatina 68</p>
             <p className="mb-0">341 01 Slatina</p>
             <p className="mb-0">IČ: 14437830</p>
-            <p className="mb-0">E-mail: <a href="mailto:odhadyvachuska@gmail.com" className="text-blue-600 hover:underline">odhadyvachuska@gmail.com</a></p>
+            <p className="mb-0">E-mail: <a href="mailto:odhadyvachuska@gmail.com" className="text-primary hover:underline">odhadyvachuska@gmail.com</a></p>
           </div>
         </section>
 
@@ -54,7 +56,7 @@ export default function OchranaOsobnichUdaju() {
           <ul className="list-disc pl-6 mb-6 space-y-2">
             <li><strong>Identifikační údaje</strong> – jméno, příjmení, titul</li>
             <li><strong>Kontaktní údaje</strong> – e-mail, telefon, adresa</li>
-            <li><strong>Údaje související se službami</strong> – informace nutné pro uzavření a plnění smlouvy</li>
+            <li><strong>Údaje související se službami</strong> – údaje o nemovitostech, katastrálním území, listu vlastnictví, poznámka a dobrovolně přiložené fotografie nebo dokumenty</li>
           </ul>
         </section>
 
@@ -106,7 +108,7 @@ export default function OchranaOsobnichUdaju() {
             <li>požadovat omezení zpracování</li>
             <li>uplatnit právo na přenositelnost údajů</li>
             <li>vznést námitku proti zpracování</li>
-            <li>podat stížnost u Úřadu pro ochranu osobních údajů (<a href="https://www.uoou.cz" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.uoou.cz</a>), pokud se domníváte, že je s vašimi údaji nakládáno v rozporu s GDPR</li>
+            <li>podat stížnost u Úřadu pro ochranu osobních údajů (<a href="https://www.uoou.cz" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.uoou.cz</a>), pokud se domníváte, že je s vašimi údaji nakládáno v rozporu s GDPR</li>
           </ul>
         </section>
 
@@ -114,12 +116,18 @@ export default function OchranaOsobnichUdaju() {
           <h2 className="text-2xl font-semibold mb-4">Kontakt pro uplatnění práv</h2>
           <p className="mb-4">
             Veškeré žádosti a dotazy ohledně ochrany osobních údajů můžete zasílat na:<br />
-            <span className="text-lg">📧 <a href="mailto:odhadyvachuska@gmail.com" className="text-blue-600 hover:underline">odhadyvachuska@gmail.com</a></span>
+            <span className="text-lg">📧 <a href="mailto:odhadyvachuska@gmail.com" className="text-primary hover:underline">odhadyvachuska@gmail.com</a></span>
           </p>
         </section>
 
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold mb-4">Poptávkový formulář a přílohy</h2>
+          <p>Jméno, telefon a e-mail jsou potřebné k vyřízení poptávky. Údaje o nemovitostech a přílohy poskytujete dobrovolně. Zasílejte pouze podklady související s oceněním. Údaje a přílohy jsou doručeny e-mailem prostřednictvím služby Resend do schránky odhadyvachuska@gmail.com. Součástí zpracování je doručení a uložení v e-mailové schránce; nejde o veřejně přístupné soubory.</p>
+          <p className="mt-4">Technickými poskytovateli doručení a e-mailové schránky jsou Resend a Google. Informace o zpracování těmito poskytovateli, včetně případných přenosů do zahraničí, najdete v <a href="https://resend.com/legal/privacy-policy" className="text-primary underline">zásadách Resend</a> a <a href="https://policies.google.com/privacy?hl=cs" className="text-primary underline">zásadách Google</a>.</p>
+        </section>
+        <section className="mb-10"><h2 className="text-2xl font-semibold mb-4">Cookies a mapa</h2><p>Google mapa se načítá jen po povolení. Podrobnosti a možnost změny nastavení jsou na stránce <Link href="/cookies" className="text-primary underline">Cookies a externí obsah</Link>.</p></section>
         <p className="text-sm text-muted-foreground mt-12 border-t pt-4">
-          Poslední aktualizace: 5. 8. 2025
+          Poslední aktualizace: 30. 9. 2026
         </p>
       </div>
     </main>
