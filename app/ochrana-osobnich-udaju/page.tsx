@@ -125,9 +125,9 @@ export default function OchranaOsobnichUdaju() {
           <p>Jméno, telefon a e-mail jsou potřebné k vyřízení poptávky. Údaje o nemovitostech a přílohy poskytujete dobrovolně. Zasílejte pouze podklady související s oceněním. Údaje a přílohy jsou doručeny e-mailem prostřednictvím služby Resend do schránky odhadyvachuska@gmail.com. Součástí zpracování je doručení a uložení v e-mailové schránce; nejde o veřejně přístupné soubory.</p>
           <p className="mt-4">Technickými poskytovateli doručení a e-mailové schránky jsou Resend a Google. Informace o zpracování těmito poskytovateli, včetně případných přenosů do zahraničí, najdete v <a href="https://resend.com/legal/privacy-policy" className="text-primary underline">zásadách Resend</a> a <a href="https://policies.google.com/privacy?hl=cs" className="text-primary underline">zásadách Google</a>.</p>
         </section>
-        <section className="mb-10"><h2 className="text-2xl font-semibold mb-4">Cookies a mapa</h2><p>Google mapa se načítá jen po povolení. Podrobnosti a možnost změny nastavení jsou na stránce <Link href="/cookies" className="text-primary underline">Cookies a externí obsah</Link>.</p></section>
+        <section className="mb-10"><h2 className="text-2xl font-semibold mb-4">Cookies a mapa</h2><p>Google mapa a Google Analytics 4 se načítají pouze po příslušném souhlasu. Analytika na základě souhlasu měří návštěvnost, zdroje návštěv a akce na webu; obsah poptávkového formuláře do ní nepředáváme. Poskytovatelem analytiky je Google Ireland Limited. Souhlas lze kdykoliv odvolat. Podrobnosti a možnost změny nastavení jsou na stránce <Link href="/cookies" className="text-primary underline">Cookies a externí obsah</Link>.</p></section>
         <p className="text-sm text-muted-foreground mt-12 border-t pt-4">
-          Poslední aktualizace: 30. 9. 2026
+          Poslední aktualizace: 2. 10. 2026
         </p>
       </div>
     </main>

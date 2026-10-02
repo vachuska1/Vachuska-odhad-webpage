@@ -1,3 +1,5 @@
+import { Suspense } from "react"
+import { Analytics } from "@/components/analytics"
 import { headers } from "next/headers"
 import { LocaleProvider, SkipLink } from "@/components/locale-provider"
 import { type Locale } from "@/lib/i18n"
@@ -15,5 +17,5 @@ export default async function RootLayout({children}: {children:React.ReactNode})
  const language = (await headers()).get("x-site-locale")
  const locale: Locale = language === "en" || language === "de" ? language : "cs"
  const business = businessGraph(locale)
- return <html lang={locale}><head><link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /><link rel="preload" href="/fonts/manrope-latin-ext.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></head><body><LocaleProvider locale={locale}><SkipLink/><CookieConsentProvider><SiteHeader/>{children}<SiteFooter/><FloatingContactButton/></CookieConsentProvider></LocaleProvider><script type="application/ld+json" dangerouslySetInnerHTML={{__html:jsonLd(business)}}/></body></html>
+ return <html lang={locale}><head><link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /><link rel="preload" href="/fonts/manrope-latin-ext.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></head><body><LocaleProvider locale={locale}><SkipLink/><CookieConsentProvider><Suspense fallback={null}><Analytics/></Suspense><SiteHeader/>{children}<SiteFooter/><FloatingContactButton/></CookieConsentProvider></LocaleProvider><script type="application/ld+json" dangerouslySetInnerHTML={{__html:jsonLd(business)}}/></body></html>
 }

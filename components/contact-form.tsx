@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { trackLead } from "@/lib/analytics"
 import { sendEmail } from "@/app/actions/send-email"
 import { ENQUIRY_TYPES, ACCEPTED_FILES, attachmentError, MAX_FILES, MAX_PROPERTIES, PROPERTY_GROUPS, type PropertyData } from "@/lib/enquiry"
 
@@ -21,6 +22,7 @@ export function ContactForm({ service = "Obecná poptávka" }: { service?: strin
   const [properties, setProperties] = useState<PropertyCard[]>([emptyProperty(0)])
   const [files, setFiles] = useState<File[]>([])
   const [fileError, setFileError] = useState<string | null>(null)
+  const submitting = useRef(false)
   const nextId = useRef(1)
   const fileInput = useRef<HTMLInputElement>(null)
   const addButton = useRef<HTMLButtonElement>(null)
@@ -50,20 +52,24 @@ export function ContactForm({ service = "Obecná poptávka" }: { service?: strin
   }
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (pending) return
+    if (submitting.current) return
     const form = event.currentTarget
     const error = attachmentError(files)
     if (error) { setFileError(error); return }
     const data = new FormData(form)
     data.set('properties', JSON.stringify(properties.map(({ type, cadastralArea, lv, parcels }) => ({ type, cadastralArea, lv, parcels }))))
     files.forEach(file => data.append('attachments', file))
+    submitting.current = true
+    const submittedPage = window.location.pathname
     setPending(true); setResult(null)
     try {
       const response = await sendEmail(null, data)
       setResult(response)
-      if (response.success) { form.reset(); setProperties([emptyProperty(nextId.current++)]); setFiles([]); setFileError(null) }
+      if (response.success) {
+        try { trackLead(true, String(data.get("service") || ""), submittedPage) } catch { /* Analytics must never affect form delivery. */ }
+        form.reset(); setProperties([emptyProperty(nextId.current++)]); setFiles([]); setFileError(null) }
     } catch { setResult({ success: false, message: 'Poptávku se nepodařilo odeslat. Zkuste to znovu nebo zavolejte na 774 104 020.' }) }
-    finally { setPending(false) }
+    finally { submitting.current = false; setPending(false) }
   }
 
   return <form id="contact-form" onSubmit={submit} className="enquiry-form" aria-busy={pending}>
