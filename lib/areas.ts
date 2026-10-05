@@ -83,5 +83,45 @@ export const areas = [
     "slug": "odhady-nemovitosti-plzen",
     "name": "Plzeň",
     "text": "V Plzni a na Plzeňsku se můžete ozvat s bytem, domem i pozemkem, včetně okolí Starého Plzence a Dobřan. Před koupí či prodejem spolu domluvíme podklady potřebné pro stanovení současné hodnoty."
+  },
+  {
+    "slug": "odhady-nemovitosti-mirovice",
+    "name": "Mirovice",
+    "text": "Pro Mirovice a okolí připravím ocenění nemovitosti pro dědictví, vlastní potřebu i rozdělení majetku. Pokud má dům více vlastníků, uveďte, zda potřebujete hodnotu celé nemovitosti, nebo konkrétního podílu; podle toho domluvíme rozsah ocenění."
+  },
+  {
+    "slug": "odhady-nemovitosti-lnare",
+    "name": "Lnáře",
+    "text": "Ve Lnářích a okolí můžete poptat ocenění domu, chalupy nebo pozemků. U souboru nemovitostí uveďte všechny listy vlastnictví a případně čísla parcel, aby bylo zřejmé, které stavby a pozemky mají být do odhadu zahrnuty."
+  },
+  {
+    "slug": "odhady-nemovitosti-kasejovice",
+    "name": "Kasejovice",
+    "text": "V Kasejovicích a okolí oceňuji také zemědělské objekty a pozemky. Pro úvodní domluvu pomůže katastrální území, číslo LV a stručný popis současného využití. U usedlosti upřesníme, zda má ocenění zahrnout i hospodářské budovy a navazující pozemky."
+  },
+  {
+    "slug": "odhady-nemovitosti-katovice",
+    "name": "Katovice",
+    "text": "Pro Katovice a okolí domluvíme ocenění bytu, domu i samostatného pozemku. Při ocenění domu před prodejem nebo koupí mi popište provedené rekonstrukce a známé závady. Fotografie a dostupná dokumentace pomohou určit další potřebné podklady."
+  },
+  {
+    "slug": "odhady-nemovitosti-rabi",
+    "name": "Rabí",
+    "text": "V Rabí a okolí pomohu s oceněním rodinné i rekreační nemovitosti. U chalupy nebo chaty je užitečné uvést způsob vytápění, napojení na vodu a odpady a možnosti přístupu. Případnou osobní prohlídku domluvíme podle stavu objektu a dostupných podkladů."
+  },
+  {
+    "slug": "odhady-nemovitosti-planice",
+    "name": "Plánice",
+    "text": "Pro Plánici a okolí zpracovávám ocenění také při vypořádání společného majetku. Předem spolu upřesníme nemovitosti, účel odhadu a požadované datum ocenění. Pokud se stav domu od tohoto data změnil, pomohou starší fotografie nebo dokumentace původního stavu."
+  },
+  {
+    "slug": "odhady-nemovitosti-nalzovske-hory",
+    "name": "Nalžovské Hory",
+    "text": "V Nalžovských Horách a okolí lze poptat ocenění více nemovitostí v jednom případě. U pozemků v různých katastrálních územích přidejte ve formuláři samostatné položky s příslušnými čísly LV. Více parcel na jednom listu vlastnictví můžete uvést společně."
+  },
+  {
+    "slug": "odhady-nemovitosti-kasperske-hory",
+    "name": "Kašperské Hory",
+    "text": "Pro Kašperské Hory a okolí připravím odhad bytu, domu i rekreačního objektu. Pokud nemovitost pronajímáte, uveďte tuto skutečnost již při první domluvě a popište její současné využití. Potřebné podklady a možnost prohlídky upřesníme individuálně."
   }
 ]

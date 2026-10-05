@@ -11,7 +11,7 @@ async function run() {
  assert.equal(sitemapResponse.status, 200)
  const sitemap = await sitemapResponse.text()
  const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1])
- assert.equal(urls.length, 75)
+ assert.equal(urls.length, 99)
  assert.equal(new Set(urls).size, urls.length)
  const paths = new Set(urls.map(url => new URL(url).pathname))
  const titles = new Set(), descriptions = new Set(), assets = new Set()
