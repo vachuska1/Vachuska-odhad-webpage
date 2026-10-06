@@ -17,6 +17,6 @@ export function SiteFooter() {
         <nav className="footer-services" aria-label={t("Služby v patičce")}>{orderedServices.map(service => <Link key={service.slug} href={href(`/${service.slug}`)}>{t(service.title)} <span aria-hidden="true">→</span></Link>)}<Link href={href("/nejcastejsi-dotazy")}>{t("Nejčastější dotazy")} <span aria-hidden="true">→</span></Link><Link href={href("/pusobnost")}>{t("Oblasti působnosti →")}</Link></nav>
       </div>
     </div>
-    <div className="shell footer-bottom"><p>© {new Date().getFullYear()} Ing. Aleš Vachuška</p><div><Link href={href("/ochrana-osobnich-udaju")}>{t("Ochrana osobních údajů")}</Link><CookieSettingsButton /></div></div>
+    <div className="shell footer-bottom"><p>© {new Date().getFullYear()} Ing. Aleš Vachuška<br />Web vytvořil <a href="https://weblepe.cz" rel="nofollow" className="hover:underline">Weblépe.cz</a></p><div><Link href={href("/ochrana-osobnich-udaju")}>{t("Ochrana osobních údajů")}</Link><CookieSettingsButton /></div></div>
   </footer>
 }
