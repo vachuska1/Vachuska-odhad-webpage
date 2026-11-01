@@ -1,9 +1,11 @@
+import { articleRoutes } from '@/lib/article-routes'
 import { areas } from '@/lib/areas'
 import en from '@/lib/translations/en.json'
 import de from '@/lib/translations/de.json'
 export type Locale = 'cs' | 'en' | 'de'
 export const locales: Locale[] = ['cs', 'en', 'de']
 export const translatedRoutes: Record<string, [string, string]> = {
+ ...articleRoutes,
  ...Object.fromEntries(areas.map(a => [`/${a.slug}`, [`property-valuation-${a.slug.replace('odhady-nemovitosti-', '')}`, `immobilienbewertung-${a.slug.replace('odhady-nemovitosti-', '')}`] as [string, string]])),
  '/': ['', ''],
  '/odhad-pro-dedicke-rizeni': ['inheritance-valuation', 'immobilienbewertung-erbschaft'],
@@ -17,7 +19,10 @@ export const translatedRoutes: Record<string, [string, string]> = {
 export function translate(locale: Locale, text: string): string {
  if (locale === 'cs') return text
  const dictionary: Record<string, string> = locale === 'en' ? en : de
- return dictionary[text] ?? (text.startsWith('Soubor „') ? dictionary['Soubor neodpovídá podporovanému formátu. Vyberte prosím jiný soubor.'] : text)
+ if (dictionary[text]) return dictionary[text]
+ const photo = text.match(/^Fotografii „(.*)“ nelze v tomto prohlížeči zpracovat\. Zvolte platný JPG, PNG nebo WebP, případně nás kontaktujte telefonicky\.$/)
+ if (photo) return dictionary['Fotografii „{name}“ nelze v tomto prohlížeči zpracovat. Zvolte platný JPG, PNG nebo WebP, případně nás kontaktujte telefonicky.'].replace('{name}', photo[1])
+ return text.startsWith('Soubor „') ? dictionary['Soubor neodpovídá podporovanému formátu. Vyberte prosím jiný soubor.'] : text
 }
 export function basePath(path: string): string {
  const match = path.match(/^\/(en|de)(?:\/(.*))?$/)
@@ -32,5 +37,5 @@ export function localePath(path: string, locale: Locale): string {
  return `/${locale}${slug ? `/${slug}` : ''}`
 }
 export function languageAlternates(path: string) {
- return { cs: localePath(path, 'cs'), en: localePath(path, 'en'), de: localePath(path, 'de'), 'x-default': localePath(path, 'cs') }
+ return { 'cs-CZ': localePath(path, 'cs'), en: localePath(path, 'en'), de: localePath(path, 'de'), 'x-default': localePath(path, 'cs') }
 }

@@ -27,7 +27,7 @@ export function HomeHero() {
     <section className="home-hero" aria-label={`Ing. Aleš Vachuška – ${t("Odhady a oceňování nemovitostí")}`}>
       <LanguageSwitcher hero />
       <div className="hero-photo" ref={portrait}>
-        <Image src="/profilfoto.png" alt="Ing. Aleš Vachuška" fill priority sizes="(max-width: 767px) 100vw, 760px" className="portrait" />
+        <Image src="/profilfoto-transparent.png" alt="Ing. Aleš Vachuška" fill priority sizes="(max-width: 767px) 100vw, 760px" className="portrait" />
       </div>
       <div className="hero-title"><h1>Ing. Aleš Vachuška</h1><p>{t("Odhady a oceňování nemovitostí")}</p></div>
       <a href="#predstaveni" className="discover-link">{t("Zjistit více")} <ArrowDown size={18} aria-hidden="true" /></a>

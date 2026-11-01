@@ -11,7 +11,7 @@ async function run() {
  assert.equal(sitemapResponse.status, 200)
  const sitemap = await sitemapResponse.text()
  const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1])
- assert.equal(urls.length, 113)
+ assert.equal(urls.length, 141)
  assert.equal(new Set(urls).size, urls.length)
  const paths = new Set(urls.map(url => new URL(url).pathname))
  const titles = new Set(), descriptions = new Set(), assets = new Set()
@@ -32,7 +32,7 @@ async function run() {
    assert.ok(!attr(meta(html, 'robots') || '', 'content')?.includes('noindex'), path)
    const links = tags(html, 'link')
    assert.equal(new URL(attr(links.find(tag => attr(tag, 'rel') === 'canonical') || '', 'href')).href, new URL(url).href, `Canonical: ${path}`)
-   for (const alternate of (path === '/clanky' || path.startsWith('/clanky/')) ? [] : ['cs', 'en', 'de', 'x-default']) {
+   for (const alternate of ['cs-CZ', 'en', 'de', 'x-default']) {
     const href = attr(links.find(tag => attr(tag, 'hrefLang') === alternate || attr(tag, 'hreflang') === alternate) || '', 'href')
     assert.ok(href?.startsWith(canonicalOrigin), `Hreflang: ${path} ${alternate}`)
     assert.ok(urls.some(url => new URL(url).href === new URL(href).href), `Hreflang destination missing: ${href}`)
@@ -50,6 +50,7 @@ async function run() {
      assert.equal(node.datePublished, '2026-11-01')
      assert.equal(new URL(node.mainEntityOfPage).pathname, path)
      assert.ok(node.image)
+     assert.equal(node.inLanguage, language)
     }
     if (node['@type'] === 'Service') {
      assert.ok(node.name && node.description && node.areaServed)
@@ -90,6 +91,6 @@ async function run() {
  for (const path of ['/webdesign', '/en/not-a-page', '/de/nicht-vorhanden', '/zodborovany.png', '/superpricky.png', '/recyclesound.png']) assert.equal((await get(path)).status, 404, path)
  for (const path of [...assets, '/favicon.ico', '/favicon-32x32.png', '/apple-touch-icon.png', '/android-chrome-192x192.png', '/android-chrome-512x512.png', '/fonts/manrope-latin.woff2', '/fonts/manrope-latin-ext.woff2', '/googlef1e74bf4ed807a2b.html']) assert.equal((await get(path)).status, 200, path)
  const robots = await (await get('/robots.txt')).text(); assert.ok(robots.includes(`Sitemap: ${canonicalOrigin}/sitemap.xml`)); assert.ok(robots.includes('Allow: /'))
- console.log(`PASS: ${urls.length} canonical pages; unique titles/descriptions; 3 languages + x-default; H1; social images; ${schemas} valid JSON-LD blocks; internal links; 6 permanent redirects; retired assets/pages return 404; robots and current assets.`)
+ console.log(`PASS: ${urls.length} canonical pages; unique titles/descriptions; cs-CZ/en/de + x-default; H1; social images; ${schemas} valid JSON-LD blocks; internal links; 6 permanent redirects; retired assets/pages return 404; robots and current assets.`)
 }
 run().catch(error => { console.error(error); process.exitCode = 1 })

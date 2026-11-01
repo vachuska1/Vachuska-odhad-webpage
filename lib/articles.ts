@@ -385,32 +385,72 @@ export const articles: Article[] = [
     "title": "Vyplacení spoluvlastnického podílu na nemovitosti",
     "seoTitle": "Vyplacení spoluvlastnického podílu na nemovitosti",
     "description": "Jak určit hodnotu nemovitosti při vyplacení spoluvlastníka? Odhad domu, bytu nebo pozemku pro majetkové vyrovnání.",
-    "intro": "Pokud nemovitost vlastní více osob a jeden ze spoluvlastníků chce ostatní vyplatit, je vhodné nejprve zjistit její hodnotu.",
+    "intro": "Pokud nemovitost vlastní více osob a jeden ze spoluvlastníků chce ostatní vyplatit, je důležité nejprve stanovit její hodnotu.\n\nTypicky se jedná o rodinný dům, byt, rekreační nemovitost nebo pozemky ve spoluvlastnictví sourozenců či dalších příbuzných.",
     "category": "settlement",
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Typicky jde o rodinný dům, byt nebo pozemek ve společném vlastnictví sourozenců či dalších příbuzných."
-      },
       {
         "type": "heading",
         "text": "Jak se stanovuje částka k vyplacení?"
       },
       {
         "type": "paragraph",
-        "text": "Nejprve je potřeba upřesnit, zda se oceňuje celá nemovitost pro účely dohody, nebo samotný spoluvlastnický podíl jako samostatně obchodovatelný majetek."
+        "text": "Při vypořádání mezi spoluvlastníky se obvykle vychází z hodnoty celé nemovitosti a velikosti jednotlivých spoluvlastnických podílů."
       },
       {
         "type": "paragraph",
-        "text": "Tržní hodnota samostatně obchodovaného podílu se může lišit od jeho poměrné části z hodnoty celé nemovitosti."
+        "text": "Pokud má například rodinný dům hodnotu 4 000 000 Kč a vlastní jej dva sourozenci, každý s podílem jedné poloviny, odpovídá hodnota každého podílu částce 2 000 000 Kč."
       },
       {
         "type": "paragraph",
-        "text": "Při ocenění vycházím ze skutečně realizovaných prodejů obdobných nemovitostí a zohledňuji konkrétní okolnosti."
+        "text": "Jiná situace nastává při samostatném prodeji spoluvlastnického podílu třetí osobě. Jeho tržní hodnota může být nižší než odpovídající část hodnoty celé nemovitosti, protože kupující nezískává nemovitost do výlučného vlastnictví."
       },
       {
         "type": "paragraph",
-        "text": "Výsledný odhad může sloužit jako cenový podklad pro jednání mezi spoluvlastníky."
+        "text": "Proto je důležité předem upřesnit, k jakému účelu odhad potřebujete."
+      },
+      {
+        "type": "heading",
+        "text": "Jak nemovitost oceňuji?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Při stanovení hodnoty vycházím ze skutečně realizovaných prodejů srovnatelných nemovitostí."
+      },
+      {
+        "type": "paragraph",
+        "text": "U rodinných domů, bytů a rekreačních objektů posuzuji jejich polohu, velikost, technický stav a další vlastnosti ovlivňující cenu."
+      },
+      {
+        "type": "paragraph",
+        "text": "U pozemků zohledňuji zejména lokalitu, výměru, přístup a možnosti využití."
+      },
+      {
+        "type": "paragraph",
+        "text": "Výsledkem je písemný odhad s výpočtem a zdůvodněním stanovené hodnoty."
+      },
+      {
+        "type": "heading",
+        "text": "Co potřebuji k vypracování odhadu?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pro začátek stačí základní identifikace nemovitosti:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Rodinný dům nebo byt:** adresa, případně číslo listu vlastnictví (LV) a katastrální území.",
+          "**Pozemky:** číslo LV a příslušné katastrální území.",
+          "**Více nemovitostí:** čísla jednotlivých LV a příslušná katastrální území."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Dále je vhodné uvést, zda se jedná o vyplacení mezi spoluvlastníky, nebo ocenění podílu pro samostatný prodej."
+      },
+      {
+        "type": "paragraph",
+        "text": "Konkrétní rozsah a cenu odhadu si vždy odsouhlasíme před zahájením zpracování."
       }
     ],
     "cardDescription": "Jak ocenit nemovitost a určit hodnotu podílu."
@@ -420,36 +460,36 @@ export const articles: Article[] = [
     "title": "Rozdělení nemovitostí mezi spoluvlastníky",
     "seoTitle": "Rozdělení nemovitostí mezi spoluvlastníky",
     "description": "Potřebujete rozdělit domy, byty nebo pozemky mezi spoluvlastníky? Odhad pomůže stanovit jejich hodnotu pro dohodu.",
-    "intro": "Při rozdělování společného majetku nemusí jít pouze o jednu nemovitost. Často se vypořádává například rodinný dům, několik pozemků nebo více bytových jednotek.",
+    "intro": "Při vypořádání společného majetku se často řeší více nemovitostí současně, například rodinný dům, byt, rekreační objekt nebo několik pozemků.\n\nPísemný odhad umožňuje stanovit hodnotu jednotlivých nemovitostí a poskytuje podklad pro jejich rozdělení mezi spoluvlastníky.",
     "category": "settlement",
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Ocenění umožňuje porovnat hodnoty jednotlivých nemovitostí."
-      },
       {
         "type": "heading",
         "text": "Jak může odhad pomoci?"
       },
       {
         "type": "paragraph",
-        "text": "Každou nemovitost posoudím podle jejího charakteru a porovnám se skutečně realizovanými prodeji obdobných nemovitostí."
+        "text": "Každou nemovitost oceňuji samostatně podle jejího charakteru a na základě skutečně realizovaných prodejů srovnatelných nemovitostí."
       },
       {
         "type": "paragraph",
-        "text": "Výsledkem může být přehled ocenění jednotlivých nemovitostí i jejich celková hodnota."
+        "text": "Výsledkem je přehled hodnot jednotlivých nemovitostí i jejich celková hodnota."
       },
       {
         "type": "paragraph",
-        "text": "Takový podklad lze využít například při dohodě, kdy jeden spoluvlastník převezme dům a druhý pozemky nebo finanční vyrovnání."
+        "text": "Odhad lze využít například při dohodě, kdy jeden spoluvlastník převezme rodinný dům a druhý pozemky nebo jinou nemovitost. Pokud se hodnoty převáděného majetku liší, může být součástí dohody také finanční vyrovnání."
+      },
+      {
+        "type": "heading",
+        "text": "Co potřebuji k ocenění?"
       },
       {
         "type": "paragraph",
-        "text": "Před zpracováním je potřeba upřesnit rozsah majetku a účel ocenění."
+        "text": "Pro začátek stačí adresy nemovitostí, případně **čísla listů vlastnictví (LV) a příslušná katastrální území**."
       },
       {
         "type": "paragraph",
-        "text": "U nemovitostí na různých listech vlastnictví pomůže jejich seznam přesně vymezit rozsah ocenění."
+        "text": "Dále si upřesníme, které nemovitosti se mají ocenit a zda odhad slouží pro vzájemnou dohodu nebo jiný účel."
       }
     ],
     "cardDescription": "Jak stanovit hodnotu více nemovitostí pro vzájemnou dohodu."
@@ -459,32 +499,40 @@ export const articles: Article[] = [
     "title": "Za kolik prodat nemovitost?",
     "seoTitle": "Za kolik prodat nemovitost? | Odhad tržní ceny",
     "description": "Chcete prodat dům, byt nebo pozemek? Zjistěte, proč nestačí porovnat realitní inzeráty a jak určit tržní cenu.",
-    "intro": "Pokud plánujete prodej domu, bytu nebo pozemku, jednou z prvních otázek bývá, jakou cenu nastavit.",
+    "intro": "Pokud plánujete prodej rodinného domu, bytu nebo pozemku, jednou z prvních otázek bývá, za jakou cenu nemovitost nabídnout.",
     "category": "sale",
     "blocks": [
       {
+        "type": "heading",
+        "text": "Jak zjistit skutečnou hodnotu nemovitosti?"
+      },
+      {
         "type": "paragraph",
-        "text": "Často se vychází z podobných nemovitostí na realitních portálech. Ty ale ukazují především ceny, za které chtějí majitelé prodávat, nikoliv částky, za které se skutečně prodalo."
+        "text": "Při stanovení ceny se často vychází z podobných nemovitostí nabízených na realitních portálech. Ty však ukazují především požadované ceny prodávajících, nikoliv částky, za které se nemovitosti skutečně prodaly."
+      },
+      {
+        "type": "paragraph",
+        "text": "Při ocenění proto vycházím ze skutečně realizovaných prodejů srovnatelných nemovitostí."
+      },
+      {
+        "type": "paragraph",
+        "text": "U rodinných domů a bytů zohledňuji zejména jejich polohu, velikost, technický stav a vybavení. U pozemků pak především lokalitu, výměru, přístup a možnosti využití."
       },
       {
         "type": "heading",
-        "text": "Jak zjistit reálnou cenu?"
+        "text": "K čemu odhad využít?"
       },
       {
         "type": "paragraph",
-        "text": "Při ocenění vycházím ze skutečně realizovaných prodejů srovnatelných nemovitostí."
+        "text": "Výsledkem je písemný odhad s výpočtem a zdůvodněním stanovené hodnoty."
       },
       {
         "type": "paragraph",
-        "text": "Zohledňuji lokalitu, velikost, technický stav, vybavení a další vlastnosti, které mají na cenu vliv."
+        "text": "Odhad může sloužit jako podklad pro nastavení nabídkové ceny a pomoci předejít situaci, kdy je nemovitost nabízena za nepřiměřeně vysokou nebo naopak zbytečně nízkou cenu."
       },
       {
         "type": "paragraph",
-        "text": "Stanovená hodnota slouží jako podklad pro nastavení nabídkové ceny."
-      },
-      {
-        "type": "paragraph",
-        "text": "Dosažená prodejní cena se může lišit podle aktuální poptávky a průběhu prodeje."
+        "text": "Konečná prodejní cena se může lišit podle aktuální poptávky, způsobu prodeje a výsledného jednání se zájemci."
       }
     ],
     "cardDescription": "Proč při stanovení ceny nestačí realitní inzeráty."
@@ -494,32 +542,36 @@ export const articles: Article[] = [
     "title": "Kupujete nemovitost? Jak poznat, zda není cena příliš vysoká?",
     "seoTitle": "Odhad ceny nemovitosti před koupí",
     "description": "Kupujete dům, byt nebo pozemek? Nezávislý odhad Vám pomůže posoudit, zda nabídková cena odpovídá trhu.",
-    "intro": "Při koupi nemovitosti nemusí být jednoduché posoudit, zda požadovaná cena odpovídá skutečné situaci na trhu.",
+    "intro": "Při koupi rodinného domu, bytu nebo pozemku nemusí být jednoduché posoudit, zda požadovaná cena odpovídá jeho skutečné hodnotě.",
     "category": "sale",
     "blocks": [
       {
+        "type": "heading",
+        "text": "Jak zjistit, zda je cena přiměřená?"
+      },
+      {
         "type": "paragraph",
-        "text": "Realitní inzeráty mohou posloužit pro základní orientaci, ale neukazují, za jaké ceny se obdobné nemovitosti nakonec prodaly."
+        "text": "Realitní inzeráty mohou posloužit pro základní orientaci. Rozdíly mezi nabídkovými a skutečně realizovanými cenami však mohou dosahovat 10 %, v některých případech i 20 % nebo více."
+      },
+      {
+        "type": "paragraph",
+        "text": "Při ocenění proto vycházím především ze skutečně realizovaných prodejů srovnatelných nemovitostí. Ty poskytují spolehlivější podklad pro stanovení hodnoty než samotné nabídkové ceny."
+      },
+      {
+        "type": "paragraph",
+        "text": "U rodinných domů a bytů zohledňuji především polohu, velikost, dispozici, technický stav a vybavení. U pozemků pak lokalitu, výměru, přístup a možnosti využití."
       },
       {
         "type": "heading",
-        "text": "Co ukáže nezávislý odhad?"
+        "text": "K čemu odhad využít?"
       },
       {
         "type": "paragraph",
-        "text": "Porovnám vybranou nemovitost se skutečně realizovanými prodeji obdobných domů, bytů nebo pozemků."
+        "text": "Výsledkem je písemný odhad, který umožňuje porovnat požadovanou kupní cenu s odborně stanovenou hodnotou nemovitosti."
       },
       {
         "type": "paragraph",
-        "text": "Zohledním lokalitu, výměru, technický stav a další vlastnosti ovlivňující cenu."
-      },
-      {
-        "type": "paragraph",
-        "text": "Odhad umožňuje porovnat požadovanou cenu s hodnotou vycházející z uskutečněných prodejů."
-      },
-      {
-        "type": "paragraph",
-        "text": "Odhad nenahrazuje technickou prohlídku stavby ani právní prověrku nemovitosti."
+        "text": "Pokud se tyto částky výrazně liší, může odhad posloužit také jako podklad pro jednání s prodávajícím o ceně."
       }
     ],
     "cardDescription": "Porovnání požadované ceny se skutečnými prodeji."
@@ -529,32 +581,44 @@ export const articles: Article[] = [
     "title": "Jak zjistit současnou hodnotu své nemovitosti?",
     "seoTitle": "Jak zjistit skutečnou hodnotu nemovitosti?",
     "description": "Zajímá Vás aktuální hodnota domu, bytu nebo pozemku? Odhad na základě skutečně realizovaných prodejů.",
-    "intro": "Nemovitost nemusíte hned prodávat, abyste potřebovali znát její hodnotu.",
+    "intro": "Nemovitost nemusíte hned prodávat, abyste potřebovali znát její hodnotu. Odhad může posloužit například při rozdělování majetku mezi děti nebo další členy rodiny ještě za vašeho života, při rodinných dohodách, rozhodování o investicích nebo jednoduše pro vlastní přehled.",
     "category": "personal",
     "blocks": [
-      {
-        "type": "paragraph",
-        "text": "Odhad se hodí při plánování majetku, rodinných dohodách, rozhodování o investicích i pro vlastní přehled."
-      },
       {
         "type": "heading",
         "text": "Online kalkulačka, nebo individuální odhad?"
       },
       {
         "type": "paragraph",
-        "text": "Internetové kalkulačky mohou poskytnout základní orientaci, ale nemusí dostatečně zohlednit konkrétní stav a vlastnosti nemovitosti."
+        "text": "Online kalkulačky obvykle pracují s omezeným množstvím údajů o nemovitosti. Zpravidla zohledňují její polohu, výměru, typ a několik dalších základních informací. Skutečný technický stav, provedené rekonstrukce, vybavení nebo další specifické vlastnosti však nemusí dokázat dostatečně posoudit."
       },
       {
         "type": "paragraph",
-        "text": "Při individuálním ocenění vycházím ze skutečně realizovaných prodejů obdobných nemovitostí a posuzuji rozdíly, které mají na cenu vliv."
+        "text": "Výsledkem proto často bývá poměrně široké cenové rozpětí, které poskytuje pouze orientační představu o hodnotě nemovitosti."
       },
       {
         "type": "paragraph",
-        "text": "Ocenit lze rodinné domy, byty, chaty, pozemky i soubory více nemovitostí."
+        "text": "Některé online kalkulačky navíc slouží především jako rychlé předběžné nacenění, na které následně navazuje nabídka zprostředkování prodeje."
+      },
+      {
+        "type": "heading",
+        "text": "V čem je rozdíl při individuálním ocenění?"
       },
       {
         "type": "paragraph",
-        "text": "Výsledkem je písemný odhad s přehledným výpočtem a stanovenou hodnotou."
+        "text": "Při zpracování odhadu vycházím ze skutečně realizovaných prodejů srovnatelných nemovitostí, nikoliv pouze z cen uvedených v realitních inzerátech."
+      },
+      {
+        "type": "paragraph",
+        "text": "U rodinných domů, bytů, chat a chalup umožňuje osobní prohlídka podrobněji posoudit skutečný technický stav, kvalitu provedení, vybavení a případné rekonstrukce. Díky tomu lze jednotlivé rozdíly mezi oceňovanou nemovitostí a srovnatelnými prodeji přesněji vyhodnotit."
+      },
+      {
+        "type": "paragraph",
+        "text": "U pozemků zohledňuji především jejich polohu, výměru, přístup a možnosti využití podle územně plánovací dokumentace."
+      },
+      {
+        "type": "paragraph",
+        "text": "Výsledkem je **písemný odhad s konkrétní stanovenou hodnotou, přehledným výpočtem a zdůvodněním**, nikoliv pouze automaticky vytvořené cenové rozpětí."
       }
     ],
     "cardDescription": "Kdy se hodí znát hodnotu vlastní nemovitosti."

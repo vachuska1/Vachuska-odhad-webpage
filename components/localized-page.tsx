@@ -1,3 +1,6 @@
+import { articles, articlePath } from '@/lib/articles'
+import { ArticlePage, articleMetadata } from '@/components/article-page'
+import { ArticleIndex } from '@/components/article-index'
 import { jsonLd, breadcrumbSchema } from "@/lib/structured-data"
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -22,6 +25,9 @@ export function resolveLocalizedPath(locale: ForeignLocale, slug: string[] = [])
 }
 export function localizedMetadata(locale: ForeignLocale, slug?: string[]): Metadata {
  const path = resolveLocalizedPath(locale, slug)
+ const article = articles.find(a => articlePath(a) === path)
+ if (article) return articleMetadata(article, locale)
+ if (path === '/clanky') return pageMetadata(translate(locale, 'Články a rady k oceňování nemovitostí'), translate(locale, 'Praktické informace o odhadech nemovitostí pro dědictví, vypořádání majetku, koupi, prodej i vlastní potřebu.'), path, locale)
  const t = (text: string) => translate(locale, text)
  const service = services.find(s => `/${s.slug}` === path)
  const area = areas.find(a => `/${a.slug}` === path)
@@ -53,6 +59,9 @@ export function LocalizedPage({ locale, slug }: { locale: ForeignLocale; slug?: 
  const path = resolveLocalizedPath(locale, slug)
  const t = (text: string) => translate(locale, text)
  const href = (value: string) => localePath(value, locale)
+ if (path === '/clanky') return <ArticleIndex locale={locale} />
+ const article = articles.find(a => articlePath(a) === path)
+ if (article) return <ArticlePage article={article} locale={locale} />
  if (path === '/') return <HomeContent />
  const service = services.find(s => `/${s.slug}` === path)
  if (service) return <ServicePage service={service} />

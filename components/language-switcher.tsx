@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import { ThemeToggle } from '@/components/theme-toggle'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { locales, localePath } from '@/lib/i18n'
@@ -24,6 +25,7 @@ export function LanguageSwitcher({ hero = false }: { hero?: boolean }) {
  }, [open])
  return <nav ref={container} className={`language-switcher${hero ? ' hero-languages' : ''}`} aria-label={labels[locale]} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setOpen(false) }}>
   <button ref={trigger} type="button" className="language-trigger" aria-expanded={open} aria-controls={id} aria-label={`${labels[locale]}: ${names[locale]}`} title={names[locale]} onClick={() => setOpen(value => !value)}><span aria-hidden="true">{flags[locale]}</span></button>
+  <ThemeToggle />
   {open && <div className="language-options" id={id}>{locales.filter(language => language !== locale).map(language => <Link key={language} href={localePath(path, language)} hrefLang={language} lang={language} aria-label={names[language]} title={names[language]} onClick={() => setOpen(false)}><span aria-hidden="true">{flags[language]}</span></Link>)}</div>}
  </nav>
 }

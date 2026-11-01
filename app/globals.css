@@ -287,7 +287,7 @@ html {scroll-padding-top:182px;}
 }
 @media(max-width:767px) {
  .footer-contact .footer-phone,.footer-contact .footer-email {font-size:21.75px;}
- .home-intro .intro-statement {text-align:justify;-webkit-hyphens:none;hyphens:none;}
+ .home-intro .intro-statement {text-align:justify;-webkit-hyphens:none;hyphens:none;text-align-last:start;}
  .landing-hero .service-intro {font-size:24px;}
  .faq-item h2 {font-size:18px;}
 }
@@ -295,15 +295,15 @@ html {scroll-padding-top:182px;}
 
 /* Service introductions follow the homepage typography. */
 .service-hero h1 {margin-inline:auto;text-align:center;}
-.service-hero .service-intro {max-width:960px;margin-inline:auto;text-align:justify;-webkit-hyphens:none;hyphens:none;font-weight:400;color:#263d35;}
+.service-hero .service-intro {max-width:960px;margin-inline:auto;text-align:justify;-webkit-hyphens:none;hyphens:none;text-align-last:start;font-weight:400;color:#263d35;}
 .service-hero .contact-actions {justify-content:center;}
 @media(max-width:767px) {.service-hero .service-intro {line-height:1.45;}}
 
 .area-hero h1 {margin-inline:auto;text-align:center;}
-.area-hero p {max-width:960px;margin-inline:auto;text-align:justify;-webkit-hyphens:none;hyphens:none;}
+.area-hero p {max-width:960px;margin-inline:auto;text-align:justify;-webkit-hyphens:none;hyphens:none;text-align-last:start;}
 .service-area {width:100%;max-width:960px;margin-inline:auto;}
 .service-area h2 {text-align:center;}
-.service-area p {text-align:justify;-webkit-hyphens:none;hyphens:none;}
+.service-area p {text-align:justify;-webkit-hyphens:none;hyphens:none;text-align-last:start;}
 
 /* Compact single-row desktop header; retain the small-screen menu. */
 @media(min-width:1200px) {
@@ -416,3 +416,139 @@ html {scroll-padding-top:182px;}
 @media(hover:hover) {.article-card-link:hover {background:#f6fbfa;border-color:#97c6b5;box-shadow:0 4px 12px rgb(22 70 75 / 8%);}.article-card-link:hover .article-card-more {text-decoration:underline;}}
 @media(max-width:1023px) {.article-cards {grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:639px) {.article-cards {grid-template-columns:1fr;gap:18px;}.article-card-link {padding:22px;}}
+
+/* Header: readable subtitle and room for all five navigation links. */
+.header-inner .brand span {font-size:13px;font-weight:600;line-height:1.35;}
+@media(min-width:1200px) {
+ .header-inner .brand {max-width:250px;white-space:normal;}
+ .header-inner .brand span,html:lang(de) .header-inner .brand span {font-size:13px;}
+ .header-inner .header-navigation nav {gap:12px;font-size:14px;}
+ html:lang(en) .header-inner .header-navigation nav,html:lang(de) .header-inner .header-navigation nav {font-size:14px;}
+}
+@media(min-width:1400px) {
+ .header-inner .header-navigation nav {gap:16px;font-size:17px;}
+}
+@media(max-width:480px) {
+ .header-inner .brand span {font-size:11.5px;overflow-wrap:normal;}
+}
+
+/* Main menu only: retain Manrope and mark the current route. */
+#header-navigation > nav > a {position:relative;font-family:inherit;font-size:17px;line-height:1.4;font-weight:500;color:inherit;text-decoration:none;}
+#header-navigation > nav > a[aria-current="page"] {color:var(--action-bg);font-weight:700;}
+#header-navigation > nav > a[aria-current="page"]::after {content:"";position:absolute;bottom:3px;left:0;width:28px;height:3px;border-radius:2px;background:var(--action-bg);}
+@media(hover:hover) {#header-navigation > nav > a:hover {color:var(--action-bg);}}
+@media(min-width:1200px) {.header-inner #header-navigation > nav {flex-wrap:wrap;justify-content:flex-end;column-gap:16px;row-gap:0;}}
+@media(max-width:1199px) {
+ #header-navigation > nav > a {align-self:center;max-width:100%;text-align:center;}
+ #header-navigation > nav > a[aria-current="page"]::after {left:50%;transform:translateX(-50%);}
+}
+
+/* Compact navigation within the existing inheritance advice section. */
+.inheritance-advice-links {display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+.landing-hero .inheritance-advice-links a {display:inline-flex;align-items:center;justify-content:center;max-width:100%;min-height:40px;padding:8px 14px;border:1px solid #dbe4dc;border-radius:8px;background:#f6f9f8;color:#435d60;font-size:14px;font-weight:500;line-height:1.4;text-decoration:none;text-align:center;}
+.landing-hero .inheritance-advice-links .all-articles-link {background:#eef7f5;border-color:#b9d9d3;color:#007a82;font-weight:600;}
+@media(hover:hover) {.landing-hero .inheritance-advice-links a:hover {background:#e1f4f3;border-color:#97c6b5;color:#007a82;}}
+.landing-hero .inheritance-advice-links a:focus-visible {outline:2px solid #007a82;outline-offset:3px;}
+
+@media(max-width:1199px) {
+ .home-intro p,.home-intro .intro-statement {text-align:justify;-webkit-hyphens:none;hyphens:none;text-align-last:start;}
+}
+
+/* Keep mobile introductions consistent across services, areas and articles. */
+@media(max-width:767px) {
+ .landing-hero > p,.landing-hero .service-intro,.home-intro .intro-statement {font-size:20px;line-height:1.6;text-align:justify;text-align-last:start;-webkit-hyphens:none;hyphens:none;}
+}
+@media(max-width:390px) {
+ .landing-hero > p,.landing-hero .service-intro,.home-intro .intro-statement {font-size:18px;}
+}
+
+/* Long translated headings retain the layout on narrow screens. */
+html:lang(de) main :is(h1,h2,h3) {overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto;}
+
+/* Shared flag and theme control. The flag itself has no coloured tile. */
+.language-switcher,.header-inner nav.language-switcher {flex-direction:column;gap:2px;}
+.language-switcher.hero-languages {background:transparent;padding:0;}
+.language-switcher .language-trigger {height:34px;min-height:34px;background:transparent;border-color:transparent;}
+.language-switcher .language-trigger:hover,.language-switcher .language-trigger[aria-expanded="true"] {background:transparent;}
+.theme-toggle {display:flex;align-items:center;justify-content:center;width:48px;height:30px;padding:3px 0;border-radius:20px;}
+.theme-toggle-track {position:relative;display:flex;align-items:center;justify-content:space-between;width:46px;height:24px;padding:0 5px;border-radius:14px;background:var(--action-bg);color:#fff;}
+.theme-toggle-track > svg {position:relative;z-index:1;}
+.theme-toggle-track > svg:first-child {color:var(--action-bg);}
+html[data-theme="dark"] .theme-toggle-track > svg:first-child {color:#fff;}
+html[data-theme="dark"] .theme-toggle-track > svg:nth-child(2) {color:var(--action-bg);}
+.theme-toggle-thumb {position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgb(0 0 0 / .18);}
+html[data-theme="dark"] .theme-toggle-thumb {left:25px;}
+.theme-toggle:focus-visible {outline:2px solid #007a82;outline-offset:2px;}
+
+/* Dark palette is opt-in via the pre-paint controller; light styles stay intact. */
+html[data-theme="dark"] {
+ --background:215 17% 13%;--foreground:200 16% 93%;--card:214 15% 17%;--card-foreground:200 16% 93%;
+ --popover:214 15% 17%;--popover-foreground:200 16% 93%;--secondary:213 14% 20%;--secondary-foreground:200 16% 93%;
+ --muted:213 14% 20%;--muted-foreground:202 15% 74%;--accent:185 24% 22%;--accent-foreground:184 65% 73%;
+ --border:207 14% 31%;--input:207 14% 39%;--ring:184 65% 64%;
+ --dark-bg:#1c2229;--dark-surface:#252d35;--dark-raised:#2d3740;--dark-border:#485963;
+ --dark-text:#eaf0f2;--dark-muted:#bcc9cf;--dark-accent:#70dce3;
+}
+html[data-theme="dark"] body {background:var(--dark-bg);color:var(--dark-text);}
+html[data-theme="dark"] :focus-visible {outline-color:var(--dark-accent);}
+html[data-theme="dark"] .site-header,
+html[data-theme="dark"] .mobile-contact-bar,
+html[data-theme="dark"] .skip-link {background:var(--dark-bg);border-color:var(--dark-border);color:var(--dark-text);}
+html[data-theme="dark"] .brand span {color:var(--dark-muted);}
+html[data-theme="dark"] .menu-toggle {color:var(--dark-accent);border-color:var(--dark-border);}
+html[data-theme="dark"] #header-navigation > nav > a[aria-current="page"],
+html[data-theme="dark"] #header-navigation > nav > a:hover {color:var(--dark-accent);}
+html[data-theme="dark"] #header-navigation > nav > a[aria-current="page"]::after {background:var(--dark-accent);}
+html[data-theme="dark"] .home-hero {background:linear-gradient(to bottom,transparent 60%,var(--dark-bg) 100%),radial-gradient(ellipse at 50% 42%,#4b5660 0%,#37424c 38%,var(--dark-bg) 76%);}
+html[data-theme="dark"] .portrait {mix-blend-mode:normal;}
+html[data-theme="dark"] .hero-title {background:transparent;}
+html[data-theme="dark"] .discover-link {background:transparent;color:var(--dark-text);}
+html[data-theme="dark"] .home-intro p,
+html[data-theme="dark"] .home-intro .intro-statement,
+html[data-theme="dark"] .service-hero .service-intro {color:var(--dark-text);}
+html[data-theme="dark"] :is(.landing-hero p,.detail-grid p,.local-services p,.article-body p,.article-body ul,.policy-page p,.faq-answer p,.breadcrumbs,.eyebrow) {color:var(--dark-muted);}
+html[data-theme="dark"] :is(.landing-hero,.faq-item,.footer-bottom,.area-list a,hr) {border-color:var(--dark-border);}
+html[data-theme="dark"] :is(.back-link,.text-link,.article-body a,.policy-page a,.policy-page button,.local-services a,.detail-grid a,.landing-hero p a,.breadcrumbs a,.area-list a:hover,.faq-item h2 svg) {color:var(--dark-accent);}
+html[data-theme="dark"] .article-card-link {background:var(--dark-surface);border-color:var(--dark-border);box-shadow:0 2px 8px rgb(0 0 0 / .12);}
+html[data-theme="dark"] .article-card-link :is(h2,h3) {color:var(--dark-text);}
+html[data-theme="dark"] .article-card-link p {color:var(--dark-muted);}
+html[data-theme="dark"] :is(.article-card-icon,.article-card-more) {color:var(--dark-accent);}
+html[data-theme="dark"] .article-card-icon {background:#203e43;}
+html[data-theme="dark"] .article-card-link:hover {background:var(--dark-raised);border-color:#63969b;}
+html[data-theme="dark"] .landing-hero .inheritance-advice-links a {background:var(--dark-surface);border-color:var(--dark-border);color:var(--dark-muted);}
+html[data-theme="dark"] .landing-hero .inheritance-advice-links .all-articles-link,
+html[data-theme="dark"] .landing-hero .inheritance-advice-links a:hover {background:#203e43;border-color:#52848b;color:var(--dark-accent);}
+html[data-theme="dark"] .cta.secondary,
+html[data-theme="dark"] .form-add-button,
+html[data-theme="dark"] .mobile-contact-bar a:not(:first-child) {background:var(--dark-surface);color:var(--dark-accent);border-color:#64848c;}
+html[data-theme="dark"] .cta.secondary:hover,
+html[data-theme="dark"] .form-add-button:hover {background:var(--dark-raised);}
+html[data-theme="dark"] .enquiry-section {background:#203238;border-color:#52727c;}
+html[data-theme="dark"] .enquiry-section :is(.section-heading h2,.section-heading p,legend,label,.required-note,.field-help,.consent a,.property-toggle small,.remove-property) {color:var(--dark-text);}
+html[data-theme="dark"] .enquiry-section .consent {color:var(--dark-muted);}
+html[data-theme="dark"] .enquiry-section :is(.property-card,.attachment-list li) {background:var(--dark-surface);border-color:var(--dark-border);color:var(--dark-text);}
+html[data-theme="dark"] .enquiry-section .property-card-header {background:#2c4048;}
+html[data-theme="dark"] .enquiry-section :is(.property-fields,.attachment-fields) {border-color:#526b75;}
+html[data-theme="dark"] .enquiry-section .form-grid :is(input,textarea,select) {background:#19242b;color:var(--dark-text);border-color:#738a95;color-scheme:dark;}
+html[data-theme="dark"] .enquiry-section .form-grid :is(input,textarea)::placeholder {color:#a7b9c3;}
+html[data-theme="dark"] .enquiry-section .attachment-list small {color:var(--dark-muted);}
+html[data-theme="dark"] .enquiry-section .remove-property:hover {background:#3d3034;}
+html[data-theme="dark"] .enquiry-section .submit-button {background:var(--action-bg);border-color:#78bfc5;}
+html[data-theme="dark"] .enquiry-section .submit-button:hover {background:#00636b;}
+html[data-theme="dark"] .enquiry-section .form-error {background:#4b2c30;color:#ffd0c8;}
+html[data-theme="dark"] .enquiry-section .form-success {background:#214538;color:#c4f4db;}
+html[data-theme="dark"] .site-footer {background:#202a31;color:var(--dark-muted);border-color:var(--dark-border);}
+html[data-theme="dark"] :is(.footer-map h2,.footer-contact>strong,.footer-services a) {color:var(--dark-text);}
+html[data-theme="dark"] :is(.footer-contact .footer-phone,.footer-contact .footer-email,.footer-social>a,.footer-services a:hover,.footer-bottom a:hover,.footer-bottom button:hover) {color:var(--dark-accent);}
+html[data-theme="dark"] .footer-map-frame {background:var(--dark-surface);border-color:var(--dark-border);}
+html[data-theme="dark"] :is(.quick-contact-panel,.cookie-banner,.cookie-dialog,.language-options) {background:var(--dark-surface);border-color:var(--dark-border);color:var(--dark-text);box-shadow:0 8px 30px rgb(0 0 0 / .25);}
+html[data-theme="dark"] :is(.quick-contact-panel a,.cookie-banner a,.cookie-dialog a,.language-options a,.language-code) {color:var(--dark-accent);}
+html[data-theme="dark"] :is(.quick-contact-panel small,.cookie-banner p,.cookie-dialog p,.cookie-choice small) {color:var(--dark-muted);}
+html[data-theme="dark"] :is(.cookie-choice,.footer-bottom) {border-color:var(--dark-border);}
+html[data-theme="dark"] .cookie-actions button {background:#203e43;border-color:#64848c;color:var(--dark-text);}
+html[data-theme="dark"] .cookie-actions button:hover,
+html[data-theme="dark"] .quick-contact-panel a:hover,
+html[data-theme="dark"] .language-options a:hover,
+html[data-theme="dark"] .header-inner nav.language-switcher .language-options a:hover {background:var(--dark-raised);}
+html[data-theme="dark"] .language-options a:focus-visible,
+html[data-theme="dark"] .header-inner nav.language-switcher .language-options a:focus-visible {background:var(--dark-raised);outline-color:var(--dark-accent);}

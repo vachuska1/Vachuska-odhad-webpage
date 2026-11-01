@@ -1,3 +1,4 @@
+import { themeScript } from "@/lib/theme"
 import { Suspense } from "react"
 import { Analytics } from "@/components/analytics"
 import { LocaleProvider, SkipLink } from "@/components/locale-provider"
@@ -14,5 +15,5 @@ export const viewport: Viewport = {width:"device-width",initialScale:1,themeColo
 export const metadata: Metadata = {metadataBase:new URL(siteUrl),title:{default:"Odhady nemovitostí | Ing. Aleš Vachuška",template:"%s | Ing. Aleš Vachuška"},description:"Odhady a oceňování nemovitostí pro dědictví, vypořádání majetku, prodej i koupi.",verification:{google:"f1e74bf4ed807a2b"},robots:{index:true,follow:true},icons:{icon:[{url:"/favicon.ico",sizes:"any"},{url:"/favicon-32x32.png",sizes:"32x32",type:"image/png"},{url:"/android-chrome-192x192.png",sizes:"192x192",type:"image/png"}],shortcut:"/favicon.ico",apple:"/apple-touch-icon.png"},manifest:"/site.webmanifest"}
 export function SiteLayout({children, locale}: {children:React.ReactNode; locale:Locale}) {
  const business = businessGraph(locale)
- return <html lang={locale}><head><link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /><link rel="preload" href="/fonts/manrope-latin-ext.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></head><body><LocaleProvider locale={locale}><SkipLink/><CookieConsentProvider><Suspense fallback={null}><Analytics/></Suspense><SiteHeader/>{children}<SiteFooter/><FloatingContactButton/></CookieConsentProvider></LocaleProvider><script type="application/ld+json" dangerouslySetInnerHTML={{__html:jsonLd(business)}}/></body></html>
+ return <html lang={locale} suppressHydrationWarning><head><script dangerouslySetInnerHTML={{__html:themeScript}} /><link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /><link rel="preload" href="/fonts/manrope-latin-ext.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></head><body><LocaleProvider locale={locale}><SkipLink/><CookieConsentProvider><Suspense fallback={null}><Analytics/></Suspense><SiteHeader/>{children}<SiteFooter/><FloatingContactButton/></CookieConsentProvider></LocaleProvider><script type="application/ld+json" dangerouslySetInnerHTML={{__html:jsonLd(business)}}/></body></html>
 }
