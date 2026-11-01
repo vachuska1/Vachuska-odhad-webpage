@@ -11,7 +11,7 @@ async function run() {
  assert.equal(sitemapResponse.status, 200)
  const sitemap = await sitemapResponse.text()
  const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1])
- assert.equal(urls.length, 99)
+ assert.equal(urls.length, 113)
  assert.equal(new Set(urls).size, urls.length)
  const paths = new Set(urls.map(url => new URL(url).pathname))
  const titles = new Set(), descriptions = new Set(), assets = new Set()
@@ -32,7 +32,7 @@ async function run() {
    assert.ok(!attr(meta(html, 'robots') || '', 'content')?.includes('noindex'), path)
    const links = tags(html, 'link')
    assert.equal(new URL(attr(links.find(tag => attr(tag, 'rel') === 'canonical') || '', 'href')).href, new URL(url).href, `Canonical: ${path}`)
-   for (const alternate of ['cs', 'en', 'de', 'x-default']) {
+   for (const alternate of (path === '/clanky' || path.startsWith('/clanky/')) ? [] : ['cs', 'en', 'de', 'x-default']) {
     const href = attr(links.find(tag => attr(tag, 'hrefLang') === alternate || attr(tag, 'hreflang') === alternate) || '', 'href')
     assert.ok(href?.startsWith(canonicalOrigin), `Hreflang: ${path} ${alternate}`)
     assert.ok(urls.some(url => new URL(url).href === new URL(href).href), `Hreflang destination missing: ${href}`)
@@ -44,7 +44,13 @@ async function run() {
    const graphs = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m => JSON.parse(m[1]))
    const nodes = graphs.flatMap(g => g['@graph'] || [g])
    for (const node of nodes) {
-    assert.ok(['LocalBusiness', 'WebSite', 'Service', 'BreadcrumbList', 'FAQPage'].includes(node['@type']), `Unexpected schema: ${path}`)
+    assert.ok(['LocalBusiness', 'WebSite', 'Service', 'BreadcrumbList', 'FAQPage', 'Article'].includes(node['@type']), `Unexpected schema: ${path}`)
+    if (node['@type'] === 'Article') {
+     assert.ok(node.headline && node.description && node.author?.name === 'Ing. Aleš Vachuška')
+     assert.equal(node.datePublished, '2026-11-01')
+     assert.equal(new URL(node.mainEntityOfPage).pathname, path)
+     assert.ok(node.image)
+    }
     if (node['@type'] === 'Service') {
      assert.ok(node.name && node.description && node.areaServed)
      assert.equal(new URL(node.url).pathname, path)

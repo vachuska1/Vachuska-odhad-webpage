@@ -22,6 +22,7 @@ export function ServicePage({ service: s }: { service: typeof services[number] }
       <div><h2>{t("Co oceňuji")}</h2><p>{t("Byty, rodinné domy, pozemky, rekreační i zemědělské objekty aj.")}</p></div>
       <div className="service-area"><h2>{t("Působnost")}</h2><p>{t(s.area)}</p><Link href={href("/pusobnost")}>{t("Oblasti působnosti →")}</Link></div>
     </section>
+    {inheritance && locale === "cs" && <section className="landing-hero"><h2>Rady k dědickému řízení</h2><p><Link href="/clanky/odhad-nemovitosti-pro-dedicke-rizeni">Jak postupovat</Link> · <Link href="/clanky/podklady-pro-odhad-nemovitosti-dedictvi">Potřebné podklady</Link> · <Link href="/clanky/kolik-stoji-odhad-pro-dedicke-rizeni">Cena odhadu</Link> · <Link href="/clanky">Všechny články</Link></p></section>}
     <EnquirySection service={s.title} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(serviceSchema(s, locale)) }} />
   </main>

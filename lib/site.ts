@@ -22,3 +22,5 @@ export const services = [
 ]
 
 export const orderedServices = [services[0], services[2], services[1]]
+
+export const contactPhone = { href: "tel:+420774104020", label: "774 104 020" }
