@@ -10,11 +10,11 @@ function cardDescription(description: string) {
  const shortened = sentence.slice(0, 119)
  return `${shortened.slice(0, shortened.lastIndexOf(' ')).trimEnd()}…`
 }
-export function ArticleCards({ items, headingLevel = 2, locale = "cs" }: { items: Article[]; headingLevel?: 2 | 3; locale?: Locale }) {
+export function ArticleCards({ items, headingLevel = 2, locale = "cs", startBlue = false }: { items: Article[]; headingLevel?: 2 | 3; locale?: Locale; startBlue?: boolean }) {
  const Heading = headingLevel === 3 ? 'h3' : 'h2'
- return <div className="article-cards">{items.map(article => {
+ return <div className="article-cards">{items.map((article, index) => {
   const Icon = categoryIcons[article.category]
-  return <article className={`article-card${article.category === 'personal' ? ' article-card-blue' : ''}`} key={article.slug}><Link className="article-card-link" href={localePath(articlePath(article), locale)}>
+  return <article className={`article-card${article.category === 'personal' || index % 2 === (startBlue ? 0 : 1) ? ' article-card-blue' : ''}`} key={article.slug}><Link className="article-card-link" href={localePath(articlePath(article), locale)}>
    <span className="article-card-icon"><Icon size={24} strokeWidth={1.7} aria-hidden="true" /></span>
    <Heading>{article.title}</Heading>
    <p>{cardDescription(article.cardDescription)}</p>

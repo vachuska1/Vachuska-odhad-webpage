@@ -574,9 +574,9 @@ html[data-theme="dark"] .article-index > .landing-hero h1,
 html[data-theme="dark"] .faq-page > h1 {color:var(--dark-accent);}
 
 /* Alternate only article previews, keeping the existing light/dark base cards. */
-.article-cards > .article-card:is(:nth-child(even),.article-card-blue) .article-card-link {background:var(--action-bg);border-color:var(--action-bg);}
-.article-cards > .article-card:is(:nth-child(even),.article-card-blue) .article-card-link :is(h2,h3,p,.article-card-more) {color:#fff;}
-.article-cards > .article-card:is(:nth-child(even),.article-card-blue) .article-card-icon {background:rgb(255 255 255 / .15);color:#fff;}
+.article-cards > .article-card.article-card-blue .article-card-link {background:var(--action-bg);border-color:var(--action-bg);}
+.article-cards > .article-card.article-card-blue .article-card-link :is(h2,h3,p,.article-card-more) {color:#fff;}
+.article-cards > .article-card.article-card-blue .article-card-icon {background:rgb(255 255 255 / .15);color:#fff;}
 @media(hover:hover) {
- .article-cards > .article-card:is(:nth-child(even),.article-card-blue) .article-card-link:hover {background:#00636b;border-color:#00636b;}
+ .article-cards > .article-card.article-card-blue .article-card-link:hover {background:#00636b;border-color:#00636b;}
 }
