@@ -15,28 +15,45 @@ function boot(timestamp, storage=new Map(), blocked=false) {
  vm.runInNewContext(context.exports.themeScript,context)
  return {api:context.window.__vachuskaTheme,root,storage,timers,handlers,context,advance:timestamp=>{now=timestamp;context.window.__vachuskaTheme.refresh()}}
 }
-test('local clock sets light at 08:00 and dark at 20:00 before any body exists',()=>{
- for(const [hour,minute,expected] of [[0,0,'dark'],[7,59,'dark'],[8,0,'light'],[19,59,'light'],[20,0,'dark'],[23,59,'dark']]){
-  const x=boot(localTime(1,hour,minute));assert.equal(x.root.dataset.theme,expected);assert.equal(x.root.style.colorScheme,expected);assert.equal(x.timers.size,1)
+test('first visit always uses light, including at night',()=>{
+ for(const hour of [0,7,8,19,20,23]){
+  const x=boot(localTime(1,hour));assert.equal(x.root.dataset.theme,'light');assert.equal(x.root.style.colorScheme,'light');assert.equal(x.timers.size,0)
  }
 })
-test('automatic boundary timer crosses both periods and the following morning',()=>{
- const x=boot(localTime(1,7,59,59));assert.equal([...x.timers.values()][0].delay,1000)
- x.advance(localTime(1,8));assert.equal(x.api.getTheme(),'light');assert.equal([...x.timers.values()][0].delay,12*60*60*1000)
- x.advance(localTime(1,20));assert.equal(x.api.getTheme(),'dark');assert.equal([...x.timers.values()][0].delay,12*60*60*1000)
- x.advance(localTime(2,8));assert.equal(x.api.getTheme(),'light')
-})
-test('manual choice survives reload/navigation and expires at the next local boundary',()=>{
+test('manual choice survives reload and later visits without expiry',()=>{
  const x=boot(localTime(1,10));x.api.setTheme('dark');assert.equal(x.api.getTheme(),'dark')
- const reloaded=boot(localTime(1,11),x.storage);assert.equal(reloaded.api.getTheme(),'dark');assert.equal(JSON.parse(x.storage.get('odhady-theme-v1')).expiresAt,localTime(1,20))
- reloaded.advance(localTime(1,20));assert.equal(reloaded.api.getTheme(),'dark');assert.equal(x.storage.has('odhady-theme-v1'),false)
- reloaded.advance(localTime(2,8));assert.equal(reloaded.api.getTheme(),'light')
- const night=boot(localTime(2,22));night.api.setTheme('light');assert.equal(JSON.parse(night.storage.get('odhady-theme-v1')).expiresAt,localTime(3,8))
+ const reloaded=boot(localTime(8,11),x.storage);assert.equal(reloaded.api.getTheme(),'dark')
+ reloaded.advance(localTime(9,8));assert.equal(reloaded.api.getTheme(),'dark')
+ reloaded.api.setTheme('light');assert.equal(boot(localTime(10,23),x.storage).api.getTheme(),'light')
 })
-test('sleep recovery, corrupt storage and disabled persistence keep theme usable',()=>{
- const blocked=boot(localTime(1,11),new Map(),true);blocked.api.setTheme('dark');assert.equal(blocked.api.getTheme(),'dark');blocked.advance(localTime(1,20));assert.equal(blocked.api.getTheme(),'dark');blocked.advance(localTime(2,9));assert.equal(blocked.api.getTheme(),'light')
- const corrupt=boot(localTime(1,22),new Map([['odhady-theme-v1','invalid JSON']]));assert.equal(corrupt.api.getTheme(),'dark')
- const expired=boot(localTime(1,22),new Map([['odhady-theme-v1',JSON.stringify({theme:'light',expiresAt:localTime(1,20)})]]));assert.equal(expired.api.getTheme(),'dark')
+test('blocked or corrupt storage keeps theme usable and sync works across tabs',()=>{
+ const blocked=boot(localTime(1,11),new Map(),true);blocked.api.setTheme('dark');blocked.advance(localTime(2,9));assert.equal(blocked.api.getTheme(),'dark')
+ for(const value of ['invalid JSON','null','{}','{"theme":"invalid"}']){
+  assert.equal(boot(localTime(1,22),new Map([['odhady-theme-v1',value]])).api.getTheme(),'light')
+ }
  const x=boot(localTime(1,10));x.api.setTheme('dark');x.storage.delete('odhady-theme-v1');x.handlers.storage({key:'odhady-theme-v1'});assert.equal(x.api.getTheme(),'light')
- vm.runInNewContext(x.context.exports.themeScript,x.context);assert.equal(x.timers.size,1)
+ vm.runInNewContext(x.context.exports.themeScript,x.context);assert.equal(x.api.getTheme(),'light')
+})
+
+test('toggle recovers when the head initializer is missing and handles repeated clicks',()=>{
+ const x=boot(localTime(1,22))
+ delete x.context.window.__vachuskaTheme
+ const themeModule=x.context.exports
+ const imports={
+  react:{useSyncExternalStore:(subscribe,snapshot)=>{subscribe(()=>{});return snapshot()}},
+  'react/jsx-runtime':{jsx:(type,props)=>({type,props}),jsxs:(type,props)=>({type,props})},
+  'lucide-react':{Moon:()=>null,Sun:()=>null},
+  '@/components/locale-provider':{useLocale:()=>({locale:'cs'})},
+  '@/lib/theme':themeModule,
+ }
+ x.context.require=name=>imports[name]
+ x.context.exports={}
+ const component=ts.transpileModule(fs.readFileSync('components/theme-toggle.tsx','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020,jsx:ts.JsxEmit.ReactJSX}}).outputText
+ vm.runInNewContext(component,x.context)
+ const toggle=x.context.exports.ThemeToggle()
+ assert.equal(x.root.dataset.theme,'light')
+ // Simulate losing the initializer during a development refresh as well.
+ delete x.context.window.__vachuskaTheme
+ for(const theme of ['dark','light','dark']){toggle.props.onClick();assert.equal(x.root.dataset.theme,theme)}
+ assert.equal(boot(localTime(8,9),x.storage).api.getTheme(),'dark')
 })

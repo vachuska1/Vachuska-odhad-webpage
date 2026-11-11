@@ -552,3 +552,13 @@ html[data-theme="dark"] .language-options a:hover,
 html[data-theme="dark"] .header-inner nav.language-switcher .language-options a:hover {background:var(--dark-raised);}
 html[data-theme="dark"] .language-options a:focus-visible,
 html[data-theme="dark"] .header-inner nav.language-switcher .language-options a:focus-visible {background:var(--dark-raised);outline-color:var(--dark-accent);}
+
+/* Collapsible biography; the original content remains in the HTML. */
+.intro-details {margin-top:24px;}
+.intro-details > summary {padding-bottom:16px;border-bottom:1px solid #dbe4dc;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;cursor:pointer;list-style:none;font-size:20px;font-weight:600;}
+.intro-details > summary::-webkit-details-marker {display:none;}
+.intro-details-icon::before {content:"+";}
+.intro-details[open] > summary .intro-details-icon::before {content:"−";}
+.intro-details-icon {flex-shrink:0;font-size:26px;line-height:1;}
+
+html[data-theme="dark"] .intro-details > summary {border-color:var(--dark-border);}
