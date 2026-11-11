@@ -11,7 +11,7 @@ import { EnquirySection } from "@/components/enquiry-section"
 export function ServicePage({ service: s }: { service: typeof services[number] }) {
   const { t, href, locale } = useLocale()
   const inheritance = s.slug === "odhad-pro-dedicke-rizeni"
-  return <main id="main-content" className="shell">
+  return <main id="main-content" className="shell service-page">
     <Link className="back-link" href={href("/")}>{t("← ZPĚT")}</Link>
     <section className="landing-hero service-hero">
       <h1>{t(s.title)}</h1>

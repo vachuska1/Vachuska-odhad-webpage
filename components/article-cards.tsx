@@ -14,7 +14,7 @@ export function ArticleCards({ items, headingLevel = 2, locale = "cs" }: { items
  const Heading = headingLevel === 3 ? 'h3' : 'h2'
  return <div className="article-cards">{items.map(article => {
   const Icon = categoryIcons[article.category]
-  return <article className="article-card" key={article.slug}><Link className="article-card-link" href={localePath(articlePath(article), locale)}>
+  return <article className={`article-card${article.category === 'personal' ? ' article-card-blue' : ''}`} key={article.slug}><Link className="article-card-link" href={localePath(articlePath(article), locale)}>
    <span className="article-card-icon"><Icon size={24} strokeWidth={1.7} aria-hidden="true" /></span>
    <Heading>{article.title}</Heading>
    <p>{cardDescription(article.cardDescription)}</p>

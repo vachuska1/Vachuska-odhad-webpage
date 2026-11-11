@@ -562,3 +562,21 @@ html[data-theme="dark"] .header-inner nav.language-switcher .language-options a:
 .intro-details-icon {flex-shrink:0;font-size:26px;line-height:1;}
 
 html[data-theme="dark"] .intro-details > summary {border-color:var(--dark-border);}
+
+/* Match service page headings to the existing brand accent. */
+.service-page > .landing-hero :is(h1,h2),
+.service-page > .detail-grid h2 {color:var(--action-bg);}
+html[data-theme="dark"] .service-page > .landing-hero :is(h1,h2),
+html[data-theme="dark"] .service-page > .detail-grid h2 {color:var(--dark-accent);}
+
+.article-index > .landing-hero h1,.faq-page > h1 {color:var(--action-bg);}
+html[data-theme="dark"] .article-index > .landing-hero h1,
+html[data-theme="dark"] .faq-page > h1 {color:var(--dark-accent);}
+
+/* Alternate only article previews, keeping the existing light/dark base cards. */
+.article-cards > .article-card:is(:nth-child(even),.article-card-blue) .article-card-link {background:var(--action-bg);border-color:var(--action-bg);}
+.article-cards > .article-card:is(:nth-child(even),.article-card-blue) .article-card-link :is(h2,h3,p,.article-card-more) {color:#fff;}
+.article-cards > .article-card:is(:nth-child(even),.article-card-blue) .article-card-icon {background:rgb(255 255 255 / .15);color:#fff;}
+@media(hover:hover) {
+ .article-cards > .article-card:is(:nth-child(even),.article-card-blue) .article-card-link:hover {background:#00636b;border-color:#00636b;}
+}
