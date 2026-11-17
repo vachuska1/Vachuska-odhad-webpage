@@ -1,3 +1,5 @@
+import type { Locale } from '@/lib/i18n'
+
 export const articlesPublishedAt = "2026-11-01"
 export const articleCategories = [
  { id: 'inheritance', title: 'Dědické řízení', servicePath: '/odhad-pro-dedicke-rizeni', serviceLabel: 'Ocenění pro dědické řízení', enquiryType: 'Dědictví' },
@@ -7,8 +9,14 @@ export const articleCategories = [
  { id: 'tax', title: 'Daně a nemovitosti', servicePath: '/odhad-pro-vlastni-potrebu', serviceLabel: 'Ocenění pro vlastní potřebu', enquiryType: 'Pro vlastní potřebu' },
 ] as const
 export type ArticleCategory = typeof articleCategories[number]['id']
-export type ArticleBlock = { type: 'heading' | 'subheading' | 'paragraph'; text: string } | { type: 'list'; items: string[] }
-export type Article = { slug: string; title: string; seoTitle: string; description: string; cardDescription: string; intro: string; category: ArticleCategory; publishedAt?: string; blocks: ArticleBlock[] }
+export type ArticleBlock = { type: 'heading' | 'subheading' | 'paragraph'; text: string; id?: string } | { type: 'list'; items: string[] }
+type ArticleImage = {
+ src: `/${string}.webp`
+ width: number
+ height: number
+ alt: Record<Locale, string>
+}
+export type Article = { slug: string; title: string; seoTitle: string; description: string; cardDescription: string; intro: string; category: ArticleCategory; publishedAt?: string; image?: ArticleImage; bodyImage?: ArticleImage & { beforeBlock: string }; blocks: ArticleBlock[] }
 export const articles: Article[] = [
   {
     "slug": "odhad-nemovitosti-pro-dedicke-rizeni",
@@ -646,6 +654,27 @@ export const articles: Article[] = [
     "intro": "Darování nemovitosti v rodině je běžným způsobem převodu majetku. Pokud se však obdarovaný rozhodne nemovitost následně prodat, může mu vzniknout povinnost zaplatit daň z příjmů. Záleží především na době vlastnictví, způsobu využívání nemovitosti a účelu, na který budou získané peníze použity.\n\nV některých případech je příjem z prodeje osvobozen. Pokud podmínky osvobození splněny nejsou, může být důležité nechat nemovitost ocenit zpětně ke dni jejího darování.",
     "category": "tax",
     publishedAt: "2026-11-17",
+    image: {
+      src: "/darovana-nemovitost-klice-a-dokumenty.webp",
+      width: 1600,
+      height: 900,
+      alt: {
+        cs: "Klíče s přívěskem ve tvaru domu položené na dokumentech",
+        en: "Keys with a house-shaped keyring resting on documents",
+        de: "Schlüssel mit hausförmigem Anhänger auf Dokumenten",
+      },
+    },
+    bodyImage: {
+      src: "/darovana-nemovitost-podpis-smlouvy.webp",
+      width: 1280,
+      height: 720,
+      beforeBlock: "calculation-example",
+      alt: {
+        cs: "Ruka drží klíče od domu vedle podepisovaného dokumentu",
+        en: "A hand holds house keys beside a document being signed",
+        de: "Eine Hand hält Hausschlüssel neben einem Dokument, das gerade unterschrieben wird",
+      },
+    },
     "blocks": [
       {
         "type": "heading",
@@ -801,6 +830,7 @@ export const articles: Article[] = [
       },
       {
         "type": "heading",
+        id: "calculation-example",
         "text": "Praktický příklad výpočtu"
       },
       {

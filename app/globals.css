@@ -400,6 +400,9 @@ html {scroll-padding-top:182px;}
 
 @media(max-width:1199px) {.detail-grid h2 {text-align:center;}}
 
+.article-image {display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:5px;}
+.article-image-hero {max-width:800px;margin-bottom:22px;}
+.article-image-inline {margin-top:28px;}
 .article-body {max-width:780px;margin-bottom:36px;}
 .article-body h2,.related-heading {font-size:24px;margin:28px 0 12px;font-weight:600;}
 .article-body h3 {font-size:18px;margin:20px 0 10px;font-weight:600;}

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, FileText, Scale, House, ChartNoAxesCombined } from 'lucide-react'
 import { localePath, translate, type Locale } from '@/lib/i18n'
@@ -15,7 +16,14 @@ export function ArticleCards({ items, headingLevel = 2, locale = "cs", startBlue
  return <div className="article-cards">{items.map((article, index) => {
   const Icon = categoryIcons[article.category]
   return <article className={`article-card${article.category === 'personal' || index % 2 === (startBlue ? 0 : 1) ? ' article-card-blue' : ''}`} key={article.slug}><Link className="article-card-link" href={localePath(articlePath(article), locale)}>
-   <span className="article-card-icon"><Icon size={24} strokeWidth={1.7} aria-hidden="true" /></span>
+   {article.image ? <Image
+    className="article-image"
+    src={article.image.src}
+    alt={article.image.alt[locale]}
+    width={article.image.width}
+    height={article.image.height}
+    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 340px"
+   /> : <span className="article-card-icon"><Icon size={24} strokeWidth={1.7} aria-hidden="true" /></span>}
    <Heading>{article.title}</Heading>
    <p>{cardDescription(article.cardDescription)}</p>
    <span className="article-card-more">{translate(locale, "Přečíst článek")} <ArrowRight size={17} aria-hidden="true" /></span>
