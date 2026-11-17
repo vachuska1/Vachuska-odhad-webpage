@@ -26,6 +26,16 @@ export const articles: Article[] = [
     "intro": "Pokud je součástí dědictví nemovitost (rodinný dům, chata či chalupa, byt nebo pozemky), bude notář požadovat doložení její obvyklé ceny. K tomu zpravidla slouží písemný odhad nemovitosti.",
     "category": "inheritance",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/01_dedictvi_postup.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Rodinný dům, listina a lilie",
+        "en": "House, document and lilies",
+        "de": "Einfamilienhaus, Urkunde und Lilien"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
@@ -83,6 +93,16 @@ export const articles: Article[] = [
     "intro": "Cena odhadu se stanovuje individuálně podle druhu nemovitosti a rozsahu ocenění. Jinak náročné je ocenění běžného bytu a jinak rodinného domu s více pozemky nebo souboru zemědělských nemovitostí.",
     "category": "inheritance",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/02_dedictvi_cena.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Kalkulačka a mince před rodinným domem",
+        "en": "Calculator and coins in front of a house",
+        "de": "Taschenrechner und Münzen vor einem Einfamilienhaus"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
@@ -115,6 +135,16 @@ export const articles: Article[] = [
     "intro": "Ano, v řadě případů lze odhad pro dědické řízení zpracovat i bez osobní prohlídky nemovitosti. Záleží především na jejím charakteru a dostupných podkladech.",
     "category": "inheritance",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/03_dedictvi_bez_prohlidky.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Dům na obrazovce notebooku vedle lupy",
+        "en": "House on a laptop screen beside a magnifying glass",
+        "de": "Haus auf einem Laptopbildschirm neben einer Lupe"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
@@ -179,6 +209,16 @@ export const articles: Article[] = [
     "intro": "Pro první domluvu stačí základní údaje o nemovitosti. Ostatní podklady si případně upřesníme.",
     "category": "inheritance",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/04_dedictvi_podklady.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Složky s dokumenty a kontrolní seznam",
+        "en": "Document folders and a checklist",
+        "de": "Dokumentenmappen und eine Checkliste"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
@@ -213,6 +253,16 @@ export const articles: Article[] = [
     "intro": "**Pro běžné dědické řízení zpravidla není nutné nechávat zpracovat znalecký posudek.** K doložení obvyklé ceny nemovitosti může postačovat písemný odhad od odhadce nemovitostí.",
     "category": "inheritance",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/05_dedictvi_znalecky_posudek.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Váhy a stoh právnických knih",
+        "en": "Scales and a stack of law books",
+        "de": "Waage und ein Stapel juristischer Bücher"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
@@ -253,6 +303,16 @@ export const articles: Article[] = [
     "intro": "Součástí dědictví mohou být také pozemky, například orná půda, louky, zahrady, stavební nebo lesní pozemky. Často se jedná o větší počet parcel, případně pouze o spoluvlastnické podíly.",
     "category": "inheritance",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/06_dedictvi_pozemky.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Pole a louky se stromy v krajině",
+        "en": "Fields and meadows dotted with trees",
+        "de": "Felder und Wiesen mit Bäumen"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
@@ -293,6 +353,16 @@ export const articles: Article[] = [
     "intro": "Při dědickém řízení se nemovitosti oceňují ke dni úmrtí zůstavitele. Toto datum je rozhodující pro stanovení jejich obvyklé ceny, bez ohledu na to, kdy se samotný odhad zpracovává.",
     "category": "inheritance",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/07_dedictvi_datum_umrti.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Kalendář s vyznačeným datem vedle domu",
+        "en": "Calendar with a marked date beside a house",
+        "de": "Kalender mit markiertem Datum neben einem Haus"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
@@ -329,6 +399,16 @@ export const articles: Article[] = [
     "intro": "Pokud je součástí společného jmění (SJ, dříve v katastru označovaného jako SJM) rodinný dům, byt, pozemky nebo jiné nemovitosti, je při rozvodu důležité stanovit jejich hodnotu.\n\nPísemný odhad může sloužit jako podklad pro dohodu o rozdělení majetku, vyplacení jednoho z manželů nebo další jednání o majetkovém vypořádání.",
     "category": "settlement",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/08_rozvod_sjm.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Dva snubní prsteny před rozděleným domem",
+        "en": "Two wedding rings in front of a split house",
+        "de": "Zwei Eheringe vor einem geteilten Haus"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
@@ -405,6 +485,16 @@ export const articles: Article[] = [
     "intro": "Pokud nemovitost vlastní více osob a jeden ze spoluvlastníků chce ostatní vyplatit, je důležité nejprve stanovit její hodnotu.\n\nTypicky se jedná o rodinný dům, byt, rekreační nemovitost nebo pozemky ve spoluvlastnictví sourozenců či dalších příbuzných.",
     "category": "settlement",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/09_spoluvlastnicky_podil.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Rozdělený kruhový graf vedle domu",
+        "en": "Pie chart with a detached slice beside a house",
+        "de": "Kreisdiagramm mit abgetrenntem Segment neben einem Haus"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
@@ -481,6 +571,16 @@ export const articles: Article[] = [
     "intro": "Při vypořádání společného majetku se často řeší více nemovitostí současně, například rodinný dům, byt, rekreační objekt nebo několik pozemků.\n\nPísemný odhad umožňuje stanovit hodnotu jednotlivých nemovitostí a poskytuje podklad pro jejich rozdělení mezi spoluvlastníky.",
     "category": "settlement",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/10_rozdeleni_nemovitosti.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Několik samostatných rodinných domů",
+        "en": "Several detached houses",
+        "de": "Mehrere freistehende Einfamilienhäuser"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
@@ -521,6 +621,16 @@ export const articles: Article[] = [
     "intro": "Pokud plánujete prodej rodinného domu, bytu nebo pozemku, jednou z prvních otázek bývá, za jakou cenu nemovitost nabídnout.",
     "category": "sale",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/11_prodejni_cena.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Rodinný dům s prodejní tabulí",
+        "en": "House with a sale sign",
+        "de": "Einfamilienhaus mit Verkaufsschild"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
@@ -565,6 +675,16 @@ export const articles: Article[] = [
     "intro": "Při koupi rodinného domu, bytu nebo pozemku nemusí být jednoduché posoudit, zda požadovaná cena odpovídá jeho skutečné hodnotě.",
     "category": "sale",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/12_koupe_predrazena_nemovitost.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Klíč položený na půdorysu nemovitosti",
+        "en": "Key resting on a floor plan",
+        "de": "Schlüssel auf einem Grundriss"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
@@ -605,6 +725,16 @@ export const articles: Article[] = [
     "intro": "Nemovitost nemusíte hned prodávat, abyste potřebovali znát její hodnotu. Odhad může posloužit například při rozdělování majetku mezi děti nebo další členy rodiny ještě za vašeho života, při rodinných dohodách, rozhodování o investicích nebo jednoduše pro vlastní přehled.",
     "category": "personal",
     publishedAt: articlesPublishedAt,
+    image: {
+      "src": "/images/clanky/13_soucasna_hodnota.webp",
+      "width": 1175,
+      "height": 500,
+      "alt": {
+        "cs": "Rodinný dům vedle rostoucího sloupcového grafu",
+        "en": "House beside a rising bar chart",
+        "de": "Einfamilienhaus neben einem ansteigenden Balkendiagramm"
+      }
+    },
     "blocks": [
       {
         "type": "heading",
