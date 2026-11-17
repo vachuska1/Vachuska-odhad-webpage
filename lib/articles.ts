@@ -210,9 +210,9 @@ export const articles: Article[] = [
     "category": "inheritance",
     publishedAt: articlesPublishedAt,
     image: {
-      "src": "/images/clanky/04_dedictvi_podklady.webp",
+      "src": "/images/clanky/04_dedictvi_podklady-orez.webp",
       "width": 1175,
-      "height": 500,
+      "height": 422,
       "alt": {
         "cs": "Složky s dokumenty a kontrolní seznam",
         "en": "Document folders and a checklist",
@@ -254,9 +254,9 @@ export const articles: Article[] = [
     "category": "inheritance",
     publishedAt: articlesPublishedAt,
     image: {
-      "src": "/images/clanky/05_dedictvi_znalecky_posudek.webp",
+      "src": "/images/clanky/05_dedictvi_znalecky_posudek-orez.webp",
       "width": 1175,
-      "height": 500,
+      "height": 425,
       "alt": {
         "cs": "Váhy a stoh právnických knih",
         "en": "Scales and a stack of law books",
@@ -304,9 +304,9 @@ export const articles: Article[] = [
     "category": "inheritance",
     publishedAt: articlesPublishedAt,
     image: {
-      "src": "/images/clanky/06_dedictvi_pozemky.webp",
+      "src": "/images/clanky/06_dedictvi_pozemky-orez.webp",
       "width": 1175,
-      "height": 500,
+      "height": 425,
       "alt": {
         "cs": "Pole a louky se stromy v krajině",
         "en": "Fields and meadows dotted with trees",
@@ -354,9 +354,9 @@ export const articles: Article[] = [
     "category": "inheritance",
     publishedAt: articlesPublishedAt,
     image: {
-      "src": "/images/clanky/07_dedictvi_datum_umrti.webp",
+      "src": "/images/clanky/07_dedictvi_datum_umrti-orez.webp",
       "width": 1175,
-      "height": 500,
+      "height": 375,
       "alt": {
         "cs": "Kalendář s vyznačeným datem vedle domu",
         "en": "Calendar with a marked date beside a house",
@@ -400,9 +400,9 @@ export const articles: Article[] = [
     "category": "settlement",
     publishedAt: articlesPublishedAt,
     image: {
-      "src": "/images/clanky/08_rozvod_sjm.webp",
+      "src": "/images/clanky/08_rozvod_sjm-orez.webp",
       "width": 1175,
-      "height": 500,
+      "height": 377,
       "alt": {
         "cs": "Dva snubní prsteny před rozděleným domem",
         "en": "Two wedding rings in front of a split house",
@@ -486,9 +486,9 @@ export const articles: Article[] = [
     "category": "settlement",
     publishedAt: articlesPublishedAt,
     image: {
-      "src": "/images/clanky/09_spoluvlastnicky_podil.webp",
+      "src": "/images/clanky/09_spoluvlastnicky_podil-orez.webp",
       "width": 1175,
-      "height": 500,
+      "height": 377,
       "alt": {
         "cs": "Rozdělený kruhový graf vedle domu",
         "en": "Pie chart with a detached slice beside a house",
@@ -572,9 +572,9 @@ export const articles: Article[] = [
     "category": "settlement",
     publishedAt: articlesPublishedAt,
     image: {
-      "src": "/images/clanky/10_rozdeleni_nemovitosti.webp",
+      "src": "/images/clanky/10_rozdeleni_nemovitosti-orez.webp",
       "width": 1175,
-      "height": 500,
+      "height": 387,
       "alt": {
         "cs": "Několik samostatných rodinných domů",
         "en": "Several detached houses",
@@ -622,9 +622,9 @@ export const articles: Article[] = [
     "category": "sale",
     publishedAt: articlesPublishedAt,
     image: {
-      "src": "/images/clanky/11_prodejni_cena.webp",
+      "src": "/images/clanky/11_prodejni_cena-orez.webp",
       "width": 1175,
-      "height": 500,
+      "height": 388,
       "alt": {
         "cs": "Rodinný dům s prodejní tabulí",
         "en": "House with a sale sign",
@@ -676,9 +676,9 @@ export const articles: Article[] = [
     "category": "sale",
     publishedAt: articlesPublishedAt,
     image: {
-      "src": "/images/clanky/12_koupe_predrazena_nemovitost.webp",
+      "src": "/images/clanky/12_koupe_predrazena_nemovitost-orez.webp",
       "width": 1175,
-      "height": 500,
+      "height": 392,
       "alt": {
         "cs": "Klíč položený na půdorysu nemovitosti",
         "en": "Key resting on a floor plan",
