@@ -4,10 +4,11 @@ export const articleCategories = [
  { id: 'settlement', title: 'Vypořádání a rozdělení majetku', servicePath: '/odhad-vyporadani-majetku', serviceLabel: 'Ocenění pro vypořádání majetku', enquiryType: 'Vypořádání majetku' },
  { id: 'sale', title: 'Koupě a prodej nemovitosti', servicePath: '/odhad-pro-vlastni-potrebu', serviceLabel: 'Ocenění pro vlastní potřebu', enquiryType: 'Pro vlastní potřebu' },
  { id: 'personal', title: 'Ocenění pro vlastní potřebu', servicePath: '/odhad-pro-vlastni-potrebu', serviceLabel: 'Ocenění pro vlastní potřebu', enquiryType: 'Pro vlastní potřebu' },
+ { id: 'tax', title: 'Daně a nemovitosti', servicePath: '/odhad-pro-vlastni-potrebu', serviceLabel: 'Ocenění pro vlastní potřebu', enquiryType: 'Pro vlastní potřebu' },
 ] as const
 export type ArticleCategory = typeof articleCategories[number]['id']
-export type ArticleBlock = { type: 'heading' | 'paragraph'; text: string } | { type: 'list'; items: string[] }
-export type Article = { slug: string; title: string; seoTitle: string; description: string; cardDescription: string; intro: string; category: ArticleCategory; blocks: ArticleBlock[] }
+export type ArticleBlock = { type: 'heading' | 'subheading' | 'paragraph'; text: string } | { type: 'list'; items: string[] }
+export type Article = { slug: string; title: string; seoTitle: string; description: string; cardDescription: string; intro: string; category: ArticleCategory; publishedAt?: string; blocks: ArticleBlock[] }
 export const articles: Article[] = [
   {
     "slug": "odhad-nemovitosti-pro-dedicke-rizeni",
@@ -16,6 +17,7 @@ export const articles: Article[] = [
     "description": "Potřebujete odhad nemovitosti pro notáře? Zjistěte, jak probíhá ocenění pro dědictví a jaké podklady potřebujete.",
     "intro": "Pokud je součástí dědictví nemovitost (rodinný dům, chata či chalupa, byt nebo pozemky), bude notář požadovat doložení její obvyklé ceny. K tomu zpravidla slouží písemný odhad nemovitosti.",
     "category": "inheritance",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -72,6 +74,7 @@ export const articles: Article[] = [
     "description": "Cena odhadu pro notáře je individuální. Zjistěte, na čem závisí a jak získat konkrétní cenu před zahájením zpracování.",
     "intro": "Cena odhadu se stanovuje individuálně podle druhu nemovitosti a rozsahu ocenění. Jinak náročné je ocenění běžného bytu a jinak rodinného domu s více pozemky nebo souboru zemědělských nemovitostí.",
     "category": "inheritance",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -103,6 +106,7 @@ export const articles: Article[] = [
     "description": "Je možné zpracovat odhad nemovitosti pro notáře bez osobní prohlídky? Kdy postačí fotografie a další podklady?",
     "intro": "Ano, v řadě případů lze odhad pro dědické řízení zpracovat i bez osobní prohlídky nemovitosti. Záleží především na jejím charakteru a dostupných podkladech.",
     "category": "inheritance",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -166,6 +170,7 @@ export const articles: Article[] = [
     "description": "Jaké podklady jsou potřeba pro odhad nemovitosti pro notáře? Fotografie, parcely, list vlastnictví a datum úmrtí.",
     "intro": "Pro první domluvu stačí základní údaje o nemovitosti. Ostatní podklady si případně upřesníme.",
     "category": "inheritance",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -199,6 +204,7 @@ export const articles: Article[] = [
     "description": "Stačí notáři běžný odhad nemovitosti, nebo je nutný znalecký posudek? Vysvětlení rozdílu a doporučený postup.",
     "intro": "**Pro běžné dědické řízení zpravidla není nutné nechávat zpracovat znalecký posudek.** K doložení obvyklé ceny nemovitosti může postačovat písemný odhad od odhadce nemovitostí.",
     "category": "inheritance",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -238,6 +244,7 @@ export const articles: Article[] = [
     "description": "Ocenění polí, luk, zahrad, stavebních pozemků a spoluvlastnických podílů pro notáře.",
     "intro": "Součástí dědictví mohou být také pozemky, například orná půda, louky, zahrady, stavební nebo lesní pozemky. Často se jedná o větší počet parcel, případně pouze o spoluvlastnické podíly.",
     "category": "inheritance",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -277,6 +284,7 @@ export const articles: Article[] = [
     "description": "Proč se nemovitost při dědictví oceňuje ke dni úmrtí a jak se zohledňují skutečné prodeje a vývoj cen?",
     "intro": "Při dědickém řízení se nemovitosti oceňují ke dni úmrtí zůstavitele. Toto datum je rozhodující pro stanovení jejich obvyklé ceny, bez ohledu na to, kdy se samotný odhad zpracovává.",
     "category": "inheritance",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -312,6 +320,7 @@ export const articles: Article[] = [
     "description": "Potřebujete ocenit dům nebo byt při rozvodu? Odhad jako podklad pro vypořádání společného jmění manželů.",
     "intro": "Pokud je součástí společného jmění (SJ, dříve v katastru označovaného jako SJM) rodinný dům, byt, pozemky nebo jiné nemovitosti, je při rozvodu důležité stanovit jejich hodnotu.\n\nPísemný odhad může sloužit jako podklad pro dohodu o rozdělení majetku, vyplacení jednoho z manželů nebo další jednání o majetkovém vypořádání.",
     "category": "settlement",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -387,6 +396,7 @@ export const articles: Article[] = [
     "description": "Jak určit hodnotu nemovitosti při vyplacení spoluvlastníka? Odhad domu, bytu nebo pozemku pro majetkové vyrovnání.",
     "intro": "Pokud nemovitost vlastní více osob a jeden ze spoluvlastníků chce ostatní vyplatit, je důležité nejprve stanovit její hodnotu.\n\nTypicky se jedná o rodinný dům, byt, rekreační nemovitost nebo pozemky ve spoluvlastnictví sourozenců či dalších příbuzných.",
     "category": "settlement",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -462,6 +472,7 @@ export const articles: Article[] = [
     "description": "Potřebujete rozdělit domy, byty nebo pozemky mezi spoluvlastníky? Odhad pomůže stanovit jejich hodnotu pro dohodu.",
     "intro": "Při vypořádání společného majetku se často řeší více nemovitostí současně, například rodinný dům, byt, rekreační objekt nebo několik pozemků.\n\nPísemný odhad umožňuje stanovit hodnotu jednotlivých nemovitostí a poskytuje podklad pro jejich rozdělení mezi spoluvlastníky.",
     "category": "settlement",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -501,6 +512,7 @@ export const articles: Article[] = [
     "description": "Chcete prodat dům, byt nebo pozemek? Zjistěte, proč nestačí porovnat realitní inzeráty a jak určit tržní cenu.",
     "intro": "Pokud plánujete prodej rodinného domu, bytu nebo pozemku, jednou z prvních otázek bývá, za jakou cenu nemovitost nabídnout.",
     "category": "sale",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -544,6 +556,7 @@ export const articles: Article[] = [
     "description": "Kupujete dům, byt nebo pozemek? Nezávislý odhad Vám pomůže posoudit, zda nabídková cena odpovídá trhu.",
     "intro": "Při koupi rodinného domu, bytu nebo pozemku nemusí být jednoduché posoudit, zda požadovaná cena odpovídá jeho skutečné hodnotě.",
     "category": "sale",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -583,6 +596,7 @@ export const articles: Article[] = [
     "description": "Zajímá Vás aktuální hodnota domu, bytu nebo pozemku? Odhad na základě skutečně realizovaných prodejů.",
     "intro": "Nemovitost nemusíte hned prodávat, abyste potřebovali znát její hodnotu. Odhad může posloužit například při rozdělování majetku mezi děti nebo další členy rodiny ještě za vašeho života, při rodinných dohodách, rozhodování o investicích nebo jednoduše pro vlastní přehled.",
     "category": "personal",
+    publishedAt: articlesPublishedAt,
     "blocks": [
       {
         "type": "heading",
@@ -622,7 +636,287 @@ export const articles: Article[] = [
       }
     ],
     "cardDescription": "Kdy se hodí znát hodnotu vlastní nemovitosti."
-  }
+  },
+  {
+    "slug": "prodej-darovane-nemovitosti-dan-odhad-ceny",
+    "title": "Prodej darované nemovitosti a daň z příjmů: Kdy potřebujete odhad ceny?",
+    "seoTitle": "Prodej darované nemovitosti 2026 | Daň a odhad ceny",
+    "description": "Prodáváte darovaný byt, dům nebo pozemek? Zjistěte, kdy platíte daň z příjmů, jak funguje časový test a proč potřebujete cenu zjištěnou ke dni darování.",
+    "cardDescription": "Kdy je prodej osvobozen a jak doložit cenu nemovitosti ke dni darování.",
+    "intro": "Darování nemovitosti v rodině je běžným způsobem převodu majetku. Pokud se však obdarovaný rozhodne nemovitost následně prodat, může mu vzniknout povinnost zaplatit daň z příjmů. Záleží především na době vlastnictví, způsobu využívání nemovitosti a účelu, na který budou získané peníze použity.\n\nV některých případech je příjem z prodeje osvobozen. Pokud podmínky osvobození splněny nejsou, může být důležité nechat nemovitost ocenit zpětně ke dni jejího darování.",
+    "category": "tax",
+    publishedAt: "2026-11-17",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Platí se daň při samotném darování nemovitosti?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Samotné darování nemovitosti mezi blízkými příbuznými bývá od daně z příjmů osvobozeno. Typicky jde o darování mezi rodiči a dětmi, prarodiči a vnoučaty, manžely nebo zákonem vymezenými dalšími příbuznými."
+      },
+      {
+        "type": "paragraph",
+        "text": "Osvobození se za stanovených podmínek vztahuje také na darování mezi osobami žijícími ve společně hospodařící domácnosti."
+      },
+      {
+        "type": "paragraph",
+        "text": "U darování mezi nepříbuznými osobami nemusí osvobození platit a může vzniknout daňová povinnost již při přijetí daru."
+      },
+      {
+        "type": "paragraph",
+        "text": "Je však důležité rozlišovat dvě situace: získání nemovitosti darem a její pozdější prodej. Jde o dva samostatné daňové případy."
+      },
+      {
+        "type": "heading",
+        "text": "Kdy je prodej darované nemovitosti osvobozen od daně?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Zákon o daních z příjmů stanovuje několik možností osvobození."
+      },
+      {
+        "type": "subheading",
+        "text": "1. Časový test vlastnictví"
+      },
+      {
+        "type": "paragraph",
+        "text": "U nemovitostí nabytých od 1. ledna 2021 se zpravidla uplatňuje desetiletý časový test. U nemovitostí nabytých před tímto datem se podle příslušných přechodných ustanovení zpravidla použije původní pětiletá lhůta."
+      },
+      {
+        "type": "paragraph",
+        "text": "Pokud je příslušný časový test splněn, může být příjem z prodeje osvobozen od daně."
+      },
+      {
+        "type": "paragraph",
+        "text": "**Pozor: Při darování nelze do časového testu započítat dobu, po kterou nemovitost vlastnil dárce.**"
+      },
+      {
+        "type": "paragraph",
+        "text": "Například pokud rodiče vlastnili dům dvacet let a následně jej darovali dítěti, nezačíná se časový test dítěti počítat od původního nabytí domu rodiči. Rozhodující je jeho vlastní nabytí darované nemovitosti."
+      },
+      {
+        "type": "subheading",
+        "text": "2. Bydliště alespoň dva roky před prodejem"
+      },
+      {
+        "type": "paragraph",
+        "text": "U rodinného domu nebo příslušné bytové jednotky může být příjem z prodeje osvobozen, pokud v nemovitosti prodávající měl bydliště nejméně dva roky bezprostředně před prodejem."
+      },
+      {
+        "type": "paragraph",
+        "text": "Podstatné je skutečné bydliště, nikoliv pouze formální údaj o trvalém pobytu."
+      },
+      {
+        "type": "paragraph",
+        "text": "Toto osvobození se nevztahuje automaticky na všechny druhy nemovitostí, například na samostatné pozemky."
+      },
+      {
+        "type": "subheading",
+        "text": "3. Použití získaných peněz na vlastní bytovou potřebu"
+      },
+      {
+        "type": "paragraph",
+        "text": "Za stanovených podmínek může být příjem osvobozen také tehdy, pokud prodávající použije získané prostředky na obstarání vlastní bytové potřeby."
+      },
+      {
+        "type": "paragraph",
+        "text": "Může jít například o pořízení vlastního bydlení nebo jiný zákonem uznaný účel."
+      },
+      {
+        "type": "paragraph",
+        "text": "[V tomto případě je zásadní dodržet zákonné lhůty i oznamovací povinnost vůči finančnímu úřadu.](https://financnisprava.gov.cz/cs/dane/dane/dan-z-prijmu/dotazy-a-odpovedi/dan-z-prijmu-fyzickych-osob/aktualne-k-dani-z-prijmu-fyzickych-osob-2024) Získání prostředků je nutné oznámit ve lhůtě pro podání daňového přiznání za rok, ve kterém byly získány. Prostředky je zpravidla nutné použít nejpozději do konce následujícího zdaňovacího období; zákon umožňuje zohlednit také některé předchozí výdaje na vlastní bytovou potřebu."
+      },
+      {
+        "type": "paragraph",
+        "text": "Pokud se na vlastní bytovou potřebu použije pouze část prostředků, může být osvobozena jen odpovídající část příjmu."
+      },
+      {
+        "type": "paragraph",
+        "text": "U každé z uvedených možností je nutné posoudit konkrétní zákonné podmínky a případné výjimky."
+      },
+      {
+        "type": "heading",
+        "text": "Jak se vypočítá daň při prodeji darované nemovitosti?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pokud příjem z prodeje není osvobozen, zpravidla se posuzuje jako ostatní příjem podle § 10 zákona o daních z příjmů."
+      },
+      {
+        "type": "paragraph",
+        "text": "Daň se nepočítá automaticky z celé prodejní ceny."
+      },
+      {
+        "type": "paragraph",
+        "text": "Proti příjmu z prodeje lze uplatnit zákonem uznané a doložené výdaje. U darované nemovitosti je zásadní zejména její cena stanovená podle zákona o oceňování majetku ke dni nabytí daru."
+      },
+      {
+        "type": "paragraph",
+        "text": "Zjednodušeně lze výpočet vyjádřit následovně:"
+      },
+      {
+        "type": "paragraph",
+        "text": "**Příjem z prodeje − daňově uznatelné výdaje = dílčí základ daně z tohoto prodeje.**"
+      },
+      {
+        "type": "paragraph",
+        "text": "Kromě ceny nemovitosti mohou být za splnění zákonných podmínek uplatnitelné také některé doložené výdaje související s nemovitostí a jejím prodejem."
+      },
+      {
+        "type": "paragraph",
+        "text": "Výsledná daň závisí na celkovém základu daně poplatníka a příslušné sazbě daně z příjmů fyzických osob."
+      },
+      {
+        "type": "heading",
+        "text": "Proč je důležité ocenění ke dni darování?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Podle § 10 odst. 5 zákona č. 586/1992 Sb., o daních z příjmů, je u bezúplatně nabyté věci výdajem cena určená podle zákona o oceňování majetku ke dni nabytí."
+      },
+      {
+        "type": "paragraph",
+        "text": "U nemovitých věcí je pro tento účel rozhodující **cena zjištěná podle zákona č. 151/1997 Sb., o oceňování majetku, a příslušné oceňovací vyhlášky**."
+      },
+      {
+        "type": "paragraph",
+        "text": "Tuto cenu je důležité odlišovat od běžného tržního odhadu nemovitosti."
+      },
+      {
+        "type": "paragraph",
+        "text": "Tržní hodnota vyjadřuje hodnotu nemovitosti na trhu. Cena zjištěná se stanovuje zákonem předepsaným oceňovacím postupem a její výsledek se může od tržní hodnoty lišit."
+      },
+      {
+        "type": "paragraph",
+        "text": "Pro daňové účely proto nemusí postačovat běžný odhad tržní ceny."
+      },
+      {
+        "type": "paragraph",
+        "text": "Ocenění lze zpracovat také zpětně, ke dni, kdy byla nemovitost nabyta darem. Je nutné vycházet ze stavu nemovitosti k rozhodnému datu a použít odpovídající oceňovací předpisy."
+      },
+      {
+        "type": "paragraph",
+        "text": "Finanční správa ve svém metodickém vyjádření zveřejněném dne 19. ledna 2026 potvrdila, že zákon pro tento účel obecně nevyžaduje výhradně znalecký posudek. Připouští také ocenění odhadcem, pokud je cena zjištěná stanovena a řádně odůvodněna podle platných oceňovacích předpisů."
+      },
+      {
+        "type": "heading",
+        "text": "Praktický příklad výpočtu"
+      },
+      {
+        "type": "paragraph",
+        "text": "Představme si situaci, kdy člověk získá rodinný dům darem a po dvou letech jej prodá."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Prodejní cena domu: 5 000 000 Kč.",
+          "Cena zjištěná ke dni darování podle oceňovacích předpisů: 3 800 000 Kč.",
+          "Další doložené daňově uznatelné výdaje: 100 000 Kč."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Zjednodušený výpočet:"
+      },
+      {
+        "type": "paragraph",
+        "text": "5 000 000 − 3 800 000 − 100 000 = **1 100 000 Kč**."
+      },
+      {
+        "type": "paragraph",
+        "text": "Částka 1 100 000 Kč představuje dílčí základ daně z tohoto prodeje za předpokladu, že příjem není osvobozen a všechny uvedené výdaje lze daňově uplatnit."
+      },
+      {
+        "type": "paragraph",
+        "text": "Nejde o výslednou daň. Ta se stanoví až podle celkové daňové situace poplatníka."
+      },
+      {
+        "type": "paragraph",
+        "text": "Příklad je pouze ilustrativní."
+      },
+      {
+        "type": "heading",
+        "text": "Jaký je rozdíl mezi darováním a děděním?"
+      },
+      {
+        "type": "paragraph",
+        "text": "U dědictví existuje důležitá výjimka. Pokud nemovitost zdědíte po příbuzném v řadě přímé nebo po manželovi či manželce, může se příslušný časový test zkrátit o dobu, po kterou nemovitost vlastnil zůstavitel."
+      },
+      {
+        "type": "paragraph",
+        "text": "U darování takové započtení doby vlastnictví dárce neplatí."
+      },
+      {
+        "type": "paragraph",
+        "text": "Pokud je prodej zděděné nemovitosti zdanitelný, může být rovněž potřeba stanovit cenu zjištěnou ke dni nabytí. V případě dědictví se vychází ze dne úmrtí zůstavitele."
+      },
+      {
+        "type": "paragraph",
+        "text": "[Ocenění použité v dědickém řízení](/odhad-pro-dedicke-rizeni) nemusí automaticky odpovídat ocenění požadovanému pro daňové účely."
+      },
+      {
+        "type": "heading",
+        "text": "Kdy si nechat zpracovat odhad?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Ocenění ke dni darování může být potřeba zejména tehdy, když:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "jste získali nemovitost darem a chcete ji prodat před uplynutím časového testu;",
+          "nesplňujete ostatní podmínky osvobození od daně;",
+          "potřebujete doložit cenu zjištěnou pro účely daňového přiznání;",
+          "původní ocenění nemáte nebo neodpovídá požadavkům daňových předpisů."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Při zpracování zpětného ocenění je důležité znát zejména datum nabytí, identifikaci nemovitosti, její tehdejší technický stav a případné rekonstrukce."
+      },
+      {
+        "type": "heading",
+        "text": "Odhad nemovitosti pro daňové účely"
+      },
+      {
+        "type": "paragraph",
+        "text": "Potřebujete ocenit darovaný rodinný dům, byt, pozemek nebo jinou nemovitost ke dni jejího nabytí?"
+      },
+      {
+        "type": "paragraph",
+        "text": "[Zpracovávám ocenění nemovitostí](/odhad-pro-vlastni-potrebu) pro různé účely včetně zpětného stanovení hodnoty k rozhodnému datu."
+      },
+      {
+        "type": "paragraph",
+        "text": "V případě ocenění pro účely daně z příjmů je nutné předem určit, zda je požadována cena zjištěná podle oceňovacích předpisů, nebo jiný typ ocenění."
+      },
+      {
+        "type": "paragraph",
+        "text": "**Ing. Aleš Vachuška – Oceňování nemovitostí**"
+      },
+      {
+        "type": "paragraph",
+        "text": "E-mail: [odhadyvachuska@gmail.com](mailto:odhadyvachuska@gmail.com)"
+      },
+      {
+        "type": "heading",
+        "text": "Použité právní předpisy a zdroje"
+      },
+      {
+        "type": "list",
+        "items": [
+          "[Zákon č. 586/1992 Sb., o daních z příjmů](https://e-sbirka.gov.cz/sb/1992/586), zejména § 4, § 4b a § 10.",
+          "[Zákon č. 151/1997 Sb., o oceňování majetku](https://e-sbirka.gov.cz/sb/1997/151)."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Informace odpovídají právnímu stavu ověřovanému k listopadu 2026. Článek má informativní charakter a nenahrazuje individuální daňové nebo právní poradenství."
+      }
+    ]
+  },
 ]
 export const articlePath = (article: Article) => `/clanky/${article.slug}`
 export const articleCategory = (article: Article) => articleCategories.find(c => c.id === article.category)!
@@ -633,6 +927,7 @@ export function relatedArticles(article: Article) {
   settlement: ['settlement', 'personal', 'inheritance', 'sale'],
   sale: ['sale', 'personal', 'settlement', 'inheritance'],
   personal: ['personal', 'sale', 'settlement', 'inheritance'],
+  tax: ['tax', 'sale', 'inheritance', 'personal'],
  }
  return order[article.category].flatMap(category => others.filter(a => a.category === category)).slice(0, 3)
 }

@@ -41,12 +41,13 @@ test('validation messages are translated without exposing Czech file errors', ()
  }
 })
 
-test('all thirteen article translations preserve blocks, lists and emphasis', () => {
- const {articles} = compile('lib/articles.ts')
+test('all registered article translations preserve blocks, lists and emphasis', () => {
+ const {articles, articlePath} = compile('lib/articles.ts')
+ const translatedArticles = articles.filter(article => articlePath(article) in routes.articleRoutes)
  for (const locale of ['en','de']) {
   const translations = require(`../lib/translations/articles.${locale}.json`)
-  assert.equal(Object.keys(translations).length, 13)
-  for (const article of articles) {
+  assert.equal(Object.keys(translations).length, translatedArticles.length)
+  for (const article of translatedArticles) {
    const translated = translations[article.slug]
    for (const field of ['title','seoTitle','description','cardDescription','intro']) {
     assert.ok(translated[field]?.trim(), `${locale}: ${article.slug} ${field}`)

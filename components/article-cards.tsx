@@ -3,7 +3,7 @@ import { ArrowRight, FileText, Scale, House, ChartNoAxesCombined } from 'lucide-
 import { localePath, translate, type Locale } from '@/lib/i18n'
 import { articlePath, type Article } from '@/lib/articles'
 
-const categoryIcons = { inheritance: FileText, settlement: Scale, sale: House, personal: ChartNoAxesCombined }
+const categoryIcons = { inheritance: FileText, settlement: Scale, sale: House, personal: ChartNoAxesCombined, tax: FileText }
 function cardDescription(description: string) {
  const sentence = description.match(/^.*?[.!?](?:\s|$)/)?.[0].trim() || description
  if (sentence.length <= 120) return sentence

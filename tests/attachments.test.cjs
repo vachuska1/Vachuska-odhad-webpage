@@ -27,8 +27,8 @@ test('preserves smaller originals and lossless plan resolution; rejects invalid 
  const x=setup();const jpg=new File(['tiny'],'small.jpg');const png=new File([new Uint8Array(200000)],'plan.png');const result=await x.api.optimizeAttachments([jpg,png]);assert.equal(result[0],jpg);assert.equal(result[1].type,'image/png');assert.deepEqual(x.draws[1],[4000,3000]);await assert.rejects(x.api.optimizeAttachments([new File(['x'],'bad.exe')]));await assert.rejects(x.api.optimizeAttachments([new File([],'empty.jpg')]));await assert.rejects(x.api.optimizeAttachments(Array(21).fill(jpg)))
  const bad=setup({fail:true});await assert.rejects(bad.api.optimizeAttachments([jpg]));const pdf=new File([new Uint8Array(3500000)],'large.pdf');assert.equal(x.api.optimizedAttachmentError(await x.api.optimizeAttachments([pdf])),null);const oversized=new File([new Uint8Array(4200000)],'oversized.pdf');assert.equal(x.api.optimizedAttachmentError(await x.api.optimizeAttachments([oversized])),x.api.TOO_LARGE)
 })
-test('thirteen articles use four categories, valid services and at most three related articles',()=>{
- const {articles,articleCategories,articleCategory,relatedArticles}=compile('lib/articles.ts');assert.equal(articles.length,13);assert.equal(new Set(articles.map(a=>a.slug)).size,13);assert.equal(new Set(articles.map(a=>a.description)).size,13)
- assert.deepEqual(Array.from(articleCategories,c=>articles.filter(a=>a.category===c.id).length),[7,3,2,1])
+test('fourteen articles use five categories, valid services and at most three related articles',()=>{
+ const {articles,articleCategories,articleCategory,relatedArticles}=compile('lib/articles.ts');assert.equal(articles.length,14);assert.equal(new Set(articles.map(a=>a.slug)).size,14);assert.equal(new Set(articles.map(a=>a.description)).size,14)
+ assert.deepEqual(Array.from(articleCategories,c=>articles.filter(a=>a.category===c.id).length),[7,3,2,1,1])
  for(const a of articles){assert.ok(!a.title.includes('\n'));assert.ok(a.title.length<150);assert.ok(a.blocks.length>0);const category=articleCategory(a);assert.ok(fs.existsSync(`app/(cs)${category.servicePath}/page.tsx`));assert.ok(shared.ENQUIRY_TYPES.includes(category.enquiryType));const related=relatedArticles(a);assert.equal(related.length,3);assert.ok(related.every(item=>item.slug!==a.slug));assert.equal(new Set(related.map(item=>item.slug)).size,3)}
 })
