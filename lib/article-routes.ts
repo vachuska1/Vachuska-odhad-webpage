@@ -14,4 +14,5 @@ export const articleRoutes: Record<string, [string, string]> = {
  '/clanky/za-kolik-prodat-nemovitost': ['articles/property-selling-price', 'artikel/verkaufspreis-immobilie'],
  '/clanky/odhad-ceny-nemovitosti-pred-koupi': ['articles/property-valuation-before-buying', 'artikel/immobilienbewertung-vor-kauf'],
  '/clanky/jak-zjistit-hodnotu-nemovitosti': ['articles/current-property-value', 'artikel/aktueller-immobilienwert'],
+ '/clanky/prodej-darovane-nemovitosti-dan-odhad-ceny': ['articles/selling-gifted-property-tax-valuation', 'artikel/geschenkte-immobilie-verkauf-steuer-bewertung'],
 }

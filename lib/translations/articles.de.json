@@ -586,5 +586,282 @@
         "text": "Das Ergebnis ist eine **schriftliche Bewertung mit einem konkret ermittelten Wert, einer nachvollziehbaren Berechnung und Begründung**, nicht lediglich eine automatisch erzeugte Preisspanne."
       }
     ]
-  }
+  },
+    "prodej-darovane-nemovitosti-dan-odhad-ceny": {
+      "title": "Verkauf einer geschenkten Immobilie und Einkommensteuer: Wann brauchen Sie eine Bewertung?",
+      "seoTitle": "Geschenkte Immobilie in Tschechien verkaufen 2026 | Steuer und Bewertung",
+      "description": "Sie verkaufen eine geschenkte Immobilie in Tschechien? Erfahren Sie, wann Einkommensteuer anfällt, welche Fristen gelten und warum der Wert zum Schenkungszeitpunkt wichtig ist.",
+      "cardDescription": "Wann der Verkauf steuerfrei ist und wie Sie den Immobilienwert zum Zeitpunkt der Schenkung nachweisen.",
+      "intro": "Die Schenkung einer Immobilie innerhalb der Familie ist eine gängige Form der Vermögensübertragung. Entscheidet sich die beschenkte Person später für den Verkauf, kann in Tschechien Einkommensteuer anfallen. Ausschlaggebend sind vor allem die Eigentumsdauer, die Nutzung der Immobilie und die Verwendung des Verkaufserlöses.\n\nIn manchen Fällen ist der Verkaufserlös steuerfrei. Sind die Voraussetzungen für eine Steuerbefreiung nicht erfüllt, kann es wichtig sein, die Immobilie rückwirkend zum Zeitpunkt der Schenkung bewerten zu lassen.",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Fällt bereits bei der Schenkung einer Immobilie Steuer an?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Die Schenkung einer Immobilie zwischen nahen Angehörigen ist in der Regel von der Einkommensteuer befreit. Das gilt typischerweise für Schenkungen zwischen Eltern und Kindern, Großeltern und Enkeln, Ehegatten sowie weiteren gesetzlich bestimmten Verwandten."
+        },
+        {
+          "type": "paragraph",
+          "text": "Unter bestimmten Voraussetzungen gilt die Befreiung auch für Schenkungen zwischen Personen, die in einem gemeinsamen Haushalt leben und gemeinsam wirtschaften."
+        },
+        {
+          "type": "paragraph",
+          "text": "Bei Schenkungen zwischen nicht verwandten Personen greift die Befreiung möglicherweise nicht. Eine Steuerpflicht kann dann bereits beim Erhalt der Schenkung entstehen."
+        },
+        {
+          "type": "paragraph",
+          "text": "Der Erwerb einer Immobilie durch Schenkung und ihr späterer Verkauf sind zwei eigenständige steuerliche Vorgänge."
+        },
+        {
+          "type": "heading",
+          "text": "Wann ist der Verkauf einer geschenkten Immobilie steuerfrei?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Das tschechische Einkommensteuergesetz sieht mehrere Möglichkeiten der Steuerbefreiung vor."
+        },
+        {
+          "type": "subheading",
+          "text": "1. Mindestdauer des Eigentums"
+        },
+        {
+          "type": "paragraph",
+          "text": "Für Immobilien, die ab dem 1. Januar 2021 erworben wurden, gilt in der Regel eine Zehnjahresfrist. Bei Immobilien, die vor diesem Datum erworben wurden, gilt nach den einschlägigen Übergangsbestimmungen in der Regel die bisherige Fünfjahresfrist."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ist die einschlägige Frist erfüllt, kann der Verkaufserlös von der Einkommensteuer befreit sein."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Wichtig: Bei einer Schenkung wird die Eigentumsdauer des Schenkers nicht auf die Frist angerechnet.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "War ein Haus beispielsweise zwanzig Jahre im Eigentum der Eltern, bevor sie es ihrem Kind schenkten, beginnt die Frist für das Kind mit dem eigenen Erwerb durch Schenkung. Der ursprüngliche Erwerb durch die Eltern ist dafür unerheblich."
+        },
+        {
+          "type": "subheading",
+          "text": "2. Wohnsitz seit mindestens zwei Jahren vor dem Verkauf"
+        },
+        {
+          "type": "paragraph",
+          "text": "Beim Verkauf eines Einfamilienhauses oder einer begünstigten Wohneinheit kann der Erlös steuerfrei sein, wenn der Verkäufer dort unmittelbar vor dem Verkauf mindestens zwei Jahre seinen Wohnsitz hatte."
+        },
+        {
+          "type": "paragraph",
+          "text": "Maßgeblich ist der tatsächliche Wohnsitz. Die bloße Meldung eines ständigen Wohnsitzes reicht nicht aus."
+        },
+        {
+          "type": "paragraph",
+          "text": "Diese Befreiung gilt nicht automatisch für alle Arten von Immobilien, etwa für einzeln verkaufte Grundstücke."
+        },
+        {
+          "type": "subheading",
+          "text": "3. Verwendung des Erlöses für den eigenen Wohnbedarf"
+        },
+        {
+          "type": "paragraph",
+          "text": "Unter den gesetzlichen Voraussetzungen kann der Erlös auch dann steuerfrei sein, wenn der Verkäufer ihn zur Deckung des eigenen Wohnbedarfs verwendet."
+        },
+        {
+          "type": "paragraph",
+          "text": "Dazu zählen beispielsweise der Erwerb eines Eigenheims oder andere gesetzlich anerkannte Zwecke."
+        },
+        {
+          "type": "paragraph",
+          "text": "[Hierbei müssen Sie die gesetzlichen Fristen und die Anzeigepflicht gegenüber dem tschechischen Finanzamt beachten.](https://financnisprava.gov.cz/cs/dane/dane/dan-z-prijmu/dotazy-a-odpovedi/dan-z-prijmu-fyzickych-osob/aktualne-k-dani-z-prijmu-fyzickych-osob-2024) Der Erhalt des Erlöses ist bis zum Ablauf der Frist für die Abgabe der Steuererklärung für das Jahr anzuzeigen, in dem der Erlös zugeflossen ist. Die Mittel müssen in der Regel spätestens bis zum Ende des darauffolgenden Besteuerungszeitraums verwendet werden. Das Gesetz lässt auch die Berücksichtigung bestimmter früherer Ausgaben für den eigenen Wohnbedarf zu."
+        },
+        {
+          "type": "paragraph",
+          "text": "Wird nur ein Teil des Erlöses für den eigenen Wohnbedarf verwendet, kann nur der entsprechende Teil steuerfrei sein."
+        },
+        {
+          "type": "paragraph",
+          "text": "Bei jeder dieser Möglichkeiten sind die jeweiligen gesetzlichen Voraussetzungen und etwaige Ausnahmen zu prüfen."
+        },
+        {
+          "type": "heading",
+          "text": "Wie wird die Steuer beim Verkauf einer geschenkten Immobilie berechnet?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ist der Verkaufserlös steuerpflichtig, zählt er in der Regel zu den sonstigen Einkünften nach § 10 des tschechischen Einkommensteuergesetzes."
+        },
+        {
+          "type": "paragraph",
+          "text": "Die Steuer wird nicht automatisch auf den gesamten Verkaufspreis erhoben."
+        },
+        {
+          "type": "paragraph",
+          "text": "Gesetzlich anerkannte und nachgewiesene Ausgaben können vom Verkaufserlös abgezogen werden. Bei einer geschenkten Immobilie ist insbesondere ihr nach dem tschechischen Vermögensbewertungsgesetz zum Zeitpunkt des Erwerbs durch Schenkung ermittelter Wert maßgeblich."
+        },
+        {
+          "type": "paragraph",
+          "text": "Vereinfacht lautet die Berechnung:"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Verkaufserlös − steuerlich abzugsfähige Ausgaben = Teilbemessungsgrundlage aus diesem Verkauf.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "Neben dem Immobilienwert können unter den gesetzlichen Voraussetzungen auch bestimmte nachgewiesene Ausgaben für die Immobilie und ihren Verkauf abzugsfähig sein."
+        },
+        {
+          "type": "paragraph",
+          "text": "Die endgültige Steuer hängt von der gesamten Bemessungsgrundlage des Steuerpflichtigen und dem geltenden Einkommensteuersatz für natürliche Personen ab."
+        },
+        {
+          "type": "heading",
+          "text": "Warum ist die Bewertung zum Zeitpunkt der Schenkung wichtig?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Nach § 10 Abs. 5 des tschechischen Einkommensteuergesetzes Nr. 586/1992 Sb. gilt bei einem unentgeltlich erworbenen Vermögensgegenstand der nach dem Vermögensbewertungsgesetz zum Erwerbszeitpunkt ermittelte Wert als abzugsfähige Ausgabe."
+        },
+        {
+          "type": "paragraph",
+          "text": "Bei Immobilien ist hierfür der **nach dem tschechischen Vermögensbewertungsgesetz Nr. 151/1997 Sb. und der einschlägigen Bewertungsverordnung ermittelte Wert (cena zjištěná)** maßgeblich."
+        },
+        {
+          "type": "paragraph",
+          "text": "Dieser Wert ist von einer gewöhnlichen Schätzung des Marktwerts zu unterscheiden."
+        },
+        {
+          "type": "paragraph",
+          "text": "Der Marktwert gibt an, welchen Wert die Immobilie am Markt hat. Der gesetzlich ermittelte Wert wird nach einem vorgeschriebenen Bewertungsverfahren bestimmt und kann vom Marktwert abweichen."
+        },
+        {
+          "type": "paragraph",
+          "text": "Eine gewöhnliche Marktwertschätzung kann für steuerliche Zwecke daher unzureichend sein."
+        },
+        {
+          "type": "paragraph",
+          "text": "Die Immobilie kann auch rückwirkend zum Zeitpunkt des Erwerbs durch Schenkung bewertet werden. Maßgeblich sind der Zustand der Immobilie am Stichtag und die einschlägigen Bewertungsvorschriften."
+        },
+        {
+          "type": "paragraph",
+          "text": "Die tschechische Finanzverwaltung hat in einer am 19. Januar 2026 veröffentlichten Stellungnahme bestätigt, dass das Gesetz für diesen Zweck im Allgemeinen kein förmliches Sachverständigengutachten als einzige Möglichkeit verlangt. Auch die Bewertung durch einen Immobilienbewerter ist zulässig, sofern der gesetzlich ermittelte Wert nach den geltenden Bewertungsvorschriften berechnet und nachvollziehbar begründet wird."
+        },
+        {
+          "type": "heading",
+          "text": "Rechenbeispiel"
+        },
+        {
+          "type": "paragraph",
+          "text": "Angenommen, jemand erhält ein Einfamilienhaus als Geschenk und verkauft es zwei Jahre später."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Verkaufspreis des Hauses: 5.000.000 CZK.",
+            "Zum Zeitpunkt der Schenkung nach den Bewertungsvorschriften ermittelter Wert: 3.800.000 CZK.",
+            "Weitere nachgewiesene steuerlich abzugsfähige Ausgaben: 100.000 CZK."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Vereinfachte Berechnung:"
+        },
+        {
+          "type": "paragraph",
+          "text": "5.000.000 − 3.800.000 − 100.000 = **1.100.000 CZK**."
+        },
+        {
+          "type": "paragraph",
+          "text": "1.100.000 CZK bilden die Teilbemessungsgrundlage aus diesem Verkauf, sofern der Erlös steuerpflichtig ist und alle genannten Ausgaben steuerlich abzugsfähig sind."
+        },
+        {
+          "type": "paragraph",
+          "text": "Die endgültige Steuer ergibt sich aus der gesamten steuerlichen Situation des Steuerpflichtigen."
+        },
+        {
+          "type": "paragraph",
+          "text": "Das Beispiel dient der Veranschaulichung."
+        },
+        {
+          "type": "heading",
+          "text": "Was unterscheidet eine Schenkung von einer Erbschaft?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bei Erbschaften gibt es eine wichtige Ausnahme. Wenn Sie eine Immobilie von einem Verwandten in gerader Linie oder von Ihrem Ehegatten erben, kann die Eigentumsdauer des Erblassers auf die einschlägige Frist angerechnet werden."
+        },
+        {
+          "type": "paragraph",
+          "text": "Bei einer Schenkung wird die Eigentumsdauer des Schenkers nicht angerechnet."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ist der Verkauf einer geerbten Immobilie steuerpflichtig, kann auch hier der zum Erwerbszeitpunkt gesetzlich ermittelte Wert erforderlich sein. Bei einer Erbschaft ist der Todestag des Erblassers maßgeblich."
+        },
+        {
+          "type": "paragraph",
+          "text": "[Die im Nachlassverfahren verwendete Bewertung](/de/immobilienbewertung-erbschaft) entspricht nicht zwangsläufig den steuerlichen Bewertungsvorschriften."
+        },
+        {
+          "type": "heading",
+          "text": "Wann sollten Sie eine Bewertung in Auftrag geben?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Eine Bewertung zum Zeitpunkt der Schenkung kann insbesondere dann nötig sein, wenn:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Sie die Immobilie geschenkt bekommen haben und sie vor Ablauf der maßgeblichen Frist verkaufen möchten;",
+            "Sie die übrigen Voraussetzungen einer Steuerbefreiung nicht erfüllen;",
+            "Sie den gesetzlich ermittelten Wert für Ihre Steuererklärung nachweisen müssen;",
+            "Ihnen die ursprüngliche Bewertung fehlt oder sie den steuerlichen Vorschriften nicht genügt."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Für eine rückwirkende Bewertung sind insbesondere das Erwerbsdatum, die Angaben zur Identifizierung der Immobilie, ihr damaliger baulicher Zustand und etwaige Umbauten wichtig."
+        },
+        {
+          "type": "heading",
+          "text": "Immobilienbewertung für steuerliche Zwecke"
+        },
+        {
+          "type": "paragraph",
+          "text": "Benötigen Sie für ein geschenktes Einfamilienhaus, eine Wohnung, ein Grundstück oder eine andere Immobilie eine Bewertung zum Zeitpunkt des Erwerbs?"
+        },
+        {
+          "type": "paragraph",
+          "text": "[Ich erstelle Immobilienbewertungen](/de/immobilienbewertung-privat) für verschiedene Zwecke, auch rückwirkend zum maßgeblichen Stichtag."
+        },
+        {
+          "type": "paragraph",
+          "text": "Bei einer Bewertung für Einkommensteuerzwecke ist vorab zu klären, ob der nach den Bewertungsvorschriften ermittelte Wert oder eine andere Art der Bewertung erforderlich ist."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Ing. Aleš Vachuška – Immobilienbewertung**"
+        },
+        {
+          "type": "paragraph",
+          "text": "E-Mail: [odhadyvachuska@gmail.com](mailto:odhadyvachuska@gmail.com)"
+        },
+        {
+          "type": "heading",
+          "text": "Rechtsgrundlagen und Quellen"
+        },
+        {
+          "type": "list",
+          "items": [
+            "[Tschechisches Einkommensteuergesetz Nr. 586/1992 Sb.](https://e-sbirka.gov.cz/sb/1992/586), insbesondere §§ 4, 4b und 10.",
+            "[Tschechisches Vermögensbewertungsgesetz Nr. 151/1997 Sb.](https://e-sbirka.gov.cz/sb/1997/151)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Die Informationen entsprechen dem geprüften Rechtsstand von November 2026. Der Artikel dient der Information und ersetzt keine individuelle steuerliche oder rechtliche Beratung."
+        }
+      ]
+    }
 }

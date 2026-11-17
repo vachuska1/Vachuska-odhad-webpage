@@ -586,5 +586,282 @@
         "text": "The result is a **written valuation with a specific assessed value, a clear calculation and an explanation**, rather than just an automatically generated price range."
       }
     ]
-  }
+  },
+    "prodej-darovane-nemovitosti-dan-odhad-ceny": {
+      "title": "Selling a gifted property and income tax: When do you need a valuation?",
+      "seoTitle": "Selling Gifted Property in Czechia in 2026 | Tax and Valuation",
+      "description": "Selling a gifted house, flat or plot in Czechia? Find out when income tax applies, how the ownership period works and why the value on the gift date matters.",
+      "cardDescription": "When the sale is tax-exempt and how to substantiate the property's value on the date of the gift.",
+      "intro": "Giving property to a family member is a common way to transfer assets. If the recipient later decides to sell, they may have to pay income tax in the Czech Republic. This depends primarily on how long they owned the property, how it was used and what they do with the sale proceeds.\n\nIn some cases the proceeds are exempt. If the conditions for exemption are not met, it may be important to obtain a retrospective valuation as of the date of the gift.",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Is tax payable when the property is given?"
+        },
+        {
+          "type": "paragraph",
+          "text": "A gift of property between close relatives is usually exempt from income tax. This typically includes gifts between parents and children, grandparents and grandchildren, spouses and other relatives specified by law."
+        },
+        {
+          "type": "paragraph",
+          "text": "Under certain conditions the exemption also applies to gifts between people who live in a household and share its expenses."
+        },
+        {
+          "type": "paragraph",
+          "text": "The exemption may not apply to gifts between unrelated people, and a tax liability may arise as soon as the recipient receives the gift."
+        },
+        {
+          "type": "paragraph",
+          "text": "Receiving property as a gift and selling it later are two separate events for tax purposes."
+        },
+        {
+          "type": "heading",
+          "text": "When is the sale of a gifted property exempt from tax?"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Czech Income Taxes Act provides for several exemptions."
+        },
+        {
+          "type": "subheading",
+          "text": "1. Minimum ownership period"
+        },
+        {
+          "type": "paragraph",
+          "text": "A ten-year ownership period generally applies to property acquired on or after 1 January 2021. For property acquired before that date, the applicable transitional provisions generally retain the previous five-year period."
+        },
+        {
+          "type": "paragraph",
+          "text": "If the applicable ownership period requirement is met, the sale proceeds may be exempt from income tax."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Important: For gifted property, the time the donor owned it does not count towards the required ownership period.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "For example, if parents owned a house for twenty years and then gave it to their child, the child's ownership period does not start when the parents originally acquired it. It starts when the child acquires the property as a gift."
+        },
+        {
+          "type": "subheading",
+          "text": "2. Residence for at least two years before sale"
+        },
+        {
+          "type": "paragraph",
+          "text": "Proceeds from the sale of a family house or a qualifying residential unit may be exempt if the seller lived there for at least two years immediately before the sale."
+        },
+        {
+          "type": "paragraph",
+          "text": "What matters is where the seller actually lived. Formal registration of permanent residence alone is insufficient."
+        },
+        {
+          "type": "paragraph",
+          "text": "This exemption does not automatically apply to every type of property. A standalone plot of land is one example."
+        },
+        {
+          "type": "subheading",
+          "text": "3. Using the proceeds for your own housing needs"
+        },
+        {
+          "type": "paragraph",
+          "text": "Subject to the statutory conditions, the proceeds may also be exempt if the seller uses them to meet their own housing needs."
+        },
+        {
+          "type": "paragraph",
+          "text": "Examples include buying a home for personal use or spending the proceeds for another purpose recognised by law."
+        },
+        {
+          "type": "paragraph",
+          "text": "[You must meet the statutory deadlines and notify the Czech tax office.](https://financnisprava.gov.cz/cs/dane/dane/dan-z-prijmu/dotazy-a-odpovedi/dan-z-prijmu-fyzickych-osob/aktualne-k-dani-z-prijmu-fyzickych-osob-2024) Report receipt of the proceeds by the tax return filing deadline for the year in which you received them. You generally need to use the proceeds by the end of the following tax period. The law also allows certain earlier expenses for your own housing needs to be taken into account."
+        },
+        {
+          "type": "paragraph",
+          "text": "If you use only part of the proceeds for your own housing needs, only the corresponding portion may be exempt."
+        },
+        {
+          "type": "paragraph",
+          "text": "For each exemption, check the specific legal conditions and any applicable exceptions."
+        },
+        {
+          "type": "heading",
+          "text": "How is tax calculated when you sell a gifted property?"
+        },
+        {
+          "type": "paragraph",
+          "text": "If the sale proceeds are taxable, they are generally treated as other income under section 10 of the Czech Income Taxes Act."
+        },
+        {
+          "type": "paragraph",
+          "text": "The full sale price is not automatically the amount subject to tax."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can deduct documented expenses recognised by law from the sale proceeds. For a gifted property, a key deductible expense is its value determined under the Czech Property Valuation Act as of the date the recipient acquired it."
+        },
+        {
+          "type": "paragraph",
+          "text": "The simplified calculation is:"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Sale proceeds − deductible expenses = tax base attributable to the sale.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "In addition to the property's value, some documented expenses associated with the property and its sale may also be deductible if the statutory conditions are met."
+        },
+        {
+          "type": "paragraph",
+          "text": "The final amount of tax depends on the taxpayer's total tax base and the applicable personal income tax rate."
+        },
+        {
+          "type": "heading",
+          "text": "Why does the value on the date of the gift matter?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Under section 10(5) of Czech Act No. 586/1992 Coll. on Income Taxes, the deductible expense for an asset acquired without payment is its value determined under the Property Valuation Act as of the date of acquisition."
+        },
+        {
+          "type": "paragraph",
+          "text": "For real estate, the relevant figure for this purpose is the **statutory value determined under Czech Act No. 151/1997 Coll. on Property Valuation and the applicable valuation decree**."
+        },
+        {
+          "type": "paragraph",
+          "text": "This value needs to be distinguished from an ordinary estimate of the property's market value."
+        },
+        {
+          "type": "paragraph",
+          "text": "Market value reflects what a property is worth on the market. Statutory value is calculated using a legally prescribed valuation method and may differ from market value."
+        },
+        {
+          "type": "paragraph",
+          "text": "An ordinary estimate of market value may therefore be insufficient for tax purposes."
+        },
+        {
+          "type": "paragraph",
+          "text": "A property can also be valued retrospectively as of the date it was acquired as a gift. The valuation must reflect the property's condition on that date and follow the applicable valuation rules."
+        },
+        {
+          "type": "paragraph",
+          "text": "In guidance published on 19 January 2026, the Czech Financial Administration confirmed that the law generally does not require a formal expert report as the only option for this purpose. It also accepts a valuation prepared by a valuer, provided the statutory value is determined and properly substantiated under the applicable valuation rules."
+        },
+        {
+          "type": "heading",
+          "text": "A worked example"
+        },
+        {
+          "type": "paragraph",
+          "text": "Suppose someone receives a family house as a gift and sells it two years later."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Sale price of the house: CZK 5,000,000.",
+            "Statutory value on the date of the gift, determined under the valuation rules: CZK 3,800,000.",
+            "Other documented deductible expenses: CZK 100,000."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Simplified calculation:"
+        },
+        {
+          "type": "paragraph",
+          "text": "5,000,000 − 3,800,000 − 100,000 = **CZK 1,100,000**."
+        },
+        {
+          "type": "paragraph",
+          "text": "CZK 1,100,000 is the tax base attributable to the sale, assuming the proceeds are taxable and all the expenses listed are deductible."
+        },
+        {
+          "type": "paragraph",
+          "text": "The final tax payable depends on the taxpayer's overall tax situation."
+        },
+        {
+          "type": "paragraph",
+          "text": "This example is for illustration only."
+        },
+        {
+          "type": "heading",
+          "text": "What is the difference between a gift and an inheritance?"
+        },
+        {
+          "type": "paragraph",
+          "text": "There is an important exception for inheritances. If you inherit a property from a direct-line relative or a spouse, the time the deceased owned the property may count towards the required ownership period."
+        },
+        {
+          "type": "paragraph",
+          "text": "For a gift, the time the donor owned the property does not count."
+        },
+        {
+          "type": "paragraph",
+          "text": "If the sale of inherited property is taxable, you may also need its statutory value as of the acquisition date. For an inheritance, the relevant date is the date of the deceased's death."
+        },
+        {
+          "type": "paragraph",
+          "text": "[The valuation used in inheritance proceedings](/en/inheritance-valuation) may not meet the valuation requirements for tax purposes."
+        },
+        {
+          "type": "heading",
+          "text": "When should you arrange a valuation?"
+        },
+        {
+          "type": "paragraph",
+          "text": "You may need a valuation as of the date of the gift, particularly if:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "you received a property as a gift and want to sell it before the required ownership period has elapsed;",
+            "you do not meet the other conditions for a tax exemption;",
+            "you need to substantiate the statutory value for your tax return;",
+            "you do not have the original valuation or it does not satisfy the requirements of the tax rules."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "For a retrospective valuation, the key details are the acquisition date, information identifying the property, its condition at the time and any renovations."
+        },
+        {
+          "type": "heading",
+          "text": "Property valuation for tax purposes"
+        },
+        {
+          "type": "paragraph",
+          "text": "Do you need a valuation of a gifted house, flat, plot or other property as of the date you acquired it?"
+        },
+        {
+          "type": "paragraph",
+          "text": "[I provide property valuations](/en/personal-property-valuation) for a range of purposes, including retrospective valuations as of the relevant date."
+        },
+        {
+          "type": "paragraph",
+          "text": "For an income tax valuation, you first need to establish whether you require the statutory value under the valuation rules or another type of valuation."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Ing. Aleš Vachuška – Property Valuation**"
+        },
+        {
+          "type": "paragraph",
+          "text": "Email: [odhadyvachuska@gmail.com](mailto:odhadyvachuska@gmail.com)"
+        },
+        {
+          "type": "heading",
+          "text": "Legislation and sources"
+        },
+        {
+          "type": "list",
+          "items": [
+            "[Czech Act No. 586/1992 Coll. on Income Taxes](https://e-sbirka.gov.cz/sb/1992/586), in particular sections 4, 4b and 10.",
+            "[Czech Act No. 151/1997 Coll. on Property Valuation](https://e-sbirka.gov.cz/sb/1997/151)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The information reflects the legal position reviewed as of November 2026. This article is for information only and does not replace individual tax or legal advice."
+        }
+      ]
+    }
 }
