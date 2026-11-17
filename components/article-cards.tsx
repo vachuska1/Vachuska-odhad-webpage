@@ -15,13 +15,14 @@ export function ArticleCards({ items, headingLevel = 2, locale = "cs", startBlue
  const Heading = headingLevel === 3 ? 'h3' : 'h2'
  return <div className="article-cards">{items.map((article, index) => {
   const Icon = categoryIcons[article.category]
+  const image = article.cardImage ?? article.image
   return <article className={`article-card${article.category === 'personal' || index % 2 === (startBlue ? 0 : 1) ? ' article-card-blue' : ''}`} key={article.slug}><Link className="article-card-link" href={localePath(articlePath(article), locale)}>
-   {article.image ? <Image
+   {image ? <Image
     className="article-image"
-    src={article.image.src}
-    alt={article.image.alt[locale]}
-    width={article.image.width}
-    height={article.image.height}
+    src={image.src}
+    alt={image.alt[locale]}
+    width={image.width}
+    height={image.height}
     sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 340px"
    /> : <span className="article-card-icon"><Icon size={24} strokeWidth={1.7} aria-hidden="true" /></span>}
    <Heading>{article.title}</Heading>

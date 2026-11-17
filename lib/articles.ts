@@ -16,7 +16,7 @@ type ArticleImage = {
  height: number
  alt: Record<Locale, string>
 }
-export type Article = { slug: string; title: string; seoTitle: string; description: string; cardDescription: string; intro: string; category: ArticleCategory; publishedAt?: string; image?: ArticleImage; bodyImage?: ArticleImage & { beforeBlock: string }; blocks: ArticleBlock[] }
+export type Article = { slug: string; title: string; seoTitle: string; description: string; cardDescription: string; intro: string; category: ArticleCategory; publishedAt?: string; image?: ArticleImage; cardImage?: ArticleImage; bodyImage?: ArticleImage & { beforeBlock: string }; blocks: ArticleBlock[] }
 export const articles: Article[] = [
   {
     "slug": "odhad-nemovitosti-pro-dedicke-rizeni",
@@ -784,6 +784,16 @@ export const articles: Article[] = [
     "intro": "Darování nemovitosti v rodině je běžným způsobem převodu majetku. Pokud se však obdarovaný rozhodne nemovitost následně prodat, může mu vzniknout povinnost zaplatit daň z příjmů. Záleží především na době vlastnictví, způsobu využívání nemovitosti a účelu, na který budou získané peníze použity.\n\nV některých případech je příjem z prodeje osvobozen. Pokud podmínky osvobození splněny nejsou, může být důležité nechat nemovitost ocenit zpětně ke dni jejího darování.",
     "category": "tax",
     publishedAt: "2026-11-17",
+    cardImage: {
+      src: "/images/clanky/darovana-nemovitost-nahled.webp",
+      width: 1280,
+      height: 720,
+      alt: {
+        cs: "Ilustrace domu, dárku a klíčů od nemovitosti",
+        en: "Illustration of a house, a gift and property keys",
+        de: "Illustration eines Hauses, eines Geschenks und von Hausschlüsseln",
+      },
+    },
     image: {
       src: "/darovana-nemovitost-klice-a-dokumenty.webp",
       width: 1600,
